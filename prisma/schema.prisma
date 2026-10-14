@@ -1,0 +1,62 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+}
+
+// 识别任务：一次上传对应一个 Task
+model Task {
+  id            String       @id @default(cuid())
+  title         String // 默认取文件名，可改
+  mode          String // 'general' | 'table' | 'deep'
+  precision     String       @default("standard") // 'standard' | 'high'（general 模式子选项）
+  status        String // 'pending' | 'processing' | 'success' | 'failed'
+  imagePath     String // storage/images/xxx.jpg（相对项目根）
+  imageWidth    Int?
+  imageHeight   Int?
+  engineTaskId  String? // 深度模式：文档解析返回的 task_id
+  engineLogId   String? // 百度 log_id，排障用
+  lastPolledAt  DateTime? // poll-on-demand 节流
+  error         String? // 失败原因（百度错误码 + 消息）
+  createdAt     DateTime     @default(now())
+  updatedAt     DateTime     @updatedAt
+  raws          RawResult[]
+  versions      DocumentVersion[]
+  exports       ExportRecord[]
+}
+
+// 每个引擎调用的百度原始响应，归一化出错时可重放，不消耗额度
+model RawResult {
+  id        String   @id @default(cuid())
+  taskId    String
+  engine    String // 'general' | 'accurate' | 'table' | 'parser'
+  payload   String // 百度原始响应 JSON（parser 为已下载的 parse_result 内容）
+  createdAt DateTime @default(now())
+  task      Task     @relation(fields: [taskId], references: [id], onDelete: Cascade)
+}
+
+// 文档版本：1 = 初始识别结果；自动保存覆盖当前版本，手动快照产生新版本
+model DocumentVersion {
+  id        String   @id @default(cuid())
+  taskId    String
+  versionNo Int
+  label     String? // "初始识别" / 用户命名快照
+  content   String // OcrDocument JSON
+  isCurrent Boolean  @default(false)
+  createdAt DateTime @default(now())
+  task      Task     @relation(fields: [taskId], references: [id], onDelete: Cascade)
+
+  @@unique([taskId, versionNo])
+}
+
+model ExportRecord {
+  id        String   @id @default(cuid())
+  taskId    String
+  versionId String
+  format    String // 'txt' | 'md' | 'docx' | 'xlsx'
+  fileName  String
+  createdAt DateTime @default(now())
+  task      Task     @relation(fields: [taskId], references: [id], onDelete: Cascade)
+}

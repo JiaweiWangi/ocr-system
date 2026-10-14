@@ -1,0 +1,27 @@
+{
+  "log_id": 1000001,
+  "direction": 0,
+  "words_result_num": 12,
+  "words_result": [
+    { "words": "北京工业大学", "location": { "left": 210, "top": 60, "width": 380, "height": 48 } },
+    { "words": "工作实习报告", "location": { "left": 190, "top": 120, "width": 420, "height": 50 } },
+    { "words": "实习是企业与学校之间的重要桥梁，", "location": { "left": 80, "top": 220, "width": 640, "height": 36 } },
+    { "words": "通过实际工作锻炼学生的专业能力。", "location": { "left": 80, "top": 262, "width": 620, "height": 36 } },
+    { "words": "本次实习期间，我参与了多版式 OCR", "location": { "left": 80, "top": 340, "width": 660, "height": 36 } },
+    { "words": "文档识别系统的设计与开发工作，", "location": { "left": 80, "top": 382, "width": 620, "height": 36 } },
+    { "words": "负责在线编辑模块的实现。", "location": { "left": 80, "top": 424, "width": 480, "height": 36 } },
+    { "words": "项目采用前后端分离架构，", "location": { "left": 80, "top": 502, "width": 500, "height": 36 } },
+    { "words": "后端对接百度智能云 OCR 接口。", "location": { "left": 80, "top": 544, "width": 600, "height": 36 } },
+    { "words": "2026年10月14日", "location": { "left": 500, "top": 700, "width": 200, "height": 32 } },
+    { "words": "学生：王某伟", "location": { "left": 80, "top": 700, "width": 220, "height": 32 } },
+    { "words": "联系电话：13812345678", "location": { "left": 80, "top": 740, "width": 340, "height": 32 } }
+  ],
+  "paragraphs_result_num": 5,
+  "paragraphs_result": [
+    { "words_result_idx": [0, 1] },
+    { "words_result_idx": [2, 3] },
+    { "words_result_idx": [4, 5, 6] },
+    { "words_result_idx": [7, 8] },
+    { "words_result_idx": [9, 10, 11] }
+  ]
+}

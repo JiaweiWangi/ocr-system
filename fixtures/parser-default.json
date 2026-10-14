@@ -1,0 +1,31 @@
+{
+  "pages": [
+    {
+      "pageNo": 1,
+      "layouts": [
+        { "type": "doc_title", "sub_type": "doc_title", "bbox": [160, 50, 480, 60] },
+        { "type": "text", "sub_type": "", "bbox": [80, 160, 640, 40] },
+        { "type": "title", "sub_type": "title2", "bbox": [80, 240, 300, 40] },
+        { "type": "text", "sub_type": "", "bbox": [80, 310, 640, 120] },
+        { "type": "table", "sub_type": "wired_table", "bbox": [80, 460, 640, 200] },
+        { "type": "image", "sub_type": "", "bbox": [80, 700, 300, 200] },
+        { "type": "seal", "sub_type": "", "bbox": [500, 700, 120, 120] }
+      ],
+      "tables": [
+        {
+          "cells": [
+            { "row_start": 0, "row_end": 0, "col_start": 0, "col_end": 0, "words": "题号" },
+            { "row_start": 0, "row_end": 0, "col_start": 1, "col_end": 1, "words": "满分" },
+            { "row_start": 0, "row_end": 0, "col_start": 2, "col_end": 2, "words": "得分" },
+            { "row_start": 1, "row_end": 1, "col_start": 0, "col_end": 0, "words": "一" },
+            { "row_start": 1, "row_end": 1, "col_start": 1, "col_end": 1, "words": "30" },
+            { "row_start": 1, "row_end": 1, "col_start": 2, "col_end": 2, "words": "" },
+            { "row_start": 2, "row_end": 2, "col_start": 0, "col_end": 0, "words": "二" },
+            { "row_start": 2, "row_end": 2, "col_start": 1, "col_end": 1, "words": "40" },
+            { "row_start": 2, "row_end": 2, "col_start": 2, "col_end": 2, "words": "" }
+          ]
+        }
+      ]
+    }
+  ]
+}
