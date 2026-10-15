@@ -53,29 +53,30 @@ export async function runParserSubmit(
     void fileName; // mock 不区分图片，统一 default 生命周期
     return mockParserSubmit();
   }
-  return parserSubmit(_imageBase64);
+  // 真实调用：file_name 必须带正确扩展名（title 可编辑不可靠，取落盘文件名）
+  return parserSubmit(_imageBase64, fileName);
 }
 
 /** 返回查询结果；完成时同时返回已下载的 parse_result */
 export async function runParserPoll(
   taskId: string,
   fileName: string,
-): Promise<{ retCode: number; parseResult?: unknown }> {
+): Promise<{ status: string; parseResult?: unknown }> {
   if (isMockMode()) {
     const r = mockParserQuery(taskId);
-    if (r.ret_code === PARSER_DONE) {
+    if (r.status === PARSER_DONE) {
       return {
-        retCode: PARSER_DONE,
+        status: PARSER_DONE,
         parseResult: await loadFixture("parser", imageKeyFromName(fileName)),
       };
     }
-    return { retCode: r.ret_code };
+    return { status: r.status };
   }
 
   const r = await parserQuery(taskId);
-  const retCode = r?.ret_code ?? -1;
-  if (retCode === PARSER_DONE && r?.parse_result_url) {
-    return { retCode, parseResult: await downloadParseResult(r.parse_result_url) };
+  const status = r?.status ?? "unknown";
+  if (status === PARSER_DONE && r?.parse_result_url) {
+    return { status, parseResult: await downloadParseResult(r.parse_result_url) };
   }
-  return { retCode };
+  return { status };
 }

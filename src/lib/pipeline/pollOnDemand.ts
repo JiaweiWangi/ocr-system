@@ -28,9 +28,9 @@ export async function pollDeepTask(taskId: string): Promise<void> {
   });
 
   const fileName = task.title || "default";
-  const { retCode, parseResult } = await runParserPoll(task.engineTaskId, fileName);
+  const { status, parseResult } = await runParserPoll(task.engineTaskId, fileName);
 
-  if (retCode === PARSER_FAILED) {
+  if (status === PARSER_FAILED) {
     await prisma.task.update({
       where: { id: taskId },
       data: { status: "failed", error: "文档解析失败（百度侧处理失败）" },
@@ -38,7 +38,7 @@ export async function pollDeepTask(taskId: string): Promise<void> {
     return;
   }
 
-  if (retCode === PARSER_DONE && parseResult) {
+  if (status === PARSER_DONE && parseResult) {
     try {
       // RawResult 存档（parse_result_url 是临时链接，立即落地）
       await prisma.rawResult.create({
@@ -80,5 +80,5 @@ export async function pollDeepTask(taskId: string): Promise<void> {
       });
     }
   }
-  // 其余 retCode：仍在处理中，等待下次轮询
+  // 其余 status：仍在处理中，等待下次轮询
 }

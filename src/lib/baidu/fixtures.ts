@@ -48,12 +48,12 @@ export function mockParserSubmit(): string {
 }
 
 export function mockParserQuery(taskId: string): {
-  ret_code: number;
+  status: string;
   task_id: string;
 } {
   const count = (mockProgress.get(taskId) ?? 0) + 1;
   mockProgress.set(taskId, count);
   // 第 1 次查询排队中，第 2 次处理中，第 3 次起完成 —— 让前端轮询有真实感
-  const ret_code = count >= 3 ? 3 : count;
-  return { ret_code, task_id: taskId };
+  const status = count >= 3 ? "success" : count === 2 ? "running" : "pending";
+  return { status, task_id: taskId };
 }

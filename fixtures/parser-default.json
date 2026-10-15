@@ -1,31 +1,1500 @@
 {
+  "file_name": "cmv9b9m1s000601ek57yymkon.png",
+  "file_id": "file-b0cTyfewufO37Nt7lc0SyA53Y7fkTjjx",
   "pages": [
     {
-      "pageNo": 1,
+      "page_id": "fkTjjx-page-0",
+      "page_num": 0,
+      "page_angle": 0,
+      "text": "| 课题号 | 企业名称 | 实习地址 | 实习课题 | 实习课题 | 实习课题 | 实习课题 | 学生 | 学生 | 学生 | 校内指导教师 | 校内指导教师 |\n| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |\n| 课题号 | 企业名称 | 实习地址 | 课题名称 | 课题内容 | 所需人数及时间 | 任务分工（子课题） | 1 | 2 | 3 | 姓名 |  |\n| BD01 | 百度在线网络技术(北京)有限公司 | 线上 | 多模态大模型驱动的校园智能问答与资料助手 | 面向高校教学、教务、实习管理、课程资料查询等场景，构建支持文本、图片、PDF、表格等资料理解的多模态问答系统。系统需支持资料上传、知识解析、知识切片、RAG检索增强、智能问答和结果引用，形成一套可演示的校园知识助手原型 | 所需人数：2-3人课题时间：78月 | 子课题1：教学资料解析与知识切片；子课题2：RAG 知识库与提示词设计子；课题3：问答系统页面开发与效果评测 | 23072106周某毅 | 23072129许某强 | 23072110尹某帆 | 赖某旭 |  |\n| BD02 | 百度在线网络技术(北京)有限公司 | 线上 | 多智能体世界网站设计与开发 | 构建一个可视化的“多智能体世界”网站，让多个AI角色在同一虚拟场景中具备不同身份、目标、行为规则和对话能力。学生需设计世界观、角色设定、任务规则、智能体交互流程和网页展示界面，形成一个可运行、可观察、可演示的AI世界原型。 | 所需人数：2-3人课题时间：78月 | 子课题1：多智能体角色与世界规则设计；子课题2:Agent 对话、任务与行为逻辑编排；子课题3:网站前端页面与交互展示开发 | 23072115向某睿 | 23072112王某轩 | 23072116程某凯 | 赖某旭 |  |\n| BD03 | 百度在线网络技术(北京)有限公司 | 线上 | 端侧AI视觉交互应用设计与开发 | 面向手机、摄像头、边缘计算设备等端侧场景，开发基于手势识别、人脸检测、姿态识别或物体检测的交互应用。课题重点研究轻量化模型部署、实时视频流处理、端侧推理性能优化与前端交互设计，形成一个可在浏览器或边缘设备上运行的视觉交互 Demo。 | 所需人数：2人课题时间：7-8月 | 子课题1：视觉模型选择与端侧部署；子课题2：摄像头视频流与交互逻辑开发；子课题3：FPS、延迟、识别准确率评测 | 23072004王某尧 | 23072026马某慧 | 23072001刘某然 | 刘某 |  |\n| BD04 | 百度在线网络技术(北京)有限公司 | 线上 | AI编程助手辅助的软件项目开发实践 | 研究如何使用AI编程助手辅助完成需求分析、代码生成、单元测试、Bug 修复和项目文档生成。课题目标不是单纯让 AI写代码，而是训练学生掌握“人提出需求、AI 辅助实现、人进行审查和优化”的人机协同软件开发流程。 | 所需人数：2-3人课题时间：78月 | 子课题1：需求文档与功能模块拆解；子课题2：AI辅助前后端代码开发；子课题3：代码审查、测试与项目说明文档 | 23072128纪某然 | 23072018郭某琪 | 23027417刘某迪 | 庄某玺 |  |\n| BD05 | 百度在线网络技术(北京)有限公司 | 线上 | 多版式OCR文档识别与在线处理系统 | 面向拍照文档、表格截图、票据单据、试卷图片、宣传海报、扫描件等多种版式内容，设计并开发一套在线OCR处理系统。系统支持用户上传图片或拍照提交，自动完成文字检测、文字识别、版面分析、表格结构还原、关键信息提取与结果导出，形成“图片输入—OCR识别—结构化处理—在线编辑—结果下载”的完整流程 | 所需人数：2-3人课题时间：7-8月 | 子课题1：多类型图片采集与OCR识别流程设计子课题2：版面分析、表格识别与结构化信息提取子课题3：在线上传、识别结果编辑与导出页面开发 | 23072013鄂某轩 | 23072002殷某 | 23072022王某伟 | 杨某 |  |\n| BD06 | 百度在线网络技术(北京)有限公司 | 线上 | AI数字人教学内容生成与交互应用 | 面向教学讲解、课程导览、校园宣传、知识科普等场景，研究数字人的形象设定、讲解脚本生成、语音合成、口播视频生成和交互问答能力。学生需完成一个具备“会讲解、可互动、能展示”的数字人应用原型，可用于课程介绍、知识点讲解或校园活动宣传。 | 所需人数：2-3人课题时间：7-8月 | 子课题1：数字人角色设定与讲解脚本设计；子课题2：语音合成、口播视频与多模态素材生成；子课题3：数字人交互页面与问答流程开发 | 23251905王某 | 23250124王某怡 | 23251221王某月 | 庄某玺 |  |\n\n",
+      "snapshot": "",
+      "chars": null,
       "layouts": [
-        { "type": "doc_title", "sub_type": "doc_title", "bbox": [160, 50, 480, 60] },
-        { "type": "text", "sub_type": "", "bbox": [80, 160, 640, 40] },
-        { "type": "title", "sub_type": "title2", "bbox": [80, 240, 300, 40] },
-        { "type": "text", "sub_type": "", "bbox": [80, 310, 640, 120] },
-        { "type": "table", "sub_type": "wired_table", "bbox": [80, 460, 640, 200] },
-        { "type": "image", "sub_type": "", "bbox": [80, 700, 300, 200] },
-        { "type": "seal", "sub_type": "", "bbox": [500, 700, 120, 120] }
+        {
+          "layout_id": "fkTjjx-layout-1",
+          "text": "",
+          "position": [
+            3,
+            72,
+            3139,
+            1377
+          ],
+          "type": "table",
+          "sub_type": "wired_table",
+          "score": 0,
+          "parent": "root",
+          "children": []
+        }
       ],
+      "images": [],
       "tables": [
         {
+          "layout_id": "fkTjjx-layout-1",
+          "markdown": "| 课题号 | 企业名称 | 实习地址 | 实习课题 | 实习课题 | 实习课题 | 实习课题 | 学生 | 学生 | 学生 | 校内指导教师 | 校内指导教师 |\n| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |\n| 课题号 | 企业名称 | 实习地址 | 课题名称 | 课题内容 | 所需人数及时间 | 任务分工（子课题） | 1 | 2 | 3 | 姓名 |  |\n| BD01 | 百度在线网络技术(北京)有限公司 | 线上 | 多模态大模型驱动的校园智能问答与资料助手 | 面向高校教学、教务、实习管理、课程资料查询等场景，构建支持文本、图片、PDF、表格等资料理解的多模态问答系统。系统需支持资料上传、知识解析、知识切片、RAG检索增强、智能问答和结果引用，形成一套可演示的校园知识助手原型 | 所需人数：2-3人课题时间：78月 | 子课题1：教学资料解析与知识切片；子课题2：RAG 知识库与提示词设计子；课题3：问答系统页面开发与效果评测 | 23072106周某毅 | 23072129许某强 | 23072110尹某帆 | 赖某旭 |  |\n| BD02 | 百度在线网络技术(北京)有限公司 | 线上 | 多智能体世界网站设计与开发 | 构建一个可视化的“多智能体世界”网站，让多个AI角色在同一虚拟场景中具备不同身份、目标、行为规则和对话能力。学生需设计世界观、角色设定、任务规则、智能体交互流程和网页展示界面，形成一个可运行、可观察、可演示的AI世界原型。 | 所需人数：2-3人课题时间：78月 | 子课题1：多智能体角色与世界规则设计；子课题2:Agent 对话、任务与行为逻辑编排；子课题3:网站前端页面与交互展示开发 | 23072115向某睿 | 23072112王某轩 | 23072116程某凯 | 赖某旭 |  |\n| BD03 | 百度在线网络技术(北京)有限公司 | 线上 | 端侧AI视觉交互应用设计与开发 | 面向手机、摄像头、边缘计算设备等端侧场景，开发基于手势识别、人脸检测、姿态识别或物体检测的交互应用。课题重点研究轻量化模型部署、实时视频流处理、端侧推理性能优化与前端交互设计，形成一个可在浏览器或边缘设备上运行的视觉交互 Demo。 | 所需人数：2人课题时间：7-8月 | 子课题1：视觉模型选择与端侧部署；子课题2：摄像头视频流与交互逻辑开发；子课题3：FPS、延迟、识别准确率评测 | 23072004王某尧 | 23072026马某慧 | 23072001刘某然 | 刘某 |  |\n| BD04 | 百度在线网络技术(北京)有限公司 | 线上 | AI编程助手辅助的软件项目开发实践 | 研究如何使用AI编程助手辅助完成需求分析、代码生成、单元测试、Bug 修复和项目文档生成。课题目标不是单纯让 AI写代码，而是训练学生掌握“人提出需求、AI 辅助实现、人进行审查和优化”的人机协同软件开发流程。 | 所需人数：2-3人课题时间：78月 | 子课题1：需求文档与功能模块拆解；子课题2：AI辅助前后端代码开发；子课题3：代码审查、测试与项目说明文档 | 23072128纪某然 | 23072018郭某琪 | 23027417刘某迪 | 庄某玺 |  |\n| BD05 | 百度在线网络技术(北京)有限公司 | 线上 | 多版式OCR文档识别与在线处理系统 | 面向拍照文档、表格截图、票据单据、试卷图片、宣传海报、扫描件等多种版式内容，设计并开发一套在线OCR处理系统。系统支持用户上传图片或拍照提交，自动完成文字检测、文字识别、版面分析、表格结构还原、关键信息提取与结果导出，形成“图片输入—OCR识别—结构化处理—在线编辑—结果下载”的完整流程 | 所需人数：2-3人课题时间：7-8月 | 子课题1：多类型图片采集与OCR识别流程设计子课题2：版面分析、表格识别与结构化信息提取子课题3：在线上传、识别结果编辑与导出页面开发 | 23072013鄂某轩 | 23072002殷某 | 23072022王某伟 | 杨某 |  |\n| BD06 | 百度在线网络技术(北京)有限公司 | 线上 | AI数字人教学内容生成与交互应用 | 面向教学讲解、课程导览、校园宣传、知识科普等场景，研究数字人的形象设定、讲解脚本生成、语音合成、口播视频生成和交互问答能力。学生需完成一个具备“会讲解、可互动、能展示”的数字人应用原型，可用于课程介绍、知识点讲解或校园活动宣传。 | 所需人数：2-3人课题时间：7-8月 | 子课题1：数字人角色设定与讲解脚本设计；子课题2：语音合成、口播视频与多模态素材生成；子课题3：数字人交互页面与问答流程开发 | 23251905王某 | 23250124王某怡 | 23251221王某月 | 庄某玺 |  |\n",
+          "table_html": "",
+          "table_title_id": null,
+          "position": [
+            3,
+            72,
+            3139,
+            1377
+          ],
           "cells": [
-            { "row_start": 0, "row_end": 0, "col_start": 0, "col_end": 0, "words": "题号" },
-            { "row_start": 0, "row_end": 0, "col_start": 1, "col_end": 1, "words": "满分" },
-            { "row_start": 0, "row_end": 0, "col_start": 2, "col_end": 2, "words": "得分" },
-            { "row_start": 1, "row_end": 1, "col_start": 0, "col_end": 0, "words": "一" },
-            { "row_start": 1, "row_end": 1, "col_start": 1, "col_end": 1, "words": "30" },
-            { "row_start": 1, "row_end": 1, "col_start": 2, "col_end": 2, "words": "" },
-            { "row_start": 2, "row_end": 2, "col_start": 0, "col_end": 0, "words": "二" },
-            { "row_start": 2, "row_end": 2, "col_start": 1, "col_end": 1, "words": "40" },
-            { "row_start": 2, "row_end": 2, "col_start": 2, "col_end": 2, "words": "" }
-          ]
+            {
+              "layout_id": "fkTjjx-layout-1-0",
+              "text": "课题号",
+              "position": [
+                3,
+                72,
+                157,
+                81
+              ],
+              "type": "text",
+              "sub_type": "",
+              "score": 0,
+              "parent": "",
+              "children": null
+            },
+            {
+              "layout_id": "fkTjjx-layout-1-1",
+              "text": "企业名称",
+              "position": [
+                160,
+                72,
+                203,
+                81
+              ],
+              "type": "text",
+              "sub_type": "",
+              "score": 0,
+              "parent": "",
+              "children": null
+            },
+            {
+              "layout_id": "fkTjjx-layout-1-2",
+              "text": "实习地址",
+              "position": [
+                363,
+                72,
+                153,
+                81
+              ],
+              "type": "text",
+              "sub_type": "",
+              "score": 0,
+              "parent": "",
+              "children": null
+            },
+            {
+              "layout_id": "fkTjjx-layout-1-3",
+              "text": "实习课题",
+              "position": [
+                516,
+                72,
+                1745,
+                39
+              ],
+              "type": "text",
+              "sub_type": "",
+              "score": 0,
+              "parent": "",
+              "children": null
+            },
+            {
+              "layout_id": "fkTjjx-layout-1-4",
+              "text": "学生",
+              "position": [
+                2261,
+                72,
+                576,
+                39
+              ],
+              "type": "text",
+              "sub_type": "",
+              "score": 0,
+              "parent": "",
+              "children": null
+            },
+            {
+              "layout_id": "fkTjjx-layout-1-5",
+              "text": "校内指导教师",
+              "position": [
+                2837,
+                72,
+                305,
+                39
+              ],
+              "type": "text",
+              "sub_type": "",
+              "score": 0,
+              "parent": "",
+              "children": null
+            },
+            {
+              "layout_id": "fkTjjx-layout-1-6",
+              "text": "课题名称",
+              "position": [
+                516,
+                111,
+                411,
+                42
+              ],
+              "type": "text",
+              "sub_type": "",
+              "score": 0,
+              "parent": "",
+              "children": null
+            },
+            {
+              "layout_id": "fkTjjx-layout-1-7",
+              "text": "课题内容",
+              "position": [
+                927,
+                111,
+                446,
+                42
+              ],
+              "type": "text",
+              "sub_type": "",
+              "score": 0,
+              "parent": "",
+              "children": null
+            },
+            {
+              "layout_id": "fkTjjx-layout-1-8",
+              "text": "所需人数及时间",
+              "position": [
+                1373,
+                111,
+                352,
+                42
+              ],
+              "type": "text",
+              "sub_type": "",
+              "score": 0,
+              "parent": "",
+              "children": null
+            },
+            {
+              "layout_id": "fkTjjx-layout-1-9",
+              "text": "任务分工（子课题）",
+              "position": [
+                1725,
+                111,
+                536,
+                42
+              ],
+              "type": "text",
+              "sub_type": "",
+              "score": 0,
+              "parent": "",
+              "children": null
+            },
+            {
+              "layout_id": "fkTjjx-layout-1-10",
+              "text": "1",
+              "position": [
+                2261,
+                111,
+                192,
+                42
+              ],
+              "type": "text",
+              "sub_type": "",
+              "score": 0,
+              "parent": "",
+              "children": null
+            },
+            {
+              "layout_id": "fkTjjx-layout-1-11",
+              "text": "2",
+              "position": [
+                2453,
+                111,
+                192,
+                42
+              ],
+              "type": "text",
+              "sub_type": "",
+              "score": 0,
+              "parent": "",
+              "children": null
+            },
+            {
+              "layout_id": "fkTjjx-layout-1-12",
+              "text": "3",
+              "position": [
+                2645,
+                111,
+                192,
+                42
+              ],
+              "type": "text",
+              "sub_type": "",
+              "score": 0,
+              "parent": "",
+              "children": null
+            },
+            {
+              "layout_id": "fkTjjx-layout-1-13",
+              "text": "姓名",
+              "position": [
+                2837,
+                111,
+                280,
+                42
+              ],
+              "type": "text",
+              "sub_type": "",
+              "score": 0,
+              "parent": "",
+              "children": null
+            },
+            {
+              "layout_id": "fkTjjx-layout-1-14",
+              "text": "",
+              "position": [
+                3117,
+                111,
+                25,
+                42
+              ],
+              "type": "text",
+              "sub_type": "",
+              "score": 0,
+              "parent": "",
+              "children": null
+            },
+            {
+              "layout_id": "fkTjjx-layout-1-15",
+              "text": "BD01",
+              "position": [
+                3,
+                153,
+                157,
+                211
+              ],
+              "type": "text",
+              "sub_type": "",
+              "score": 0,
+              "parent": "",
+              "children": null
+            },
+            {
+              "layout_id": "fkTjjx-layout-1-16",
+              "text": "百度在线网络技术(北京)有限公司",
+              "position": [
+                160,
+                153,
+                203,
+                211
+              ],
+              "type": "text",
+              "sub_type": "",
+              "score": 0,
+              "parent": "",
+              "children": null
+            },
+            {
+              "layout_id": "fkTjjx-layout-1-17",
+              "text": "线上",
+              "position": [
+                363,
+                153,
+                153,
+                211
+              ],
+              "type": "text",
+              "sub_type": "",
+              "score": 0,
+              "parent": "",
+              "children": null
+            },
+            {
+              "layout_id": "fkTjjx-layout-1-18",
+              "text": "多模态大模型驱动的校园智能问答与资料助手",
+              "position": [
+                516,
+                153,
+                411,
+                211
+              ],
+              "type": "text",
+              "sub_type": "",
+              "score": 0,
+              "parent": "",
+              "children": null
+            },
+            {
+              "layout_id": "fkTjjx-layout-1-19",
+              "text": "面向高校教学、教务、实习管理、课程资料查询等场景，构建支持文本、图片、PDF、表格等资料理解的多模态问答系统。系统需支持资料上传、知识解析、知识切片、RAG检索增强、智能问答和结果引用，形成一套可演示的校园知识助手原型",
+              "position": [
+                927,
+                153,
+                446,
+                211
+              ],
+              "type": "text",
+              "sub_type": "",
+              "score": 0,
+              "parent": "",
+              "children": null
+            },
+            {
+              "layout_id": "fkTjjx-layout-1-20",
+              "text": "所需人数：2-3人课题时间：78月",
+              "position": [
+                1373,
+                153,
+                352,
+                211
+              ],
+              "type": "text",
+              "sub_type": "",
+              "score": 0,
+              "parent": "",
+              "children": null
+            },
+            {
+              "layout_id": "fkTjjx-layout-1-21",
+              "text": "子课题1：教学资料解析与知识切片；子课题2：RAG 知识库与提示词设计子；课题3：问答系统页面开发与效果评测",
+              "position": [
+                1725,
+                153,
+                536,
+                211
+              ],
+              "type": "text",
+              "sub_type": "",
+              "score": 0,
+              "parent": "",
+              "children": null
+            },
+            {
+              "layout_id": "fkTjjx-layout-1-22",
+              "text": "23072106周某毅",
+              "position": [
+                2261,
+                153,
+                192,
+                211
+              ],
+              "type": "text",
+              "sub_type": "",
+              "score": 0,
+              "parent": "",
+              "children": null
+            },
+            {
+              "layout_id": "fkTjjx-layout-1-23",
+              "text": "23072129许某强",
+              "position": [
+                2453,
+                153,
+                192,
+                211
+              ],
+              "type": "text",
+              "sub_type": "",
+              "score": 0,
+              "parent": "",
+              "children": null
+            },
+            {
+              "layout_id": "fkTjjx-layout-1-24",
+              "text": "23072110尹某帆",
+              "position": [
+                2645,
+                153,
+                192,
+                211
+              ],
+              "type": "text",
+              "sub_type": "",
+              "score": 0,
+              "parent": "",
+              "children": null
+            },
+            {
+              "layout_id": "fkTjjx-layout-1-25",
+              "text": "赖某旭",
+              "position": [
+                2837,
+                153,
+                280,
+                211
+              ],
+              "type": "text",
+              "sub_type": "",
+              "score": 0,
+              "parent": "",
+              "children": null
+            },
+            {
+              "layout_id": "fkTjjx-layout-1-26",
+              "text": "",
+              "position": [
+                3117,
+                153,
+                25,
+                211
+              ],
+              "type": "text",
+              "sub_type": "",
+              "score": 0,
+              "parent": "",
+              "children": null
+            },
+            {
+              "layout_id": "fkTjjx-layout-1-27",
+              "text": "BD02",
+              "position": [
+                3,
+                364,
+                157,
+                211
+              ],
+              "type": "text",
+              "sub_type": "",
+              "score": 0,
+              "parent": "",
+              "children": null
+            },
+            {
+              "layout_id": "fkTjjx-layout-1-28",
+              "text": "百度在线网络技术(北京)有限公司",
+              "position": [
+                160,
+                364,
+                203,
+                211
+              ],
+              "type": "text",
+              "sub_type": "",
+              "score": 0,
+              "parent": "",
+              "children": null
+            },
+            {
+              "layout_id": "fkTjjx-layout-1-29",
+              "text": "线上",
+              "position": [
+                363,
+                364,
+                153,
+                211
+              ],
+              "type": "text",
+              "sub_type": "",
+              "score": 0,
+              "parent": "",
+              "children": null
+            },
+            {
+              "layout_id": "fkTjjx-layout-1-30",
+              "text": "多智能体世界网站设计与开发",
+              "position": [
+                516,
+                364,
+                411,
+                211
+              ],
+              "type": "text",
+              "sub_type": "",
+              "score": 0,
+              "parent": "",
+              "children": null
+            },
+            {
+              "layout_id": "fkTjjx-layout-1-31",
+              "text": "构建一个可视化的“多智能体世界”网站，让多个AI角色在同一虚拟场景中具备不同身份、目标、行为规则和对话能力。学生需设计世界观、角色设定、任务规则、智能体交互流程和网页展示界面，形成一个可运行、可观察、可演示的AI世界原型。",
+              "position": [
+                927,
+                364,
+                446,
+                211
+              ],
+              "type": "text",
+              "sub_type": "",
+              "score": 0,
+              "parent": "",
+              "children": null
+            },
+            {
+              "layout_id": "fkTjjx-layout-1-32",
+              "text": "所需人数：2-3人课题时间：78月",
+              "position": [
+                1373,
+                364,
+                352,
+                211
+              ],
+              "type": "text",
+              "sub_type": "",
+              "score": 0,
+              "parent": "",
+              "children": null
+            },
+            {
+              "layout_id": "fkTjjx-layout-1-33",
+              "text": "子课题1：多智能体角色与世界规则设计；子课题2:Agent 对话、任务与行为逻辑编排；子课题3:网站前端页面与交互展示开发",
+              "position": [
+                1725,
+                364,
+                536,
+                211
+              ],
+              "type": "text",
+              "sub_type": "",
+              "score": 0,
+              "parent": "",
+              "children": null
+            },
+            {
+              "layout_id": "fkTjjx-layout-1-34",
+              "text": "23072115向某睿",
+              "position": [
+                2261,
+                364,
+                192,
+                211
+              ],
+              "type": "text",
+              "sub_type": "",
+              "score": 0,
+              "parent": "",
+              "children": null
+            },
+            {
+              "layout_id": "fkTjjx-layout-1-35",
+              "text": "23072112王某轩",
+              "position": [
+                2453,
+                364,
+                192,
+                211
+              ],
+              "type": "text",
+              "sub_type": "",
+              "score": 0,
+              "parent": "",
+              "children": null
+            },
+            {
+              "layout_id": "fkTjjx-layout-1-36",
+              "text": "23072116程某凯",
+              "position": [
+                2645,
+                364,
+                192,
+                211
+              ],
+              "type": "text",
+              "sub_type": "",
+              "score": 0,
+              "parent": "",
+              "children": null
+            },
+            {
+              "layout_id": "fkTjjx-layout-1-37",
+              "text": "赖某旭",
+              "position": [
+                2837,
+                364,
+                280,
+                211
+              ],
+              "type": "text",
+              "sub_type": "",
+              "score": 0,
+              "parent": "",
+              "children": null
+            },
+            {
+              "layout_id": "fkTjjx-layout-1-38",
+              "text": "",
+              "position": [
+                3117,
+                364,
+                25,
+                211
+              ],
+              "type": "text",
+              "sub_type": "",
+              "score": 0,
+              "parent": "",
+              "children": null
+            },
+            {
+              "layout_id": "fkTjjx-layout-1-39",
+              "text": "BD03",
+              "position": [
+                3,
+                575,
+                157,
+                211
+              ],
+              "type": "text",
+              "sub_type": "",
+              "score": 0,
+              "parent": "",
+              "children": null
+            },
+            {
+              "layout_id": "fkTjjx-layout-1-40",
+              "text": "百度在线网络技术(北京)有限公司",
+              "position": [
+                160,
+                575,
+                203,
+                211
+              ],
+              "type": "text",
+              "sub_type": "",
+              "score": 0,
+              "parent": "",
+              "children": null
+            },
+            {
+              "layout_id": "fkTjjx-layout-1-41",
+              "text": "线上",
+              "position": [
+                363,
+                575,
+                153,
+                211
+              ],
+              "type": "text",
+              "sub_type": "",
+              "score": 0,
+              "parent": "",
+              "children": null
+            },
+            {
+              "layout_id": "fkTjjx-layout-1-42",
+              "text": "端侧AI视觉交互应用设计与开发",
+              "position": [
+                516,
+                575,
+                411,
+                211
+              ],
+              "type": "text",
+              "sub_type": "",
+              "score": 0,
+              "parent": "",
+              "children": null
+            },
+            {
+              "layout_id": "fkTjjx-layout-1-43",
+              "text": "面向手机、摄像头、边缘计算设备等端侧场景，开发基于手势识别、人脸检测、姿态识别或物体检测的交互应用。课题重点研究轻量化模型部署、实时视频流处理、端侧推理性能优化与前端交互设计，形成一个可在浏览器或边缘设备上运行的视觉交互 Demo。",
+              "position": [
+                927,
+                575,
+                446,
+                211
+              ],
+              "type": "text",
+              "sub_type": "",
+              "score": 0,
+              "parent": "",
+              "children": null
+            },
+            {
+              "layout_id": "fkTjjx-layout-1-44",
+              "text": "所需人数：2人课题时间：7-8月",
+              "position": [
+                1373,
+                575,
+                352,
+                211
+              ],
+              "type": "text",
+              "sub_type": "",
+              "score": 0,
+              "parent": "",
+              "children": null
+            },
+            {
+              "layout_id": "fkTjjx-layout-1-45",
+              "text": "子课题1：视觉模型选择与端侧部署；子课题2：摄像头视频流与交互逻辑开发；子课题3：FPS、延迟、识别准确率评测",
+              "position": [
+                1725,
+                575,
+                536,
+                211
+              ],
+              "type": "text",
+              "sub_type": "",
+              "score": 0,
+              "parent": "",
+              "children": null
+            },
+            {
+              "layout_id": "fkTjjx-layout-1-46",
+              "text": "23072004王某尧",
+              "position": [
+                2261,
+                575,
+                192,
+                211
+              ],
+              "type": "text",
+              "sub_type": "",
+              "score": 0,
+              "parent": "",
+              "children": null
+            },
+            {
+              "layout_id": "fkTjjx-layout-1-47",
+              "text": "23072026马某慧",
+              "position": [
+                2453,
+                575,
+                192,
+                211
+              ],
+              "type": "text",
+              "sub_type": "",
+              "score": 0,
+              "parent": "",
+              "children": null
+            },
+            {
+              "layout_id": "fkTjjx-layout-1-48",
+              "text": "23072001刘某然",
+              "position": [
+                2645,
+                575,
+                192,
+                211
+              ],
+              "type": "text",
+              "sub_type": "",
+              "score": 0,
+              "parent": "",
+              "children": null
+            },
+            {
+              "layout_id": "fkTjjx-layout-1-49",
+              "text": "刘某",
+              "position": [
+                2837,
+                575,
+                280,
+                211
+              ],
+              "type": "text",
+              "sub_type": "",
+              "score": 0,
+              "parent": "",
+              "children": null
+            },
+            {
+              "layout_id": "fkTjjx-layout-1-50",
+              "text": "",
+              "position": [
+                3117,
+                575,
+                25,
+                211
+              ],
+              "type": "text",
+              "sub_type": "",
+              "score": 0,
+              "parent": "",
+              "children": null
+            },
+            {
+              "layout_id": "fkTjjx-layout-1-51",
+              "text": "BD04",
+              "position": [
+                3,
+                786,
+                157,
+                181
+              ],
+              "type": "text",
+              "sub_type": "",
+              "score": 0,
+              "parent": "",
+              "children": null
+            },
+            {
+              "layout_id": "fkTjjx-layout-1-52",
+              "text": "百度在线网络技术(北京)有限公司",
+              "position": [
+                160,
+                786,
+                203,
+                181
+              ],
+              "type": "text",
+              "sub_type": "",
+              "score": 0,
+              "parent": "",
+              "children": null
+            },
+            {
+              "layout_id": "fkTjjx-layout-1-53",
+              "text": "线上",
+              "position": [
+                363,
+                786,
+                153,
+                181
+              ],
+              "type": "text",
+              "sub_type": "",
+              "score": 0,
+              "parent": "",
+              "children": null
+            },
+            {
+              "layout_id": "fkTjjx-layout-1-54",
+              "text": "AI编程助手辅助的软件项目开发实践",
+              "position": [
+                516,
+                786,
+                411,
+                181
+              ],
+              "type": "text",
+              "sub_type": "",
+              "score": 0,
+              "parent": "",
+              "children": null
+            },
+            {
+              "layout_id": "fkTjjx-layout-1-55",
+              "text": "研究如何使用AI编程助手辅助完成需求分析、代码生成、单元测试、Bug 修复和项目文档生成。课题目标不是单纯让 AI写代码，而是训练学生掌握“人提出需求、AI 辅助实现、人进行审查和优化”的人机协同软件开发流程。",
+              "position": [
+                927,
+                786,
+                446,
+                181
+              ],
+              "type": "text",
+              "sub_type": "",
+              "score": 0,
+              "parent": "",
+              "children": null
+            },
+            {
+              "layout_id": "fkTjjx-layout-1-56",
+              "text": "所需人数：2-3人课题时间：78月",
+              "position": [
+                1373,
+                786,
+                352,
+                181
+              ],
+              "type": "text",
+              "sub_type": "",
+              "score": 0,
+              "parent": "",
+              "children": null
+            },
+            {
+              "layout_id": "fkTjjx-layout-1-57",
+              "text": "子课题1：需求文档与功能模块拆解；子课题2：AI辅助前后端代码开发；子课题3：代码审查、测试与项目说明文档",
+              "position": [
+                1725,
+                786,
+                536,
+                181
+              ],
+              "type": "text",
+              "sub_type": "",
+              "score": 0,
+              "parent": "",
+              "children": null
+            },
+            {
+              "layout_id": "fkTjjx-layout-1-58",
+              "text": "23072128纪某然",
+              "position": [
+                2261,
+                786,
+                192,
+                181
+              ],
+              "type": "text",
+              "sub_type": "",
+              "score": 0,
+              "parent": "",
+              "children": null
+            },
+            {
+              "layout_id": "fkTjjx-layout-1-59",
+              "text": "23072018郭某琪",
+              "position": [
+                2453,
+                786,
+                192,
+                181
+              ],
+              "type": "text",
+              "sub_type": "",
+              "score": 0,
+              "parent": "",
+              "children": null
+            },
+            {
+              "layout_id": "fkTjjx-layout-1-60",
+              "text": "23027417刘某迪",
+              "position": [
+                2645,
+                786,
+                192,
+                181
+              ],
+              "type": "text",
+              "sub_type": "",
+              "score": 0,
+              "parent": "",
+              "children": null
+            },
+            {
+              "layout_id": "fkTjjx-layout-1-61",
+              "text": "庄某玺",
+              "position": [
+                2837,
+                786,
+                280,
+                181
+              ],
+              "type": "text",
+              "sub_type": "",
+              "score": 0,
+              "parent": "",
+              "children": null
+            },
+            {
+              "layout_id": "fkTjjx-layout-1-62",
+              "text": "",
+              "position": [
+                3117,
+                786,
+                25,
+                181
+              ],
+              "type": "text",
+              "sub_type": "",
+              "score": 0,
+              "parent": "",
+              "children": null
+            },
+            {
+              "layout_id": "fkTjjx-layout-1-63",
+              "text": "BD05",
+              "position": [
+                3,
+                967,
+                157,
+                271
+              ],
+              "type": "text",
+              "sub_type": "",
+              "score": 0,
+              "parent": "",
+              "children": null
+            },
+            {
+              "layout_id": "fkTjjx-layout-1-64",
+              "text": "百度在线网络技术(北京)有限公司",
+              "position": [
+                160,
+                967,
+                203,
+                271
+              ],
+              "type": "text",
+              "sub_type": "",
+              "score": 0,
+              "parent": "",
+              "children": null
+            },
+            {
+              "layout_id": "fkTjjx-layout-1-65",
+              "text": "线上",
+              "position": [
+                363,
+                967,
+                153,
+                271
+              ],
+              "type": "text",
+              "sub_type": "",
+              "score": 0,
+              "parent": "",
+              "children": null
+            },
+            {
+              "layout_id": "fkTjjx-layout-1-66",
+              "text": "多版式OCR文档识别与在线处理系统",
+              "position": [
+                516,
+                967,
+                411,
+                271
+              ],
+              "type": "text",
+              "sub_type": "",
+              "score": 0,
+              "parent": "",
+              "children": null
+            },
+            {
+              "layout_id": "fkTjjx-layout-1-67",
+              "text": "面向拍照文档、表格截图、票据单据、试卷图片、宣传海报、扫描件等多种版式内容，设计并开发一套在线OCR处理系统。系统支持用户上传图片或拍照提交，自动完成文字检测、文字识别、版面分析、表格结构还原、关键信息提取与结果导出，形成“图片输入—OCR识别—结构化处理—在线编辑—结果下载”的完整流程",
+              "position": [
+                927,
+                967,
+                446,
+                271
+              ],
+              "type": "text",
+              "sub_type": "",
+              "score": 0,
+              "parent": "",
+              "children": null
+            },
+            {
+              "layout_id": "fkTjjx-layout-1-68",
+              "text": "所需人数：2-3人课题时间：7-8月",
+              "position": [
+                1373,
+                967,
+                352,
+                271
+              ],
+              "type": "text",
+              "sub_type": "",
+              "score": 0,
+              "parent": "",
+              "children": null
+            },
+            {
+              "layout_id": "fkTjjx-layout-1-69",
+              "text": "子课题1：多类型图片采集与OCR识别流程设计子课题2：版面分析、表格识别与结构化信息提取子课题3：在线上传、识别结果编辑与导出页面开发",
+              "position": [
+                1725,
+                967,
+                536,
+                271
+              ],
+              "type": "text",
+              "sub_type": "",
+              "score": 0,
+              "parent": "",
+              "children": null
+            },
+            {
+              "layout_id": "fkTjjx-layout-1-70",
+              "text": "23072013鄂某轩",
+              "position": [
+                2261,
+                967,
+                192,
+                271
+              ],
+              "type": "text",
+              "sub_type": "",
+              "score": 0,
+              "parent": "",
+              "children": null
+            },
+            {
+              "layout_id": "fkTjjx-layout-1-71",
+              "text": "23072002殷某",
+              "position": [
+                2453,
+                967,
+                192,
+                271
+              ],
+              "type": "text",
+              "sub_type": "",
+              "score": 0,
+              "parent": "",
+              "children": null
+            },
+            {
+              "layout_id": "fkTjjx-layout-1-72",
+              "text": "23072022王某伟",
+              "position": [
+                2645,
+                967,
+                192,
+                271
+              ],
+              "type": "text",
+              "sub_type": "",
+              "score": 0,
+              "parent": "",
+              "children": null
+            },
+            {
+              "layout_id": "fkTjjx-layout-1-73",
+              "text": "杨某",
+              "position": [
+                2837,
+                967,
+                280,
+                271
+              ],
+              "type": "text",
+              "sub_type": "",
+              "score": 0,
+              "parent": "",
+              "children": null
+            },
+            {
+              "layout_id": "fkTjjx-layout-1-74",
+              "text": "",
+              "position": [
+                3117,
+                967,
+                25,
+                271
+              ],
+              "type": "text",
+              "sub_type": "",
+              "score": 0,
+              "parent": "",
+              "children": null
+            },
+            {
+              "layout_id": "fkTjjx-layout-1-75",
+              "text": "BD06",
+              "position": [
+                3,
+                1238,
+                157,
+                211
+              ],
+              "type": "text",
+              "sub_type": "",
+              "score": 0,
+              "parent": "",
+              "children": null
+            },
+            {
+              "layout_id": "fkTjjx-layout-1-76",
+              "text": "百度在线网络技术(北京)有限公司",
+              "position": [
+                160,
+                1238,
+                203,
+                211
+              ],
+              "type": "text",
+              "sub_type": "",
+              "score": 0,
+              "parent": "",
+              "children": null
+            },
+            {
+              "layout_id": "fkTjjx-layout-1-77",
+              "text": "线上",
+              "position": [
+                363,
+                1238,
+                153,
+                211
+              ],
+              "type": "text",
+              "sub_type": "",
+              "score": 0,
+              "parent": "",
+              "children": null
+            },
+            {
+              "layout_id": "fkTjjx-layout-1-78",
+              "text": "AI数字人教学内容生成与交互应用",
+              "position": [
+                516,
+                1238,
+                411,
+                211
+              ],
+              "type": "text",
+              "sub_type": "",
+              "score": 0,
+              "parent": "",
+              "children": null
+            },
+            {
+              "layout_id": "fkTjjx-layout-1-79",
+              "text": "面向教学讲解、课程导览、校园宣传、知识科普等场景，研究数字人的形象设定、讲解脚本生成、语音合成、口播视频生成和交互问答能力。学生需完成一个具备“会讲解、可互动、能展示”的数字人应用原型，可用于课程介绍、知识点讲解或校园活动宣传。",
+              "position": [
+                927,
+                1238,
+                446,
+                211
+              ],
+              "type": "text",
+              "sub_type": "",
+              "score": 0,
+              "parent": "",
+              "children": null
+            },
+            {
+              "layout_id": "fkTjjx-layout-1-80",
+              "text": "所需人数：2-3人课题时间：7-8月",
+              "position": [
+                1373,
+                1238,
+                352,
+                211
+              ],
+              "type": "text",
+              "sub_type": "",
+              "score": 0,
+              "parent": "",
+              "children": null
+            },
+            {
+              "layout_id": "fkTjjx-layout-1-81",
+              "text": "子课题1：数字人角色设定与讲解脚本设计；子课题2：语音合成、口播视频与多模态素材生成；子课题3：数字人交互页面与问答流程开发",
+              "position": [
+                1725,
+                1238,
+                536,
+                211
+              ],
+              "type": "text",
+              "sub_type": "",
+              "score": 0,
+              "parent": "",
+              "children": null
+            },
+            {
+              "layout_id": "fkTjjx-layout-1-82",
+              "text": "23251905王某",
+              "position": [
+                2261,
+                1238,
+                192,
+                211
+              ],
+              "type": "text",
+              "sub_type": "",
+              "score": 0,
+              "parent": "",
+              "children": null
+            },
+            {
+              "layout_id": "fkTjjx-layout-1-83",
+              "text": "23250124王某怡",
+              "position": [
+                2453,
+                1238,
+                192,
+                211
+              ],
+              "type": "text",
+              "sub_type": "",
+              "score": 0,
+              "parent": "",
+              "children": null
+            },
+            {
+              "layout_id": "fkTjjx-layout-1-84",
+              "text": "23251221王某月",
+              "position": [
+                2645,
+                1238,
+                192,
+                211
+              ],
+              "type": "text",
+              "sub_type": "",
+              "score": 0,
+              "parent": "",
+              "children": null
+            },
+            {
+              "layout_id": "fkTjjx-layout-1-85",
+              "text": "庄某玺",
+              "position": [
+                2837,
+                1238,
+                280,
+                211
+              ],
+              "type": "text",
+              "sub_type": "",
+              "score": 0,
+              "parent": "",
+              "children": null
+            },
+            {
+              "layout_id": "fkTjjx-layout-1-86",
+              "text": "",
+              "position": [
+                3117,
+                1238,
+                25,
+                211
+              ],
+              "type": "text",
+              "sub_type": "",
+              "score": 0,
+              "parent": "",
+              "children": null
+            }
+          ],
+          "matrix": [
+            [
+              0,
+              1,
+              2,
+              3,
+              3,
+              3,
+              3,
+              4,
+              4,
+              4,
+              5,
+              5
+            ],
+            [
+              0,
+              1,
+              2,
+              6,
+              7,
+              8,
+              9,
+              10,
+              11,
+              12,
+              13,
+              14
+            ],
+            [
+              15,
+              16,
+              17,
+              18,
+              19,
+              20,
+              21,
+              22,
+              23,
+              24,
+              25,
+              26
+            ],
+            [
+              27,
+              28,
+              29,
+              30,
+              31,
+              32,
+              33,
+              34,
+              35,
+              36,
+              37,
+              38
+            ],
+            [
+              39,
+              40,
+              41,
+              42,
+              43,
+              44,
+              45,
+              46,
+              47,
+              48,
+              49,
+              50
+            ],
+            [
+              51,
+              52,
+              53,
+              54,
+              55,
+              56,
+              57,
+              58,
+              59,
+              60,
+              61,
+              62
+            ],
+            [
+              63,
+              64,
+              65,
+              66,
+              67,
+              68,
+              69,
+              70,
+              71,
+              72,
+              73,
+              74
+            ],
+            [
+              75,
+              76,
+              77,
+              78,
+              79,
+              80,
+              81,
+              82,
+              83,
+              84,
+              85,
+              86
+            ]
+          ],
+          "merge_table": ""
         }
-      ]
+      ],
+      "seals": [],
+      "meta": {
+        "page_width": 3145,
+        "page_height": 1471,
+        "is_scan": true,
+        "page_angle": 0,
+        "page_type": "doc",
+        "sheet_name": ""
+      }
     }
-  ]
+  ],
+  "chunks": [
+    {
+      "chunk_id": "fkTjjx-chunk-0",
+      "content": "| 课题号 | 企业名称 | 实习地址 | 实习课题 | 实习课题 | 实习课题 | 实习课题 | 学生 | 学生 | 学生 | 校内指导教师 | 校内指导教师 |\n| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |\n| 课题号 | 企业名称 | 实习地址 | 课题名称 | 课题内容 | 所需人数及时间 | 任务分工（子课题） | 1 | 2 | 3 | 姓名 |  |\n| BD01 | 百度在线网络技术(北京)有限公司 | 线上 | 多模态大模型驱动的校园智能问答与资料助手 | 面向高校教学、教务、实习管理、课程资料查询等场景，构建支持文本、图片、PDF、表格等资料理解的多模态问答系统。系统需支持资料上传、知识解析、知识切片、RAG检索增强、智能问答和结果引用，形成一套可演示的校园知识助手原型 | 所需人数：2-3人课题时间：78月 | 子课题1：教学资料解析与知识切片；子课题2：RAG 知识库与提示词设计子；课题3：问答系统页面开发与效果评测 | 23072106周某毅 | 23072129许某强 | 23072110尹某帆 | 赖某旭 |  |\n| BD02 | 百度在线网络技术(北京)有限公司 | 线上 | 多智能体世界网站设计与开发 | 构建一个可视化的“多智能体世界”网站，让多个AI角色在同一虚拟场景中具备不同身份、目标、行为规则和对话能力。学生需设计世界观、角色设定、任务规则、智能体交互流程和网页展示界面，形成一个可运行、可观察、可演示的AI世界原型。 | 所需人数：2-3人课题时间：78月 | 子课题1：多智能体角色与世界规则设计；子课题2:Agent 对话、任务与行为逻辑编排；子课题3:网站前端页面与交互展示开发 | 23072115向某睿 | 23072112王某轩 | 23072116程某凯 | 赖某旭 |  |\n| BD03 | 百度在线网络技术(北京)有限公司 | 线上 | 端侧AI视觉交互应用设计与开发 | 面向手机、摄像头、边缘计算设备等端侧场景，开发基于手势识别、人脸检测、姿态识别或物体检测的交互应用。课题重点研究轻量化模型部署、实时视频流处理、端侧推理性能优化与前端交互设计，形成一个可在浏览器或边缘设备上运行的视觉交互 Demo。 | 所需人数：2人课题时间：7-8月 | 子课题1：视觉模型选择与端侧部署；子课题2：摄像头视频流与交互逻辑开发；子课题3：FPS、延迟、识别准确率评测 | 23072004王某尧 | 23072026马某慧 | 23072001刘某然 | 刘某 |  |\n| BD04 | 百度在线网络技术(北京)有限公司 | 线上 | AI编程助手辅助的软件项目开发实践 | 研究如何使用AI编程助手辅助完成需求分析、代码生成、单元测试、Bug 修复和项目文档生成。课题目标不是单纯让 AI写代码，而是训练学生掌握“人提出需求、AI 辅助实现、人进行审查和优化”的人机协同软件开发流程。 | 所需人数：2-3人课题时间：78月 | 子课题1：需求文档与功能模块拆解；子课题2：AI辅助前后端代码开发；子课题3：代码审查、测试与项目说明文档 | 23072128纪某然 | 23072018郭某琪 | 23027417刘某迪 | 庄某玺 |  |\n| BD05 | 百度在线网络技术(北京)有限公司 | 线上 | 多版式OCR文档识别与在线处理系统 | 面向拍照文档、表格截图、票据单据、试卷图片、宣传海报、扫描件等多种版式内容，设计并开发一套在线OCR处理系统。系统支持用户上传图片或拍照提交，自动完成文字检测、文字识别、版面分析、表格结构还原、关键信息提取与结果导出，形成“图片输入—OCR识别—结构化处理—在线编辑—结果下载”的完整流程 | 所需人数：2-3人课题时间：7-8月 | 子课题1：多类型图片采集与OCR识别流程设计子课题2：版面分析、表格识别与结构化信息提取子课题3：在线上传、识别结果编辑与导出页面开发 | 23072013鄂某轩 | 23072002殷某 | 23072022王某伟 | 杨某 |  |\n| BD06 | 百度在线网络技术(北京)有限公司 | 线上 | AI数字人教学内容生成与交互应用 | 面向教学讲解、课程导览、校园宣传、知识科普等场景，研究数字人的形象设定、讲解脚本生成、语音合成、口播视频生成和交互问答能力。学生需完成一个具备“会讲解、可互动、能展示”的数字人应用原型，可用于课程介绍、知识点讲解或校园活动宣传。 | 所需人数：2-3人课题时间：7-8月 | 子课题1：数字人角色设定与讲解脚本设计；子课题2：语音合成、口播视频与多模态素材生成；子课题3：数字人交互页面与问答流程开发 | 23251905王某 | 23250124王某怡 | 23251221王某月 | 庄某玺 |  |\n",
+      "type": "table",
+      "meta": {
+        "title": [],
+        "position": [
+          {
+            "box": [
+              3,
+              72,
+              3139,
+              1377
+            ],
+            "page_num": 0
+          }
+        ]
+      }
+    }
+  ],
+  "pdf_data": "",
+  "pdf_vis_data": ""
 }

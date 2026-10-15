@@ -76,7 +76,8 @@ export async function callOcrApi(
 
       const data = (await res.json()) as BaiduResponse;
 
-      if (data.error_code === undefined) return data;
+      // OCR v1 接口成功时无 error_code；brain online（文档解析等）成功时返回 error_code: 0
+      if (data.error_code === undefined || data.error_code === 0) return data;
 
       // token 失效：强刷一次重试
       if (isTokenInvalidError(data.error_code) && !tokenRefreshed) {

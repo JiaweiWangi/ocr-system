@@ -4,19 +4,40 @@ import { dimsFromCells } from "./tableMath";
 /**
  * 文档解析 parse_result → OcrDocument（承担版面分析）
  *
- * parse_result.pages[].layouts[]: { type, sub_type?, bbox }
- * - type 映射: text→paragraph, title→heading, image→figure, seal→seal, formula→formula
- * - sub_type: doc_title→level1, title2→level2, title3→level3
- * - 表格块从同页的 tables 数据取（parser 结果中表格为独立数组，与 layout 块对应关系
- *   按 bbox 就近匹配；取不到时表格块退化为空表格）
+ * 真实 API 的 parse_result 结构（v2 parser）：
+ * - pages[].layouts[]: { layout_id, type, sub_type?, position: [l,t,w,h], text }
+ *   type: text / title / table / image / seal / formula / header / footer 等
+ *   sub_type: doc_title / title{n} / wired_table / wireless_table 等
+ * - pages[].tables[]: { layout_id, markdown, cells[], matrix }
+ *   cells[i]: { layout_id, text, position }（无行列坐标）
+ *   matrix[r][c] = cells 数组索引，行主序；重复索引 = 合并单元格
+ *   表格与布局块经 layout_id 直接配对
  *
- * 注：文档解析返回结构随版本有差异，适配器对缺字段做容错。
+ * 旧版手写 fixture（row_start/col_start/words + bbox）仍兼容。
  */
 
 interface ParserLayoutRaw {
+  layout_id?: string;
   type?: string;
   sub_type?: string;
-  bbox?: number[]; // [left, top, width, height]
+  bbox?: number[]; // 旧格式
+  position?: number[]; // 真实 API：[left, top, width, height]
+  text?: string;
+}
+
+interface ParserCellRaw {
+  text?: string;
+  words?: string; // 旧 fixture 格式
+  row_start?: number;
+  row_end?: number;
+  col_start?: number;
+  col_end?: number;
+}
+
+interface ParserTableRaw {
+  layout_id?: string;
+  cells?: unknown[];
+  matrix?: unknown[][];
 }
 
 interface ParserPageRaw {
@@ -42,7 +63,7 @@ const TYPE_MAP: Record<string, Block["type"]> = {
   doc_title: "heading",
   image: "figure",
   seal: "seal",
-    formula: "formula",
+  formula: "formula",
   table: "table",
 };
 
@@ -64,17 +85,25 @@ export function fromParser(
 
   for (const page of pages) {
     const layouts = page.layouts ?? [];
-    // 页内表格数据（形态不定，尽力提取 cells 数组）
-    const pageTables = (page.tables ?? []) as Record<string, unknown>[];
+    const pageTables = (page.tables ?? []) as ParserTableRaw[];
+    const tableByLayoutId = new Map(
+      pageTables.filter((t) => t.layout_id).map((t) => [t.layout_id as string, t]),
+    );
+    const usedTables = new Set<ParserTableRaw>();
 
     for (const layout of layouts) {
       const type = TYPE_MAP[layout.type ?? ""] ?? "paragraph";
-      const bbox = toBbox(layout.bbox);
+      const bbox = toBbox(layout.position ?? layout.bbox);
+      const text = layout.text ?? "";
       const base = { id: blockId(), bbox, source: "parser" as const };
 
       if (type === "table") {
-        // 就近匹配 bbox 的表格数据；取不到则给空表
-        const cells = extractTableCells(pageTables) ?? [];
+        // layout_id 直接配对；配不上则取第一个未消费的表格
+        const table =
+          (layout.layout_id ? tableByLayoutId.get(layout.layout_id) : undefined) ??
+          pageTables.find((t) => !usedTables.has(t));
+        if (table) usedTables.add(table);
+        const cells = extractTableCells(table) ?? [];
         const { rows, cols } = cells.length
           ? dimsFromCells(cells)
           : { rows: 0, cols: 0 };
@@ -86,16 +115,16 @@ export function fromParser(
       } else if (type === "figure") {
         blocks.push({ ...base, type: "figure" });
       } else if (type === "seal" || type === "formula") {
-        blocks.push({ ...base, type, text: "" });
+        blocks.push({ ...base, type, text });
       } else if (type === "heading") {
         blocks.push({
           ...base,
           type: "heading",
-          text: "",
+          text,
           level: headingLevel(layout.sub_type),
         });
       } else {
-        blocks.push({ ...base, type: "paragraph", text: "" });
+        blocks.push({ ...base, type: "paragraph", text });
       }
     }
   }
@@ -103,34 +132,69 @@ export function fromParser(
   return { schemaVersion: 1, image, blocks };
 }
 
-/** 从形态不定的 tables 数组中尽力提取 TableCell[]；识别不出返回 null */
-function extractTableCells(tables: Record<string, unknown>[]): TableCell[] | null {
-  for (const t of tables) {
-    const maybeCells = (t.cells ?? t.body ?? t.header) as unknown;
-    if (!Array.isArray(maybeCells)) continue;
-    const cells: TableCell[] = [];
-    let ok = true;
-    for (const c of maybeCells) {
-      const cell = c as Record<string, unknown>;
-      if (
-        typeof cell.row_start === "number" &&
-        typeof cell.row_end === "number" &&
-        typeof cell.col_start === "number" &&
-        typeof cell.col_end === "number"
-      ) {
-        cells.push({
-          rowStart: cell.row_start,
-          rowEnd: cell.row_end,
-          colStart: cell.col_start,
-          colEnd: cell.col_end,
-          text: typeof cell.words === "string" ? cell.words : "",
-        });
+/**
+ * 从单个表格原始数据提取 TableCell[]。
+ *
+ * 1. 旧 fixture 格式：cells 带 row_start/col_start/words，直接转换
+ * 2. 真实 API：matrix[r][c] 为 cells 数组索引（重复 = 合并格），
+ *    对每个索引收集其出现的行列范围即得稀疏坐标
+ */
+function extractTableCells(table: ParserTableRaw | undefined): TableCell[] | null {
+  if (!table) return null;
+  const rawCells = (table.cells ?? []) as ParserCellRaw[];
+
+  // 旧格式：显式行列坐标
+  const legacy = rawCells.filter(
+    (c) =>
+      typeof c.row_start === "number" &&
+      typeof c.row_end === "number" &&
+      typeof c.col_start === "number" &&
+      typeof c.col_end === "number",
+  );
+  if (legacy.length === rawCells.length && rawCells.length > 0) {
+    return rawCells.map((c) => ({
+      rowStart: c.row_start!,
+      rowEnd: c.row_end!,
+      colStart: c.col_start!,
+      colEnd: c.col_end!,
+      text: c.words ?? c.text ?? "",
+    }));
+  }
+
+  // 真实格式：matrix 索引网格 → 行列范围
+  const matrix = table.matrix;
+  if (!Array.isArray(matrix) || matrix.length === 0 || rawCells.length === 0) return null;
+
+  const spans = new Map<number, { rMin: number; rMax: number; cMin: number; cMax: number }>();
+  for (let r = 0; r < matrix.length; r++) {
+    const row = matrix[r];
+    if (!Array.isArray(row)) return null;
+    for (let c = 0; c < row.length; c++) {
+      const idx = row[c];
+      if (typeof idx !== "number") return null;
+      const s = spans.get(idx);
+      if (s) {
+        s.rMin = Math.min(s.rMin, r);
+        s.rMax = Math.max(s.rMax, r);
+        s.cMin = Math.min(s.cMin, c);
+        s.cMax = Math.max(s.cMax, c);
       } else {
-        ok = false;
-        break;
+        spans.set(idx, { rMin: r, rMax: r, cMin: c, cMax: c });
       }
     }
-    if (ok && cells.length > 0) return cells;
   }
-  return null;
+
+  const cells: TableCell[] = [];
+  for (const [idx, s] of spans) {
+    const raw = rawCells[idx];
+    if (!raw) continue;
+    cells.push({
+      rowStart: s.rMin,
+      rowEnd: s.rMax,
+      colStart: s.cMin,
+      colEnd: s.cMax,
+      text: raw.text ?? raw.words ?? "",
+    });
+  }
+  return cells.length > 0 ? cells : null;
 }

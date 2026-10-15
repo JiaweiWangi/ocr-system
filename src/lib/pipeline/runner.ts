@@ -40,7 +40,9 @@ export async function processTask(taskId: string): Promise<void> {
     const fileName = task.title || "default";
 
     if (task.mode === "deep") {
-      const engineTaskId = await runParserSubmit(imageBase64, fileName);
+      // 真实调用的 file_name 必须带正确扩展名，取落盘文件名（title 可被编辑，不可靠）
+      const realFileName = task.imagePath.split("/").pop() || "image.png";
+      const engineTaskId = await runParserSubmit(imageBase64, realFileName);
       await prisma.task.update({
         where: { id: taskId },
         data: { engineTaskId },
