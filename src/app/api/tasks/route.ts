@@ -65,11 +65,12 @@ export async function GET() {
       id: true,
       title: true,
       mode: true,
+      precision: true,
       status: true,
       imagePath: true,
       createdAt: true,
       error: true,
     },
   });
-  return NextResponse.json({ tasks });
+  return NextResponse.json({ tasks, mock: process.env.BAIDU_MOCK !== "0" });
 }

@@ -1,0 +1,226 @@
+@import "tailwindcss";
+
+/* ════════════════════════════════════════════════════
+   「朱印卡片流」设计令牌
+   纸墨朱印的骨架（宋体内容 / 黑体控件 / 朱砂品牌 / 印章）
+   + 小红书的卡片语言（白卡浮于暖纸 / 大圆角 / 悬停浮起 / 胶囊）
+   ════════════════════════════════════════════════════ */
+
+:root {
+  --paper: #f6f5f1; /* 页面暖纸底 */
+  --card: #ffffff; /* 卡片纯白 */
+  --line: #eceae3;
+  --line-strong: #d9d5c9;
+
+  --ink: #262420; /* 墨 */
+  --ink-2: #4c473f; /* 正文 */
+  --ink-3: #837c6e; /* 辅助说明 */
+  --ink-4: #a8a292; /* 装饰性小字 */
+
+  --red: #e03530; /* 朱印红：品牌 / 主操作 / 选中 / 定位 */
+  --red-deep: #c22621;
+  --red-wash: #fdeeee;
+  --red-ring: rgba(224, 53, 48, 0.3);
+
+  --gold: #9a7b23; /* 赭金：进行中 / 低置信 */
+  --gold-wash: #f8f1dc;
+  --moss: #3f7052; /* 苔绿：成功 */
+  --moss-wash: #edf4ef;
+
+  --sans: "PingFang SC", "HarmonyOS Sans SC", "Microsoft YaHei", system-ui, sans-serif;
+  --serif: "Songti SC", "Noto Serif SC", "Source Han Serif SC", "SimSun", serif;
+  --mono: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+}
+
+@theme inline {
+  --color-paper: var(--paper);
+  --color-card: var(--card);
+  --color-line: var(--line);
+  --color-line-strong: var(--line-strong);
+  --color-ink: var(--ink);
+  --color-ink-2: var(--ink-2);
+  --color-ink-3: var(--ink-3);
+  --color-ink-4: var(--ink-4);
+  --color-red: var(--red);
+  --color-red-deep: var(--red-deep);
+  --color-red-wash: var(--red-wash);
+  --color-gold: var(--gold);
+  --color-gold-wash: var(--gold-wash);
+  --color-moss: var(--moss);
+  --color-moss-wash: var(--moss-wash);
+
+  --font-sans: var(--sans);
+  --font-serif: var(--serif);
+  --font-mono: var(--mono);
+
+  --radius-card: 14px;
+  --radius-ctrl: 10px;
+
+  --shadow-card: 0 1px 3px rgba(38, 36, 32, 0.05), 0 6px 18px rgba(38, 36, 32, 0.06);
+  --shadow-lift: 0 2px 6px rgba(38, 36, 32, 0.07), 0 12px 32px rgba(38, 36, 32, 0.12);
+}
+
+body {
+  background: var(--paper);
+  color: var(--ink);
+}
+
+::selection {
+  background: var(--red-wash);
+  color: var(--red-deep);
+}
+
+/* ---------- 印章 ---------- */
+.seal-mark {
+  display: grid;
+  place-items: center;
+  width: 34px;
+  height: 34px;
+  background: var(--red);
+  color: #fff;
+  border-radius: 9px;
+  font-family: var(--serif);
+  font-size: 19px;
+  font-weight: 700;
+  transform: rotate(-4deg);
+  box-shadow: 0 3px 8px rgba(224, 53, 48, 0.35);
+  user-select: none;
+}
+.stamp {
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  border: 2.5px solid rgba(224, 53, 48, 0.72);
+  border-radius: 9px;
+  color: rgba(224, 53, 48, 0.85);
+  font-family: var(--serif);
+  font-size: 11.5px;
+  font-weight: 700;
+  line-height: 1.25;
+  text-align: center;
+  transform: rotate(-6deg);
+  user-select: none;
+}
+
+/* ---------- contentEditable 编辑区 ---------- */
+.editable {
+  outline: none;
+  min-height: 1em;
+  border-radius: 4px;
+  transition: box-shadow 0.14s ease-out;
+}
+.editable:focus {
+  box-shadow: 0 0 0 2px var(--red-ring);
+  background: rgba(255, 255, 255, 0.7);
+}
+.editable:empty::before {
+  content: attr(data-ph);
+  color: var(--ink-4);
+  pointer-events: none;
+}
+
+/* ---------- 表格网格编辑器：墨线格 ---------- */
+.grid-table {
+  border-collapse: separate;
+  border-spacing: 0;
+  width: 100%;
+  font-size: 13px;
+  border: 1px solid var(--line-strong);
+  border-radius: 10px;
+  overflow: hidden;
+  table-layout: fixed;
+}
+.grid-table th {
+  background: var(--paper);
+  font-weight: 650;
+  padding: 8px 13px;
+  text-align: left;
+  border-bottom: 2px solid var(--ink);
+  border-right: 1px solid var(--line);
+}
+.grid-table td {
+  border-bottom: 1px solid var(--line);
+  border-right: 1px solid var(--line);
+  padding: 7px 13px;
+  background: #fff;
+  vertical-align: top;
+  word-break: break-word;
+}
+.grid-table tr th:last-child,
+.grid-table tr td:last-child {
+  border-right: none;
+}
+.grid-table tr:last-child td {
+  border-bottom: none;
+}
+.grid-table td.cell-active {
+  background: var(--red-wash);
+  box-shadow: inset 0 0 0 1.5px var(--red);
+}
+
+/* ---------- 图上定位框 ---------- */
+.ov-box {
+  position: absolute;
+  border: 1.5px dashed rgba(224, 53, 48, 0.4);
+  border-radius: 3px;
+  cursor: pointer;
+  transition: background 0.12s ease-out, border-color 0.12s ease-out;
+}
+.ov-box:hover {
+  background: rgba(224, 53, 48, 0.08);
+  border-color: rgba(224, 53, 48, 0.7);
+}
+.ov-sel {
+  border: 2px solid var(--red);
+  background: rgba(224, 53, 48, 0.1);
+  box-shadow: 0 0 0 3px rgba(224, 53, 48, 0.14);
+}
+.ov-sel::before {
+  content: "";
+  position: absolute;
+  left: -2px;
+  top: -2px;
+  width: 9px;
+  height: 9px;
+  background: var(--red);
+  border-radius: 2px 0 5px 0;
+}
+
+/* ---------- 滚动条 ---------- */
+.scroll-thin {
+  scrollbar-width: thin;
+  scrollbar-color: var(--line-strong) transparent;
+}
+.scroll-thin::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+.scroll-thin::-webkit-scrollbar-thumb {
+  background: var(--line-strong);
+  border-radius: 99px;
+}
+
+/* ---------- 动效 ---------- */
+@keyframes fade-slide-in {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.anim-in {
+  animation: fade-slide-in 0.18s ease-out;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .anim-in {
+    animation: none;
+  }
+  * {
+    transition-duration: 0.01ms !important;
+  }
+}
