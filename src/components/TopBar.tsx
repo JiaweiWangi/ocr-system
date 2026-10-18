@@ -28,8 +28,8 @@ export default function TopBar({
       <Link href="/" className="flex items-center gap-2.5">
         <SealMark />
         {!compact && (
-          <span className="font-serif text-[19px] font-bold tracking-[0.12em] text-ink">
-            识
+          <span className="font-serif text-[16px] font-bold tracking-[0.08em] text-ink">
+            识 · 多版式 OCR 文档识别系统
           </span>
         )}
       </Link>
