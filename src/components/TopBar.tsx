@@ -24,8 +24,8 @@ export default function TopBar({
   const isHistory = pathname.startsWith("/history") || pathname.startsWith("/tasks");
 
   return (
-    <header className="sticky top-0 z-20 flex h-[60px] items-center border-b border-line bg-paper/90 px-5 backdrop-blur-md">
-      <Link href="/" className="flex items-center gap-2.5">
+    <header className="sticky top-0 z-20 grid h-[60px] grid-cols-[1fr_auto_1fr] items-center border-b border-line bg-paper/90 px-5 backdrop-blur-md">
+      <Link href="/" className="flex items-center gap-2.5 justify-self-start">
         <SealMark />
         {!compact && (
           <span className="font-serif text-[16px] font-bold tracking-[0.08em] text-ink">
@@ -62,7 +62,7 @@ export default function TopBar({
         </Link>
       </nav>
 
-      <div className="flex items-center gap-2">{right}</div>
+      <div className="flex items-center justify-end gap-2">{right}</div>
     </header>
   );
 }
