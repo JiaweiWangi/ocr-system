@@ -1,0 +1,277 @@
+{
+  "log_id": 9000001,
+  "direction": 0,
+  "words_result_num": 30,
+  "words_result": [
+    {
+      "words": "数电发票（普通发票）",
+      "location": {
+        "left": 290,
+        "top": 42,
+        "width": 340,
+        "height": 39
+      }
+    },
+    {
+      "words": "发票号码：24122000000123456789",
+      "location": {
+        "left": 60,
+        "top": 103,
+        "width": 272,
+        "height": 20
+      }
+    },
+    {
+      "words": "开票日期：2026年10月18日",
+      "location": {
+        "left": 640,
+        "top": 103,
+        "width": 211,
+        "height": 20
+      }
+    },
+    {
+      "words": "购买方",
+      "location": {
+        "left": 60,
+        "top": 155,
+        "width": 51,
+        "height": 20
+      }
+    },
+    {
+      "words": "名称：北京云图科技有限公司",
+      "location": {
+        "left": 60,
+        "top": 189,
+        "width": 195,
+        "height": 17
+      }
+    },
+    {
+      "words": "统一社会信用代码：91110108MA01X2Y345",
+      "location": {
+        "left": 60,
+        "top": 217,
+        "width": 284,
+        "height": 17
+      }
+    },
+    {
+      "words": "地址、电话：北京市海淀区中关村大街1号 13812345678",
+      "location": {
+        "left": 60,
+        "top": 245,
+        "width": 377,
+        "height": 17
+      }
+    },
+    {
+      "words": "销售方",
+      "location": {
+        "left": 500,
+        "top": 155,
+        "width": 51,
+        "height": 20
+      }
+    },
+    {
+      "words": "名称：上海数联信息技术有限公司",
+      "location": {
+        "left": 500,
+        "top": 189,
+        "width": 225,
+        "height": 17
+      }
+    },
+    {
+      "words": "统一社会信用代码：91310115MA1K9Z8X72A",
+      "location": {
+        "left": 500,
+        "top": 217,
+        "width": 292,
+        "height": 17
+      }
+    },
+    {
+      "words": "地址、电话：上海市浦东新区世纪大道100号 021-66889900",
+      "location": {
+        "left": 500,
+        "top": 245,
+        "width": 402,
+        "height": 17
+      }
+    },
+    {
+      "words": "项目名称",
+      "location": {
+        "left": 70,
+        "top": 309,
+        "width": 60,
+        "height": 17
+      }
+    },
+    {
+      "words": "数量",
+      "location": {
+        "left": 390,
+        "top": 309,
+        "width": 30,
+        "height": 17
+      }
+    },
+    {
+      "words": "单价",
+      "location": {
+        "left": 480,
+        "top": 309,
+        "width": 30,
+        "height": 17
+      }
+    },
+    {
+      "words": "金额",
+      "location": {
+        "left": 570,
+        "top": 309,
+        "width": 30,
+        "height": 17
+      }
+    },
+    {
+      "words": "税率",
+      "location": {
+        "left": 670,
+        "top": 309,
+        "width": 30,
+        "height": 17
+      }
+    },
+    {
+      "words": "税额",
+      "location": {
+        "left": 770,
+        "top": 309,
+        "width": 30,
+        "height": 17
+      }
+    },
+    {
+      "words": "信息技术服务费",
+      "location": {
+        "left": 70,
+        "top": 353,
+        "width": 105,
+        "height": 17
+      }
+    },
+    {
+      "words": "1",
+      "location": {
+        "left": 390,
+        "top": 353,
+        "width": 8,
+        "height": 17
+      }
+    },
+    {
+      "words": "¥890.00",
+      "location": {
+        "left": 480,
+        "top": 353,
+        "width": 58,
+        "height": 17
+      }
+    },
+    {
+      "words": "¥890.00",
+      "location": {
+        "left": 570,
+        "top": 353,
+        "width": 58,
+        "height": 17
+      }
+    },
+    {
+      "words": "6%",
+      "location": {
+        "left": 670,
+        "top": 353,
+        "width": 17,
+        "height": 17
+      }
+    },
+    {
+      "words": "¥110.00",
+      "location": {
+        "left": 770,
+        "top": 353,
+        "width": 58,
+        "height": 17
+      }
+    },
+    {
+      "words": "合计",
+      "location": {
+        "left": 70,
+        "top": 397,
+        "width": 30,
+        "height": 17
+      }
+    },
+    {
+      "words": "¥890.00",
+      "location": {
+        "left": 570,
+        "top": 397,
+        "width": 58,
+        "height": 17
+      }
+    },
+    {
+      "words": "¥110.00",
+      "location": {
+        "left": 770,
+        "top": 397,
+        "width": 58,
+        "height": 17
+      }
+    },
+    {
+      "words": "价税合计（大写）",
+      "location": {
+        "left": 60,
+        "top": 515,
+        "width": 136,
+        "height": 20
+      }
+    },
+    {
+      "words": "壹仟元整",
+      "location": {
+        "left": 260,
+        "top": 515,
+        "width": 68,
+        "height": 20
+      }
+    },
+    {
+      "words": "（小写）¥1000.00",
+      "location": {
+        "left": 640,
+        "top": 515,
+        "width": 143,
+        "height": 20
+      }
+    },
+    {
+      "words": "收款人：王某伟    复核：李明    开票人：张华    备注：测试样张",
+      "location": {
+        "left": 60,
+        "top": 563,
+        "width": 442,
+        "height": 16
+      }
+    }
+  ]
+}
