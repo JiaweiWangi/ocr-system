@@ -2,6 +2,7 @@ import { prisma } from "@/lib/db";
 import { runParserPoll, PARSER_DONE, PARSER_FAILED } from "@/lib/baidu";
 import { fromParser } from "@/lib/normalize/fromParser";
 import { ocrDocumentSchema } from "@/lib/normalize/types";
+import { extractKeyInfo } from "@/lib/kie/extract";
 
 /**
  * 深度模式按需轮询（poll-on-demand）：
@@ -55,6 +56,8 @@ export async function pollDeepTask(taskId: string): Promise<void> {
         path: task.imagePath,
       });
       const parsed = ocrDocumentSchema.parse(doc);
+      const kv = extractKeyInfo(parsed);
+      if (kv) parsed.blocks.push(kv);
 
       const count = await prisma.documentVersion.count({ where: { taskId } });
       await prisma.documentVersion.create({

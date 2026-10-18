@@ -4,6 +4,7 @@ import { runGeneral, runTable, runParserSubmit, PARSER_FAILED } from "@/lib/baid
 import { fromGeneral } from "@/lib/normalize/fromGeneral";
 import { fromTable } from "@/lib/normalize/fromTable";
 import { ocrDocumentSchema } from "@/lib/normalize/types";
+import { extractKeyInfo } from "@/lib/kie/extract";
 
 /**
  * 处理管线编排：按模式调接口 → 存 RawResult → 归一化 → 建 version 1。
@@ -83,8 +84,10 @@ export async function processTask(taskId: string): Promise<void> {
       doc = fromGeneral(result, image, precision === "high" ? "accurate" : "general");
     }
 
-    // zod 校验后写入 version 1
+    // zod 校验 → 规则式关键信息提取 → 写入 version 1
     const parsed = ocrDocumentSchema.parse(doc);
+    const kv = extractKeyInfo(parsed);
+    if (kv) parsed.blocks.push(kv);
 
     const count = await prisma.documentVersion.count({ where: { taskId } });
     await prisma.documentVersion.create({

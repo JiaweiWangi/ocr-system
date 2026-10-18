@@ -1,5 +1,5 @@
-import type { KeyValueBlock, OcrDocument, Block } from "@/lib/normalize/types";
-import { blockId } from "@/lib/normalize/types";
+import type { KeyValueBlock, OcrDocument, Block } from "../normalize/types";
+import { blockId } from "../normalize/types";
 
 /**
  * 规则式关键信息提取（KIE）：
@@ -77,6 +77,9 @@ function textOf(block: Block): string | null {
     case "seal":
     case "formula":
       return block.text;
+    case "table":
+      // 票据的核心字段（金额/日期/号码）大多在表格单元格里
+      return block.table.cells.map((c) => c.text).join("\n");
     case "keyValue":
       return block.entries.map((e) => `${e.key}: ${e.value}`).join("\n");
     default:
