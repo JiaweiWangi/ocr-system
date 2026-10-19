@@ -13,6 +13,8 @@
 
 ## 快速开始
 
+环境要求：Node.js 24.x。部署平台也请使用 Node.js 24。
+
 ```bash
 npm install
 npx prisma migrate dev        # 初始化 SQLite（首次）
