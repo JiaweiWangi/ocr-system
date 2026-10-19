@@ -50,3 +50,9 @@ Thumbs.db
 
 # ── 部署 ──
 .vercel
+
+# ── AI 编辑器技能（prisma CLI 装的，本地开发用，非项目源码）──
+.agents/
+.claude/
+.windsurf/
+skills-lock.json
