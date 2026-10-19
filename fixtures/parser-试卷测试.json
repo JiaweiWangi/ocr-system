@@ -1,0 +1,325 @@
+{
+  "file_name": "试卷测试.png",
+  "file_id": "exam-file-0001",
+  "pages": [
+    {
+      "page_id": "exam-page-0",
+      "page_num": 0,
+      "page_angle": 0,
+      "text": "",
+      "snapshot": "",
+      "chars": null,
+      "layouts": [
+        {
+          "layout_id": "exam-layout-title",
+          "type": "title",
+          "sub_type": "doc_title",
+          "position": [
+            270,
+            45,
+            360,
+            45
+          ],
+          "text": "2026年秋季学期期中考试试卷"
+        },
+        {
+          "layout_id": "exam-layout-sub",
+          "type": "text",
+          "sub_type": "",
+          "position": [
+            260,
+            105,
+            380,
+            24
+          ],
+          "text": "（考试时间：90分钟　满分：100分）"
+        },
+        {
+          "layout_id": "exam-layout-date",
+          "type": "text",
+          "sub_type": "",
+          "position": [
+            70,
+            110,
+            170,
+            22
+          ],
+          "text": "日期：2026年10月19日"
+        },
+        {
+          "layout_id": "exam-layout-table",
+          "type": "table",
+          "sub_type": "wired_table",
+          "position": [
+            280,
+            150,
+            340,
+            185
+          ],
+          "text": ""
+        },
+        {
+          "layout_id": "exam-layout-h1",
+          "type": "title",
+          "sub_type": "title2",
+          "position": [
+            70,
+            380,
+            260,
+            30
+          ],
+          "text": "一、选择题（每题2分，共40分）"
+        },
+        {
+          "layout_id": "exam-layout-q1",
+          "type": "text",
+          "sub_type": "",
+          "position": [
+            70,
+            425,
+            500,
+            24
+          ],
+          "text": "1. 下列哪项不是 RESTful API 的标准 HTTP 方法？（　）"
+        },
+        {
+          "layout_id": "exam-layout-q2",
+          "type": "text",
+          "sub_type": "",
+          "position": [
+            70,
+            460,
+            500,
+            24
+          ],
+          "text": "2. HTTP 状态码 429 表示什么含义？（　）"
+        },
+        {
+          "layout_id": "exam-layout-q3",
+          "type": "text",
+          "sub_type": "",
+          "position": [
+            70,
+            495,
+            500,
+            24
+          ],
+          "text": "3. 关系数据库中，用于去重的关键字是？（　）"
+        },
+        {
+          "layout_id": "exam-layout-h2",
+          "type": "title",
+          "sub_type": "title2",
+          "position": [
+            70,
+            560,
+            260,
+            30
+          ],
+          "text": "二、计算题（共60分）"
+        },
+        {
+          "layout_id": "exam-layout-f1",
+          "type": "formula",
+          "sub_type": "",
+          "position": [
+            70,
+            610,
+            160,
+            32
+          ],
+          "text": "E = mc²"
+        },
+        {
+          "layout_id": "exam-layout-p1",
+          "type": "text",
+          "sub_type": "",
+          "position": [
+            70,
+            670,
+            760,
+            24
+          ],
+          "text": "解答要求：写出必要的计算步骤，结果保留两位小数。"
+        },
+        {
+          "layout_id": "exam-layout-p2",
+          "type": "text",
+          "sub_type": "",
+          "position": [
+            70,
+            705,
+            760,
+            24
+          ],
+          "text": "所有答案须填写在答题卡对应区域内，试卷上作答无效。"
+        }
+      ],
+      "images": [],
+      "tables": [
+        {
+          "layout_id": "exam-layout-table",
+          "markdown": "",
+          "table_html": "",
+          "table_title_id": null,
+          "position": [
+            280,
+            150,
+            340,
+            185
+          ],
+          "cells": [
+            {
+              "text": "考生身份证号：110101200001011234",
+              "position": [
+                286,
+                154,
+                330,
+                28
+              ]
+            },
+            {
+              "text": "题号",
+              "position": [
+                286,
+                189,
+                60,
+                28
+              ]
+            },
+            {
+              "text": "满分",
+              "position": [
+                399,
+                189,
+                60,
+                28
+              ]
+            },
+            {
+              "text": "得分",
+              "position": [
+                512,
+                189,
+                60,
+                28
+              ]
+            },
+            {
+              "text": "一",
+              "position": [
+                286,
+                224,
+                60,
+                28
+              ]
+            },
+            {
+              "text": "40",
+              "position": [
+                399,
+                224,
+                60,
+                28
+              ]
+            },
+            {
+              "text": "",
+              "position": [
+                512,
+                224,
+                60,
+                28
+              ]
+            },
+            {
+              "text": "二",
+              "position": [
+                286,
+                264,
+                60,
+                28
+              ]
+            },
+            {
+              "text": "60",
+              "position": [
+                399,
+                264,
+                60,
+                28
+              ]
+            },
+            {
+              "text": "",
+              "position": [
+                512,
+                264,
+                60,
+                28
+              ]
+            },
+            {
+              "text": "总分",
+              "position": [
+                286,
+                304,
+                90,
+                28
+              ]
+            },
+            {
+              "text": "",
+              "position": [
+                512,
+                304,
+                60,
+                28
+              ]
+            }
+          ],
+          "matrix": [
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              1,
+              2,
+              3
+            ],
+            [
+              4,
+              5,
+              6
+            ],
+            [
+              7,
+              8,
+              9
+            ],
+            [
+              10,
+              10,
+              11
+            ]
+          ],
+          "merge_table": ""
+        }
+      ],
+      "seals": [],
+      "meta": {
+        "page_width": 900,
+        "page_height": 1200,
+        "is_scan": true,
+        "page_angle": 0,
+        "page_type": "doc",
+        "sheet_name": ""
+      }
+    }
+  ],
+  "chunks": [],
+  "pdf_data": "",
+  "pdf_vis_data": ""
+}

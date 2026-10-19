@@ -1,0 +1,97 @@
+{
+  "log_id": 9000011,
+  "direction": 0,
+  "words_result_num": 10,
+  "words_result": [
+    {
+      "words": "2026 秋季开发者大会",
+      "location": {
+        "left": 380,
+        "top": 93,
+        "width": 410,
+        "height": 48
+      }
+    },
+    {
+      "words": "BUILD THE FUTURE, TOGETHER",
+      "location": {
+        "left": 385,
+        "top": 157,
+        "width": 215,
+        "height": 17
+      }
+    },
+    {
+      "words": "12 场前沿技术分享 · 8 小时黑客松 · 500 位开发者",
+      "location": {
+        "left": 330,
+        "top": 215,
+        "width": 412,
+        "height": 20
+      }
+    },
+    {
+      "words": "时间：2026年11月8日 14:00—18:00",
+      "location": {
+        "left": 275,
+        "top": 384,
+        "width": 296,
+        "height": 21
+      }
+    },
+    {
+      "words": "地点：北京 · 国家会议中心 E4 馆",
+      "location": {
+        "left": 275,
+        "top": 424,
+        "width": 285,
+        "height": 21
+      }
+    },
+    {
+      "words": "报名咨询：15912345678（王老师）",
+      "location": {
+        "left": 275,
+        "top": 464,
+        "width": 289,
+        "height": 21
+      }
+    },
+    {
+      "words": "邮箱：contact@example.com",
+      "location": {
+        "left": 275,
+        "top": 504,
+        "width": 242,
+        "height": 21
+      }
+    },
+    {
+      "words": "官网：https://example.com/devconf2026",
+      "location": {
+        "left": 275,
+        "top": 544,
+        "width": 361,
+        "height": 21
+      }
+    },
+    {
+      "words": "门票：¥199（早鸟价 ¥99，截止 2026年10月31日）",
+      "location": {
+        "left": 275,
+        "top": 604,
+        "width": 420,
+        "height": 21
+      }
+    },
+    {
+      "words": "主办方：示例开发者社区 · 协办：云图科技 · 数联信息",
+      "location": {
+        "left": 255,
+        "top": 848,
+        "width": 354,
+        "height": 16
+      }
+    }
+  ]
+}

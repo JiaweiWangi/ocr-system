@@ -1,0 +1,52 @@
+{
+  "log_id": 9000013,
+  "direction": 0,
+  "words_result_num": 5,
+  "words_result": [
+    {
+      "words": "收款收据",
+      "location": {
+        "left": 410,
+        "top": 47,
+        "width": 104,
+        "height": 30
+      }
+    },
+    {
+      "words": "NO.00881234",
+      "location": {
+        "left": 60,
+        "top": 101,
+        "width": 97,
+        "height": 18
+      }
+    },
+    {
+      "words": "开票日期：2026-10-19",
+      "location": {
+        "left": 620,
+        "top": 101,
+        "width": 168,
+        "height": 18
+      }
+    },
+    {
+      "words": "收款人：李明        交款人：张华",
+      "location": {
+        "left": 60,
+        "top": 461,
+        "width": 262,
+        "height": 18
+      }
+    },
+    {
+      "words": "备注：本收据加盖公章后有效",
+      "location": {
+        "left": 60,
+        "top": 491,
+        "width": 208,
+        "height": 18
+      }
+    }
+  ]
+}
