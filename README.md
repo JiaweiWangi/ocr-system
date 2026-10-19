@@ -23,6 +23,17 @@ npm run dev                   # 默认 BAIDU_MOCK=1，使用 fixtures 回放，�
 
 打开 http://localhost:3000。
 
+### 生产部署
+
+安装命令使用 `npm ci --include=dev`，构建命令使用 `npm run build`，启动命令使用 `npm start`。
+启动时会先执行 `prisma migrate deploy`，在运行环境的数据库中创建尚未建立的表；迁移失败则不会启动应用。
+
+`DATABASE_URL` 可配置 SQLite 文件位置，例如 `file:/data/ocr.db`。迁移与应用使用相同路径；
+未设置时使用项目根目录的 `dev.db`，相对路径也以项目根目录为基准。
+生产环境应将数据库所在目录挂载为持久化磁盘，并持久化上传图片目录 `storage/images`。
+
+如果平台覆盖了启动命令，请改为 `npm start`；仅执行 `next start` 会跳过迁移。
+
 ### 接入真实百度 API
 
 1. 注册[百度智能云](https://console.bce.baidu.com/ai/#/ai/ocr/overview)，创建「文字识别」应用，拿到 API Key / Secret Key

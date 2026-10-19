@@ -1,11 +1,8 @@
 import { PrismaClient } from "@prisma/client";
 import { PrismaBetterSqlite3 } from "@prisma/adapter-better-sqlite3";
-import path from "node:path";
+import { getDatabaseUrl } from "./databaseUrl";
 
-// 与 prisma7.config.ts 的解析一致：DATABASE_URL "file:./dev.db" 相对项目根
-const dbUrl = `file:${path.join(process.cwd(), "dev.db")}`;
-
-const adapter = new PrismaBetterSqlite3({ url: dbUrl });
+const adapter = new PrismaBetterSqlite3({ url: getDatabaseUrl() });
 
 const globalForPrisma = globalThis as unknown as { prisma?: PrismaClient };
 
