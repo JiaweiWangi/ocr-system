@@ -2,6 +2,7 @@ import { NextRequest, NextResponse } from "next/server";
 import { prisma } from "@/lib/db";
 import { saveImage } from "@/lib/storage";
 import { processTask } from "@/lib/pipeline/runner";
+import { isMockMode } from "@/lib/baidu/fixtures";
 
 /**
  * POST /api/tasks —— multipart 上传，创建任务并触发处理（不 await，内存异步）
@@ -72,5 +73,5 @@ export async function GET() {
       error: true,
     },
   });
-  return NextResponse.json({ tasks, mock: process.env.BAIDU_MOCK !== "0" });
+  return NextResponse.json({ tasks, mock: isMockMode() });
 }
