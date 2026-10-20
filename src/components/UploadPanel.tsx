@@ -46,6 +46,7 @@ export default function UploadPanel() {
       router.push(`/tasks/${id}`);
     } catch (err) {
       setError(err instanceof Error ? err.message : "上传失败，请重试");
+    } finally {
       setUploading(false);
     }
   }
