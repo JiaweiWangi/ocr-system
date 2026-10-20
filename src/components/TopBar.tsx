@@ -6,7 +6,7 @@ import type { ReactNode } from "react";
 
 /** 朱砂印章 logo */
 export function SealMark({ char = "识" }: { char?: string }) {
-  return <span className="seal-mark">{char}</span>;
+  return <span className="seal-mark shrink-0">{char}</span>;
 }
 
 /**
@@ -24,11 +24,16 @@ export default function TopBar({
   const isHistory = pathname.startsWith("/history") || pathname.startsWith("/tasks");
 
   return (
-    <header className="sticky top-0 z-20 grid h-[60px] grid-cols-[1fr_auto_1fr] items-center border-b border-line bg-paper/90 px-5 backdrop-blur-md">
-      <Link href="/" className="flex items-center gap-2.5 justify-self-start">
+    <header className="sticky top-0 z-20 grid h-[60px] grid-cols-[minmax(0,1fr)_auto_minmax(0,1fr)] items-center border-b border-line bg-paper/90 px-3 backdrop-blur-md sm:px-5">
+      <Link
+        href="/"
+        aria-label="识 · 多版式 OCR 文档识别系统"
+        title="识 · 多版式 OCR 文档识别系统"
+        className="flex min-w-0 max-w-full items-center gap-2.5 justify-self-start"
+      >
         <SealMark />
         {!compact && (
-          <span className="font-serif text-[16px] font-bold tracking-[0.08em] text-ink">
+          <span className="hidden min-w-0 truncate font-serif text-[16px] font-bold tracking-normal text-ink md:block">
             识 · 多版式 OCR 文档识别系统
           </span>
         )}
@@ -36,7 +41,7 @@ export default function TopBar({
 
       <nav
         aria-label="主导航"
-        className="mx-auto flex gap-1.5 rounded-full border border-line bg-card p-1 shadow-card"
+        className="mx-auto flex gap-1.5 whitespace-nowrap rounded-full border border-line bg-card p-1 shadow-card"
       >
         <Link
           href="/"
@@ -62,7 +67,9 @@ export default function TopBar({
         </Link>
       </nav>
 
-      <div className="flex items-center justify-end gap-2">{right}</div>
+      <div className="flex min-w-0 items-center justify-end gap-2 [&>*]:min-w-0 [&>*]:truncate">
+        {right}
+      </div>
     </header>
   );
 }
