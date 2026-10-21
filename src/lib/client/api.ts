@@ -31,6 +31,8 @@ export interface TaskDetail {
     precision: Precision;
     imageWidth: number | null;
     imageHeight: number | null;
+    originalImagePath: string | null;
+    preprocessing: string | null;
     updatedAt: string;
     versions: VersionInfo[];
   };

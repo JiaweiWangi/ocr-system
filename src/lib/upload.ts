@@ -1,5 +1,5 @@
 import { imageSize } from "image-size";
-import { MAX_IMAGE_BYTES, IMAGE_MIME_TYPES } from "./uploadLimits";
+import { MAX_IMAGE_BYTES, IMAGE_MIME_TYPES, MAX_INPUT_DIMENSION, MAX_INPUT_PIXELS, MIN_IMAGE_DIMENSION } from "./uploadLimits";
 
 export class InputError extends Error {
   constructor(message: string, public status = 400) {
@@ -30,11 +30,16 @@ export async function validateImage(file: File) {
   }
   const mime: Record<string, string> = { png: "image/png", jpg: "image/jpeg", bmp: "image/bmp", webp: "image/webp" };
   if (!info.type || mime[info.type] !== file.type) throw new InputError("图片实际格式与声明不符，请重新导出为 PNG 或 JPG");
-  if (!info.width || !info.height || Math.min(info.width, info.height) < 15 || Math.max(info.width, info.height) > 4096) {
-    throw new InputError("图片每边须为 15–4096 像素，请调整尺寸后重试");
+  if (!info.width || !info.height || Math.min(info.width, info.height) < MIN_IMAGE_DIMENSION) {
+    throw new InputError("图片每边至少需要 15 像素");
   }
-  return { buffer, width: info.width, height: info.height };
+  if (Math.max(info.width, info.height) > MAX_INPUT_DIMENSION || info.width * info.height > MAX_INPUT_PIXELS) {
+    throw new InputError("图片分辨率过大，单边最多 16384 像素且总像素不超过 3200 万，请缩小后重试");
+  }
+  return { buffer, width: info.width, height: info.height, mime: file.type };
 }
+
+export type ValidatedImage = Awaited<ReturnType<typeof validateImage>>;
 
 /** Bound the multipart body before parsing, including requests without Content-Length. */
 export async function readUploadForm(req: Request): Promise<FormData> {

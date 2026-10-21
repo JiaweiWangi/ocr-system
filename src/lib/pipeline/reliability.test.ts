@@ -13,6 +13,8 @@ import { UpstreamError } from "../baidu/http";
 import { NextRequest } from "next/server";
 import { POST as upload } from "../../app/api/tasks/route";
 import { POST as retry } from "../../app/api/tasks/[id]/reprocess/route";
+import { DELETE as deleteTask } from "../../app/api/tasks/[id]/route";
+import sharp from "sharp";
 
 const state = vi.hoisted(() => ({ prisma: null as unknown as PrismaClient }));
 const engines = vi.hoisted(() => ({ runGeneral: vi.fn(), runTable: vi.fn(), runParserSubmit: vi.fn(), runParserPoll: vi.fn() }));
@@ -42,13 +44,14 @@ beforeAll(() => {
   const db = new Database(file);
   db.exec(readFileSync("prisma/migrations/20261014115632_init/migration.sql", "utf8"));
   db.exec(readFileSync("prisma/migrations/20261021120000_task_deadline/migration.sql", "utf8"));
+  db.exec(readFileSync("prisma/migrations/20261021150000_image_preprocessing/migration.sql", "utf8"));
   db.close();
   state.prisma = new PrismaClient({ adapter: new PrismaBetterSqlite3({ url: `file:${file}` }) });
 });
 beforeEach(async () => {
   vi.resetAllMocks();
   afterWork.length = 0;
-  uploads.saveImage.mockResolvedValue("storage/images/test.png");
+  uploads.saveImage.mockImplementation(async (id: string, file: File) => `storage/images/${id.endsWith("-original") ? "original" : "test"}.${file.type === "image/jpeg" ? "jpg" : "png"}`);
   uploads.removeImage.mockResolvedValue(undefined);
   await state.prisma.task.deleteMany();
 });
@@ -169,6 +172,9 @@ describe("upload and retry routes", () => {
     const t = await state.prisma.task.findUniqueOrThrow({ where: { id } });
     expect(t.status).toBe("pending");
     expect(t.imageWidth).toBeGreaterThan(15);
+    expect(t.originalImagePath).toBe("storage/images/original.png");
+    expect(JSON.parse(t.preprocessing!)).toMatchObject({ version: 1, output: { width: t.imageWidth, height: t.imageHeight } });
+    expect(uploads.saveImage).toHaveBeenCalledTimes(2);
     expect(t.attemptId).toBeTruthy();
     expect(t.deadlineAt!.getTime()).toBeGreaterThan(Date.now());
     expect(afterWork).toHaveLength(1);
@@ -181,8 +187,47 @@ describe("upload and retry routes", () => {
       expect(response.status).toBe(500);
       expect(await response.text()).not.toContain("private database path");
       expect(uploads.removeImage).toHaveBeenCalledWith("storage/images/test.png");
+      expect(uploads.removeImage).toHaveBeenCalledWith("storage/images/original.png");
       expect(await state.prisma.task.count()).toBe(0);
     } finally { create.mockRestore(); }
+  });
+
+  it("keeps the original bytes and uses rotated dimensions for OCR", async () => {
+    const jpeg = await sharp({ create: { width: 80, height: 40, channels: 3, background: "red" } })
+      .jpeg().withMetadata({ orientation: 6 }).toBuffer();
+    const response = await upload(uploadRequest(new File([new Uint8Array(jpeg)], "rotated.jpg", { type: "image/jpeg" })));
+    expect(response.status).toBe(201);
+    const { id } = await response.json();
+    expect(await state.prisma.task.findUniqueOrThrow({ where: { id } })).toMatchObject({ imageWidth: 40, imageHeight: 80 });
+    expect(uploads.saveImage.mock.calls[1][2]).toEqual(jpeg);
+    const processed = uploads.saveImage.mock.calls[0][2];
+    expect(await sharp(processed).metadata()).toMatchObject({ width: 40, height: 80 });
+  });
+
+  it("cleans the processed image if saving the original fails", async () => {
+    uploads.saveImage.mockResolvedValueOnce("storage/images/processed.png").mockRejectedValueOnce(new Error("disk full"));
+    const response = await upload(uploadRequest(new File([readFileSync("samples/发票测试.png")], "test.png", { type: "image/png" })));
+    expect(response.status).toBe(500);
+    expect(uploads.removeImage).toHaveBeenCalledWith("storage/images/processed.png");
+    expect(await state.prisma.task.count()).toBe(0);
+    expect(afterWork).toHaveLength(0);
+  });
+
+  it("rejects damaged pixel data before creating files or tasks", async () => {
+    const png = readFileSync("samples/发票测试.png").subarray(0, 60);
+    const response = await upload(uploadRequest(new File([png], "broken.png", { type: "image/png" })));
+    expect(response.status).toBe(400);
+    expect(uploads.saveImage).not.toHaveBeenCalled();
+    expect(await state.prisma.task.count()).toBe(0);
+  });
+
+  it("removes both images on deletion and supports legacy tasks", async () => {
+    const t = await task({ originalImagePath: "storage/images/original.jpg" });
+    expect((await deleteTask(new NextRequest("http://localhost"), context(t.id))).status).toBe(200);
+    expect(uploads.removeImage).toHaveBeenCalledWith(t.imagePath);
+    expect(uploads.removeImage).toHaveBeenCalledWith(t.originalImagePath);
+    const legacy = await task();
+    expect((await deleteTask(new NextRequest("http://localhost"), context(legacy.id))).status).toBe(200);
   });
 
   it("rejects malformed retry bodies and invalid options", async () => {

@@ -14,6 +14,8 @@ model Task {
   precision     String       @default("standard") // 'standard' | 'high'（general 模式子选项）
   status        String // 'pending' | 'processing' | 'success' | 'failed'
   imagePath     String // storage/images/xxx.jpg（相对项目根）
+  originalImagePath String? // 上传原文件；imagePath 为 OCR 和编辑器共用的预处理图片
+  preprocessing String? // 预处理参数与输入输出尺寸、体积的 JSON 记录
   imageWidth    Int?
   imageHeight   Int?
   engineTaskId  String? // 深度模式：文档解析返回的 task_id

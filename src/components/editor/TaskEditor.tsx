@@ -184,10 +184,11 @@ export default function TaskEditor({
   const currentVersion = versions.find((v) => v.isCurrent);
 
   return (
-    <div className="grid flex-1 grid-cols-[44%_1fr] overflow-hidden" style={{ minHeight: "calc(100vh - 60px)" }}>
+    <div className="grid flex-1 grid-cols-1 overflow-hidden md:grid-cols-[44%_1fr]" style={{ minHeight: "calc(100vh - 60px)" }}>
       {/* 左：原图 */}
       <ImagePane
         taskId={task.id}
+        hasOriginal={!!task.originalImagePath}
         imageWidth={doc.image.width}
         imageHeight={doc.image.height}
         blocks={doc.blocks}
@@ -203,13 +204,13 @@ export default function TaskEditor({
       {/* 右：文档块 */}
       <section aria-label="识别结果编辑" className="flex min-w-0 flex-col bg-card">
         {/* 工具条 */}
-        <div className="flex items-center gap-2.5 border-b border-line px-4 py-2.5">
+        <div className="flex flex-wrap items-center gap-2.5 border-b border-line px-4 py-2.5">
           <input
             value={title}
             onChange={(e) => setTitle(e.target.value)}
             onBlur={(e) => void saveTitle(e.target.value.trim() || task.title)}
             aria-label="任务题名"
-            className="min-w-0 flex-1 rounded-[10px] border border-transparent bg-transparent px-2.5 py-1 font-serif text-[16px] font-bold tracking-[0.03em] text-ink outline-none transition-all hover:border-line-strong focus:border-red focus:shadow-[0_0_0_3px_var(--red-ring)]"
+            className="min-w-0 flex-1 basis-full rounded-[10px] border border-transparent bg-transparent px-2.5 py-1 font-serif text-[16px] font-bold tracking-[0.03em] text-ink outline-none transition-all hover:border-line-strong focus:border-red focus:shadow-[0_0_0_3px_var(--red-ring)] sm:basis-auto"
           />
 
           {/* 保存状态 */}
@@ -359,7 +360,7 @@ export default function TaskEditor({
         </div>
 
         {/* 底部：版本 + 校讫章 */}
-        <footer className="flex items-center gap-2.5 border-t border-line bg-paper px-4 py-2.5 text-[12.5px] text-ink-3">
+        <footer className="flex flex-wrap items-center gap-2.5 border-t border-line bg-paper px-4 py-2.5 text-[12.5px] text-ink-3">
           <Menu
             align="left"
             buttonClassName="inline-flex items-center gap-1.5 rounded-full border border-line-strong bg-card px-3 py-1 text-xs font-semibold text-ink shadow-card hover:border-ink-4"

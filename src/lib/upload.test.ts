@@ -33,10 +33,18 @@ describe("upload validation", () => {
     await expect(validateImage(new File(["not an image"], "fake.png", { type: "image/png" }))).rejects.toThrow("无法读取");
   });
 
-  it("rejects dimensions outside the OCR range", async () => {
+  it("allows resizeable images but rejects tiny images and excessive decoded pixel counts", async () => {
     const large = Buffer.from(png);
     large.writeUInt32BE(5000, 16);
-    await expect(validateImage(new File([large], "large.png", { type: "image/png" }))).rejects.toThrow("15–4096");
+    expect((await validateImage(new File([large], "large.png", { type: "image/png" }))).width).toBe(5000);
+    large.writeUInt32BE(10, 16);
+    await expect(validateImage(new File([large], "tiny.png", { type: "image/png" }))).rejects.toThrow("至少需要 15");
+    large.writeUInt32BE(6000, 16);
+    large.writeUInt32BE(6000, 20);
+    await expect(validateImage(new File([large], "huge.png", { type: "image/png" }))).rejects.toThrow("3200 万");
+    large.writeUInt32BE(17000, 16);
+    large.writeUInt32BE(20, 20);
+    await expect(validateImage(new File([large], "wide.png", { type: "image/png" }))).rejects.toThrow("16384");
   });
 
   it("validates recognition parameters rather than silently falling back", () => {

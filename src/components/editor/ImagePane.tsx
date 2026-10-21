@@ -1,7 +1,7 @@
 "use client";
 
 import { useCallback, useEffect, useRef, useState } from "react";
-import { Minus, Plus } from "lucide-react";
+import { Download, Minus, Plus } from "lucide-react";
 import type { Block } from "@/lib/normalize/types";
 
 /**
@@ -15,6 +15,7 @@ export default function ImagePane({
   blocks,
   selectedId,
   onSelect,
+  hasOriginal,
 }: {
   taskId: string;
   imageWidth: number;
@@ -22,6 +23,7 @@ export default function ImagePane({
   blocks: Block[];
   selectedId: string | null;
   onSelect: (id: string | null) => void;
+  hasOriginal: boolean;
 }) {
   const containerRef = useRef<HTMLDivElement>(null);
   const imgRef = useRef<HTMLImageElement>(null);
@@ -53,14 +55,24 @@ export default function ImagePane({
 
   return (
     <section
-      aria-label="原图对照"
-      className="flex min-w-0 flex-col border-r border-line bg-paper"
+      aria-label="识别图片对照"
+      className="flex h-80 min-w-0 flex-col border-b border-line bg-paper md:h-auto md:border-b-0 md:border-r"
     >
-      <header className="flex items-center justify-between border-b border-line bg-card px-4 py-2.5 text-[12.5px] font-semibold text-ink-3">
-        <span>
-          原图 · {imageWidth} × {imageHeight}
+      <header className="flex flex-wrap items-center justify-between gap-2 border-b border-line bg-card px-4 py-2.5 text-[12.5px] font-semibold text-ink-3">
+        <span className="min-w-0 break-words">
+          {hasOriginal ? "识别图" : "原图"} · {imageWidth} × {imageHeight}
         </span>
-        <div className="flex items-center gap-0.5 rounded-lg border border-line bg-paper p-0.5">
+        <div className="flex shrink-0 items-center gap-0.5 rounded-lg border border-line bg-paper p-0.5">
+          {hasOriginal && (
+            <a
+              href={`/api/tasks/${taskId}/image?variant=original`}
+              aria-label="下载原图"
+              title="下载原图"
+              className="grid size-6 place-items-center rounded-md text-ink-2 hover:bg-line"
+            >
+              <Download className="size-3.5" />
+            </a>
+          )}
           <button
             type="button"
             aria-label="缩小"
@@ -93,7 +105,7 @@ export default function ImagePane({
           <img
             ref={imgRef}
             src={`/api/tasks/${taskId}/image`}
-            alt="任务原图"
+            alt="识别图片"
             draggable={false}
             onLoad={measure}
             className="block w-full select-none rounded border border-line-strong bg-white shadow-lift"

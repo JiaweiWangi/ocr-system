@@ -4,7 +4,7 @@ import { resolveImagePath } from "@/lib/storage";
 import fs from "node:fs/promises";
 
 /**
- * GET /api/tasks/[id]/image —— 返回任务原图（编辑器左侧展示用）
+ * Default: OCR image and coordinates. variant=original: download the unchanged upload.
  */
 
 const MIME: Record<string, string> = {
@@ -16,20 +16,23 @@ const MIME: Record<string, string> = {
 };
 
 export async function GET(
-  _req: NextRequest,
+  req: NextRequest,
   { params }: { params: Promise<{ id: string }> },
 ) {
   const { id } = await params;
   const task = await prisma.task.findUnique({ where: { id } });
   if (!task) return NextResponse.json({ error: "任务不存在" }, { status: 404 });
 
-  const ext = task.imagePath.split(".").pop()?.toLowerCase() ?? "jpg";
+  const original = req.nextUrl.searchParams.get("variant") === "original";
+  const imagePath = original ? task.originalImagePath ?? task.imagePath : task.imagePath;
+  const ext = imagePath.split(".").pop()?.toLowerCase() ?? "jpg";
   try {
-    const buf = await fs.readFile(resolveImagePath(task.imagePath));
+    const buf = await fs.readFile(resolveImagePath(imagePath));
     return new NextResponse(new Uint8Array(buf), {
       headers: {
         "Content-Type": MIME[ext] ?? "application/octet-stream",
         "Cache-Control": "private, max-age=3600",
+        ...(original ? { "Content-Disposition": `attachment; filename="${task.id}-original.${ext}"` } : {}),
       },
     });
   } catch {

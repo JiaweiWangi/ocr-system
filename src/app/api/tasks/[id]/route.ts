@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { prisma } from "@/lib/db";
 import { expireTasks } from "@/lib/pipeline/lifecycle";
+import { removeImage } from "@/lib/storage";
 
 /**
  * GET    /api/tasks/[id] —— 任务详情 + 当前版本内容
@@ -43,6 +44,8 @@ export async function DELETE(
   if (!task) return NextResponse.json({ error: "任务不存在" }, { status: 404 });
 
   await prisma.task.delete({ where: { id } });
+  const paths = new Set([task.imagePath, task.originalImagePath].filter((path): path is string => !!path));
+  await Promise.all([...paths].map((path) => removeImage(path).catch(() => console.error("Could not remove task image", id))));
   return NextResponse.json({ ok: true });
 }
 
