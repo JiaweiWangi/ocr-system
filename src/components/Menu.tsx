@@ -11,11 +11,13 @@ export default function Menu({
   children,
   buttonClassName = "",
   align = "right",
+  side = "bottom",
 }: {
   label: ReactNode;
   children: (close: () => void) => ReactNode;
   buttonClassName?: string;
   align?: "left" | "right";
+  side?: "top" | "bottom";
 }) {
   const [open, setOpen] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
@@ -50,7 +52,7 @@ export default function Menu({
       {open && (
         <div
           role="menu"
-          className={`anim-in absolute ${align === "right" ? "right-0" : "left-0"} top-[calc(100%+8px)] z-30 min-w-52 rounded-2xl border border-line bg-card p-2 shadow-lift`}
+          className={`anim-in absolute ${align === "right" ? "right-0" : "left-0"} ${side === "top" ? "bottom-[calc(100%+8px)]" : "top-[calc(100%+8px)]"} z-30 max-h-[calc(100dvh-6rem)] min-w-52 max-w-[calc(100vw-2rem)] overflow-y-auto rounded-2xl border border-line bg-card p-2 shadow-lift`}
         >
           {children(() => setOpen(false))}
         </div>

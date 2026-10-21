@@ -1,7 +1,7 @@
 "use client";
 
 import { useCallback, useEffect, useRef, useState } from "react";
-import { Check, ChevronDown, Download, Loader2, Plus, RotateCcw, X } from "lucide-react";
+import { Check, ChevronUp, Download, Loader2, Plus, RotateCcw, X } from "lucide-react";
 import type { Block, OcrDocument } from "@/lib/normalize/types";
 import { blockId } from "@/lib/normalize/types";
 import {
@@ -363,16 +363,17 @@ export default function TaskEditor({
         <footer className="flex flex-wrap items-center gap-2.5 border-t border-line bg-paper px-4 py-2.5 text-[12.5px] text-ink-3">
           <Menu
             align="left"
+            side="top"
             buttonClassName="inline-flex items-center gap-1.5 rounded-full border border-line-strong bg-card px-3 py-1 text-xs font-semibold text-ink shadow-card hover:border-ink-4"
             label={
               <>
-                <ChevronDown className="size-3.5" />
+                <ChevronUp className="size-3.5" />
                 {currentVersion ? `v${currentVersion.versionNo} · ${currentVersion.label ?? "当前"}` : "版本"}
               </>
             }
           >
             {(close) => (
-              <div className="w-72">
+              <div className="w-72 max-w-[calc(100vw-3rem)]">
                 <SnapshotForm onSnapshot={(label) => void snapshot(label)} />
                 <div className="scroll-thin mt-1 max-h-56 overflow-y-auto">
                   {[...versions].reverse().map((v) => (
