@@ -1,0 +1,42 @@
+{
+  "schema_version": 1,
+  "case_id": "photo-02",
+  "origin": "synthetic",
+  "annotation_method": "renderer_source_text",
+  "reading_order": "top_to_bottom_then_table_row_major",
+  "segments": [
+    {
+      "order": 0,
+      "role": "sample_label",
+      "text": "合成测试样本  photo-02"
+    },
+    {
+      "order": 1,
+      "role": "title",
+      "text": "设备借用须知"
+    },
+    {
+      "order": 2,
+      "role": "paragraph",
+      "text": "设备名称：便携式文档扫描仪"
+    },
+    {
+      "order": 3,
+      "role": "paragraph",
+      "text": "借用编号：TEST-20260708-02"
+    },
+    {
+      "order": 4,
+      "role": "paragraph",
+      "text": "借用人应在使用前检查电源、连接线与玻璃面板。发现故障时停止操作，并记录故障现象。"
+    },
+    {
+      "order": 5,
+      "role": "paragraph",
+      "text": "归还前请清理设备表面，核对附件数量，完成借用登记。归还日期为2026年7月15日。"
+    }
+  ],
+  "tables": [],
+  "coordinates_available": false,
+  "review_status": "generated_not_independently_transcribed"
+}

@@ -1,0 +1,1925 @@
+{
+  "schema_version": 1,
+  "name": "ocr-subtopic1-synthetic-baseline-v1",
+  "description": "30 independent synthetic cases, each with standard and challenge images. No real photographs or scanner captures.",
+  "independent_cases": 30,
+  "image_count": 60,
+  "generator": {
+    "script": "build.py",
+    "sha256": "5637143050cdc5e670d283a4055c6ffceecf4a5bb0bc59c47d346fe47f0dad1a",
+    "pillow_version": "12.3.0",
+    "content_sha256": "183a1a1f61260784be222609bd039c0e9dd6cb2e885c3e4ae23a9ab6d76c9e52",
+    "font": {
+      "name": "Simsun.ttc",
+      "sha256": "05068fa1acae212120dcc7e98c884b174a6eca252a636b4b64030235473ec27e"
+    },
+    "bold_font": {
+      "name": "SimHei.ttf",
+      "sha256": "ef70e6bba293c9d30bdeb0dba2dd6019cceacbfddab3fb0c550ff14d9127c813"
+    }
+  },
+  "samples": [
+    {
+      "id": "photo-01-standard",
+      "case_id": "photo-01",
+      "category": "photo_document",
+      "category_label": "拍照文档",
+      "title": "项目周例会通知",
+      "variant": "standard",
+      "split": "development",
+      "origin": "synthetic",
+      "source": "cases.json",
+      "source_case_id": "photo-01",
+      "image": "images/photo_document/photo-01-standard.jpg",
+      "ground_truth": "ground_truth/photo_document/photo-01.txt",
+      "annotation": "annotations/photo_document/photo-01.json",
+      "width": 1354,
+      "height": 1746,
+      "format": "JPEG",
+      "bytes": 150248,
+      "sha256": "79449e872028a86e18dcb2e35fa07ec6be74a43d2f008d80cebff700935285c8",
+      "ground_truth_sha256": "379964915e4d626fac1be7f57621370bd02562dc0d4874f6f4593255f51b1689",
+      "recommended_mode": "general",
+      "transforms": [
+        {
+          "operation": "simulated_camera_frame",
+          "rotation_degrees": -1.2
+        }
+      ],
+      "encoding": {
+        "jpeg_quality": 88
+      },
+      "fixture": null,
+      "ocr_verified": false
+    },
+    {
+      "id": "photo-01-challenge",
+      "case_id": "photo-01",
+      "category": "photo_document",
+      "category_label": "拍照文档",
+      "title": "项目周例会通知",
+      "variant": "challenge",
+      "split": "development",
+      "origin": "synthetic",
+      "source": "cases.json",
+      "source_case_id": "photo-01",
+      "image": "images/photo_document/photo-01-challenge.jpg",
+      "ground_truth": "ground_truth/photo_document/photo-01.txt",
+      "annotation": "annotations/photo_document/photo-01.json",
+      "width": 1430,
+      "height": 1804,
+      "format": "JPEG",
+      "bytes": 166589,
+      "sha256": "987842e873a826144a1abd2521d6b09f2ab7992a95359c44a4ad7b408dfd60f3",
+      "ground_truth_sha256": "379964915e4d626fac1be7f57621370bd02562dc0d4874f6f4593255f51b1689",
+      "recommended_mode": "general",
+      "transforms": [
+        {
+          "operation": "simulated_camera_frame",
+          "rotation_degrees": -1.2
+        },
+        {
+          "operation": "rotation",
+          "degrees": 2.5,
+          "expand": true
+        }
+      ],
+      "encoding": {
+        "jpeg_quality": 88
+      },
+      "fixture": null,
+      "ocr_verified": false
+    },
+    {
+      "id": "photo-02-standard",
+      "case_id": "photo-02",
+      "category": "photo_document",
+      "category_label": "拍照文档",
+      "title": "设备借用须知",
+      "variant": "standard",
+      "split": "development",
+      "origin": "synthetic",
+      "source": "cases.json",
+      "source_case_id": "photo-02",
+      "image": "images/photo_document/photo-02-standard.jpg",
+      "ground_truth": "ground_truth/photo_document/photo-02.txt",
+      "annotation": "annotations/photo_document/photo-02.json",
+      "width": 1354,
+      "height": 1746,
+      "format": "JPEG",
+      "bytes": 151254,
+      "sha256": "8e5c90f52c482425738a5ef44ba992d7e15757dfe3866e808c65bdc3d08432f7",
+      "ground_truth_sha256": "2a6d68145fbe877dc392ce4c0464561f53019d08aa19e44125cb1cbf1eb16286",
+      "recommended_mode": "general",
+      "transforms": [
+        {
+          "operation": "simulated_camera_frame",
+          "rotation_degrees": -1.2
+        }
+      ],
+      "encoding": {
+        "jpeg_quality": 88
+      },
+      "fixture": null,
+      "ocr_verified": false
+    },
+    {
+      "id": "photo-02-challenge",
+      "case_id": "photo-02",
+      "category": "photo_document",
+      "category_label": "拍照文档",
+      "title": "设备借用须知",
+      "variant": "challenge",
+      "split": "development",
+      "origin": "synthetic",
+      "source": "cases.json",
+      "source_case_id": "photo-02",
+      "image": "images/photo_document/photo-02-challenge.jpg",
+      "ground_truth": "ground_truth/photo_document/photo-02.txt",
+      "annotation": "annotations/photo_document/photo-02.json",
+      "width": 1354,
+      "height": 1746,
+      "format": "JPEG",
+      "bytes": 128489,
+      "sha256": "4d5c843a0420693f7f010be55b2ad651ea54e7185e77841cc6f12baa75e4b46c",
+      "ground_truth_sha256": "2a6d68145fbe877dc392ce4c0464561f53019d08aa19e44125cb1cbf1eb16286",
+      "recommended_mode": "general",
+      "transforms": [
+        {
+          "operation": "simulated_camera_frame",
+          "rotation_degrees": -1.2
+        },
+        {
+          "operation": "low_contrast",
+          "contrast_factor": 0.55,
+          "brightness_factor": 0.9
+        }
+      ],
+      "encoding": {
+        "jpeg_quality": 88
+      },
+      "fixture": null,
+      "ocr_verified": false
+    },
+    {
+      "id": "photo-03-standard",
+      "case_id": "photo-03",
+      "category": "photo_document",
+      "category_label": "拍照文档",
+      "title": "资料提交说明",
+      "variant": "standard",
+      "split": "development",
+      "origin": "synthetic",
+      "source": "cases.json",
+      "source_case_id": "photo-03",
+      "image": "images/photo_document/photo-03-standard.jpg",
+      "ground_truth": "ground_truth/photo_document/photo-03.txt",
+      "annotation": "annotations/photo_document/photo-03.json",
+      "width": 1354,
+      "height": 1746,
+      "format": "JPEG",
+      "bytes": 156279,
+      "sha256": "c85a1bcd9b231c9fb3b5de4eda888f026caf6ab0edbe73f349b532ab6e029903",
+      "ground_truth_sha256": "73abb03b3fd02af446e2f63f148a5066ca57f12c91c1c9c241e479eac4609c5d",
+      "recommended_mode": "general",
+      "transforms": [
+        {
+          "operation": "simulated_camera_frame",
+          "rotation_degrees": -1.2
+        }
+      ],
+      "encoding": {
+        "jpeg_quality": 88
+      },
+      "fixture": null,
+      "ocr_verified": false
+    },
+    {
+      "id": "photo-03-challenge",
+      "case_id": "photo-03",
+      "category": "photo_document",
+      "category_label": "拍照文档",
+      "title": "资料提交说明",
+      "variant": "challenge",
+      "split": "development",
+      "origin": "synthetic",
+      "source": "cases.json",
+      "source_case_id": "photo-03",
+      "image": "images/photo_document/photo-03-challenge.jpg",
+      "ground_truth": "ground_truth/photo_document/photo-03.txt",
+      "annotation": "annotations/photo_document/photo-03.json",
+      "width": 1354,
+      "height": 1746,
+      "format": "JPEG",
+      "bytes": 130249,
+      "sha256": "ebf05c53163ab14a6e1c6da5ada235f7d0799606b93f54dcb053294fbbb9fa75",
+      "ground_truth_sha256": "73abb03b3fd02af446e2f63f148a5066ca57f12c91c1c9c241e479eac4609c5d",
+      "recommended_mode": "general",
+      "transforms": [
+        {
+          "operation": "simulated_camera_frame",
+          "rotation_degrees": -1.2
+        },
+        {
+          "operation": "gaussian_blur",
+          "radius": 0.9
+        }
+      ],
+      "encoding": {
+        "jpeg_quality": 88
+      },
+      "fixture": null,
+      "ocr_verified": false
+    },
+    {
+      "id": "photo-04-standard",
+      "case_id": "photo-04",
+      "category": "photo_document",
+      "category_label": "拍照文档",
+      "title": "实验室开放安排",
+      "variant": "standard",
+      "split": "development",
+      "origin": "synthetic",
+      "source": "cases.json",
+      "source_case_id": "photo-04",
+      "image": "images/photo_document/photo-04-standard.jpg",
+      "ground_truth": "ground_truth/photo_document/photo-04.txt",
+      "annotation": "annotations/photo_document/photo-04.json",
+      "width": 1354,
+      "height": 1746,
+      "format": "JPEG",
+      "bytes": 149618,
+      "sha256": "3d135837702bc6f74b63e657035a95ef7a1c71e119d5c7f8b9c9700e9b7c1df0",
+      "ground_truth_sha256": "e94f0e612ddb7ba4ab1912f999788b3fecaf46caa8201c4d20c7be2ab6e76a18",
+      "recommended_mode": "general",
+      "transforms": [
+        {
+          "operation": "simulated_camera_frame",
+          "rotation_degrees": -1.2
+        }
+      ],
+      "encoding": {
+        "jpeg_quality": 88
+      },
+      "fixture": null,
+      "ocr_verified": false
+    },
+    {
+      "id": "photo-04-challenge",
+      "case_id": "photo-04",
+      "category": "photo_document",
+      "category_label": "拍照文档",
+      "title": "实验室开放安排",
+      "variant": "challenge",
+      "split": "development",
+      "origin": "synthetic",
+      "source": "cases.json",
+      "source_case_id": "photo-04",
+      "image": "images/photo_document/photo-04-challenge.jpg",
+      "ground_truth": "ground_truth/photo_document/photo-04.txt",
+      "annotation": "annotations/photo_document/photo-04.json",
+      "width": 812,
+      "height": 1048,
+      "format": "JPEG",
+      "bytes": 65872,
+      "sha256": "fd2b86b8eb1f2027179ee1cc64a5470020ff47486d05f163bc3db6147a2e4bfa",
+      "ground_truth_sha256": "e94f0e612ddb7ba4ab1912f999788b3fecaf46caa8201c4d20c7be2ab6e76a18",
+      "recommended_mode": "general",
+      "transforms": [
+        {
+          "operation": "simulated_camera_frame",
+          "rotation_degrees": -1.2
+        },
+        {
+          "operation": "downscale",
+          "factor": 0.6
+        }
+      ],
+      "encoding": {
+        "jpeg_quality": 88
+      },
+      "fixture": null,
+      "ocr_verified": false
+    },
+    {
+      "id": "photo-05-standard",
+      "case_id": "photo-05",
+      "category": "photo_document",
+      "category_label": "拍照文档",
+      "title": "阶段验收记录",
+      "variant": "standard",
+      "split": "test",
+      "origin": "synthetic",
+      "source": "cases.json",
+      "source_case_id": "photo-05",
+      "image": "images/photo_document/photo-05-standard.jpg",
+      "ground_truth": "ground_truth/photo_document/photo-05.txt",
+      "annotation": "annotations/photo_document/photo-05.json",
+      "width": 1354,
+      "height": 1746,
+      "format": "JPEG",
+      "bytes": 152747,
+      "sha256": "b510d2352b64bef0c870df40a71c94922b0a587dc8e0b4fbbaa17d374c08365c",
+      "ground_truth_sha256": "11b46c613d1d49eecf80b2368a9622b9cf232c91e2f844ea80977c981725ad69",
+      "recommended_mode": "general",
+      "transforms": [
+        {
+          "operation": "simulated_camera_frame",
+          "rotation_degrees": -1.2
+        }
+      ],
+      "encoding": {
+        "jpeg_quality": 88
+      },
+      "fixture": null,
+      "ocr_verified": false
+    },
+    {
+      "id": "photo-05-challenge",
+      "case_id": "photo-05",
+      "category": "photo_document",
+      "category_label": "拍照文档",
+      "title": "阶段验收记录",
+      "variant": "challenge",
+      "split": "test",
+      "origin": "synthetic",
+      "source": "cases.json",
+      "source_case_id": "photo-05",
+      "image": "images/photo_document/photo-05-challenge.jpg",
+      "ground_truth": "ground_truth/photo_document/photo-05.txt",
+      "annotation": "annotations/photo_document/photo-05.json",
+      "width": 1354,
+      "height": 1746,
+      "format": "JPEG",
+      "bytes": 183980,
+      "sha256": "69b166f23fac3292f6f23dcf0868ee3480e639138a051122bc355b484547d89b",
+      "ground_truth_sha256": "11b46c613d1d49eecf80b2368a9622b9cf232c91e2f844ea80977c981725ad69",
+      "recommended_mode": "general",
+      "transforms": [
+        {
+          "operation": "simulated_camera_frame",
+          "rotation_degrees": -1.2
+        },
+        {
+          "operation": "jpeg_noise",
+          "noise_range": [
+            225,
+            255
+          ],
+          "seed": 2157498187,
+          "jpeg_quality": 42
+        }
+      ],
+      "encoding": {
+        "jpeg_quality": 42
+      },
+      "fixture": null,
+      "ocr_verified": false
+    },
+    {
+      "id": "table-01-standard",
+      "case_id": "table-01",
+      "category": "table_screenshot",
+      "category_label": "表格截图",
+      "title": "每周工作安排",
+      "variant": "standard",
+      "split": "development",
+      "origin": "synthetic",
+      "source": "cases.json",
+      "source_case_id": "table-01",
+      "image": "images/table_screenshot/table-01-standard.png",
+      "ground_truth": "ground_truth/table_screenshot/table-01.txt",
+      "annotation": "annotations/table_screenshot/table-01.json",
+      "width": 1400,
+      "height": 980,
+      "format": "PNG",
+      "bytes": 84226,
+      "sha256": "7bbb9f981f1893d75c9e12a3c203f68214b329a3a74ce5cdc48c61bfe4a079bb",
+      "ground_truth_sha256": "9f597760a41d27ba86c5fcb9ecb4dd0ecebdef4b68630e34ec0e9d10c632c260",
+      "recommended_mode": "table",
+      "transforms": [],
+      "encoding": {},
+      "fixture": null,
+      "ocr_verified": false
+    },
+    {
+      "id": "table-01-challenge",
+      "case_id": "table-01",
+      "category": "table_screenshot",
+      "category_label": "表格截图",
+      "title": "每周工作安排",
+      "variant": "challenge",
+      "split": "development",
+      "origin": "synthetic",
+      "source": "cases.json",
+      "source_case_id": "table-01",
+      "image": "images/table_screenshot/table-01-challenge.jpg",
+      "ground_truth": "ground_truth/table_screenshot/table-01.txt",
+      "annotation": "annotations/table_screenshot/table-01.json",
+      "width": 1442,
+      "height": 1042,
+      "format": "JPEG",
+      "bytes": 137346,
+      "sha256": "57c7dc112759c3348ba0f585696655e8cdb61032e5f1be9420d82ac6568fe6c5",
+      "ground_truth_sha256": "9f597760a41d27ba86c5fcb9ecb4dd0ecebdef4b68630e34ec0e9d10c632c260",
+      "recommended_mode": "table",
+      "transforms": [
+        {
+          "operation": "rotation",
+          "degrees": 2.5,
+          "expand": true
+        }
+      ],
+      "encoding": {
+        "jpeg_quality": 88
+      },
+      "fixture": null,
+      "ocr_verified": false
+    },
+    {
+      "id": "table-02-standard",
+      "case_id": "table-02",
+      "category": "table_screenshot",
+      "category_label": "表格截图",
+      "title": "项目预算明细",
+      "variant": "standard",
+      "split": "development",
+      "origin": "synthetic",
+      "source": "cases.json",
+      "source_case_id": "table-02",
+      "image": "images/table_screenshot/table-02-standard.png",
+      "ground_truth": "ground_truth/table_screenshot/table-02.txt",
+      "annotation": "annotations/table_screenshot/table-02.json",
+      "width": 1400,
+      "height": 980,
+      "format": "PNG",
+      "bytes": 54355,
+      "sha256": "41e79588e02fe4d8799662ee16ed9e44d4810048fe87d26ee4cfddf434677ba0",
+      "ground_truth_sha256": "736efaa1cc5f24b88b0bcff6b5bd618e05953b6ff5cbeeb8cc77a57c96d06698",
+      "recommended_mode": "table",
+      "transforms": [],
+      "encoding": {},
+      "fixture": null,
+      "ocr_verified": false
+    },
+    {
+      "id": "table-02-challenge",
+      "case_id": "table-02",
+      "category": "table_screenshot",
+      "category_label": "表格截图",
+      "title": "项目预算明细",
+      "variant": "challenge",
+      "split": "development",
+      "origin": "synthetic",
+      "source": "cases.json",
+      "source_case_id": "table-02",
+      "image": "images/table_screenshot/table-02-challenge.jpg",
+      "ground_truth": "ground_truth/table_screenshot/table-02.txt",
+      "annotation": "annotations/table_screenshot/table-02.json",
+      "width": 1400,
+      "height": 980,
+      "format": "JPEG",
+      "bytes": 87297,
+      "sha256": "d75c733fecbc6ddedb1df984e8bb16b381c309f0f86882690804ffe3d764ad2c",
+      "ground_truth_sha256": "736efaa1cc5f24b88b0bcff6b5bd618e05953b6ff5cbeeb8cc77a57c96d06698",
+      "recommended_mode": "table",
+      "transforms": [
+        {
+          "operation": "low_contrast",
+          "contrast_factor": 0.55,
+          "brightness_factor": 0.9
+        }
+      ],
+      "encoding": {
+        "jpeg_quality": 88
+      },
+      "fixture": null,
+      "ocr_verified": false
+    },
+    {
+      "id": "table-03-standard",
+      "case_id": "table-03",
+      "category": "table_screenshot",
+      "category_label": "表格截图",
+      "title": "设备盘点清单",
+      "variant": "standard",
+      "split": "development",
+      "origin": "synthetic",
+      "source": "cases.json",
+      "source_case_id": "table-03",
+      "image": "images/table_screenshot/table-03-standard.png",
+      "ground_truth": "ground_truth/table_screenshot/table-03.txt",
+      "annotation": "annotations/table_screenshot/table-03.json",
+      "width": 1400,
+      "height": 980,
+      "format": "PNG",
+      "bytes": 66127,
+      "sha256": "96266a429d04a96a48738e99f56a1c1ed2ea10816fa950b3a4abde33f224dc16",
+      "ground_truth_sha256": "832bfa854a0e9db2ec2ccef740954d5f9e441f9e0aa476996a8b5eee4fbf954b",
+      "recommended_mode": "table",
+      "transforms": [],
+      "encoding": {},
+      "fixture": null,
+      "ocr_verified": false
+    },
+    {
+      "id": "table-03-challenge",
+      "case_id": "table-03",
+      "category": "table_screenshot",
+      "category_label": "表格截图",
+      "title": "设备盘点清单",
+      "variant": "challenge",
+      "split": "development",
+      "origin": "synthetic",
+      "source": "cases.json",
+      "source_case_id": "table-03",
+      "image": "images/table_screenshot/table-03-challenge.jpg",
+      "ground_truth": "ground_truth/table_screenshot/table-03.txt",
+      "annotation": "annotations/table_screenshot/table-03.json",
+      "width": 1400,
+      "height": 980,
+      "format": "JPEG",
+      "bytes": 94961,
+      "sha256": "922b2cd1203168db9a4675fcbb722a1ea85f98bae3f845f654cdea9edf64c07e",
+      "ground_truth_sha256": "832bfa854a0e9db2ec2ccef740954d5f9e441f9e0aa476996a8b5eee4fbf954b",
+      "recommended_mode": "table",
+      "transforms": [
+        {
+          "operation": "gaussian_blur",
+          "radius": 0.9
+        }
+      ],
+      "encoding": {
+        "jpeg_quality": 88
+      },
+      "fixture": null,
+      "ocr_verified": false
+    },
+    {
+      "id": "table-04-standard",
+      "case_id": "table-04",
+      "category": "table_screenshot",
+      "category_label": "表格截图",
+      "title": "识别模式选择表",
+      "variant": "standard",
+      "split": "development",
+      "origin": "synthetic",
+      "source": "cases.json",
+      "source_case_id": "table-04",
+      "image": "images/table_screenshot/table-04-standard.png",
+      "ground_truth": "ground_truth/table_screenshot/table-04.txt",
+      "annotation": "annotations/table_screenshot/table-04.json",
+      "width": 1400,
+      "height": 980,
+      "format": "PNG",
+      "bytes": 93790,
+      "sha256": "2288a6bbbf2a8c8a075d1f8603060f4a96909f9a8ae03714ce820ffb7d569e05",
+      "ground_truth_sha256": "a1f019533a77ff2bb862562219931de0277dfe750c39fb2f251d7d3df5613da1",
+      "recommended_mode": "table",
+      "transforms": [],
+      "encoding": {},
+      "fixture": null,
+      "ocr_verified": false
+    },
+    {
+      "id": "table-04-challenge",
+      "case_id": "table-04",
+      "category": "table_screenshot",
+      "category_label": "表格截图",
+      "title": "识别模式选择表",
+      "variant": "challenge",
+      "split": "development",
+      "origin": "synthetic",
+      "source": "cases.json",
+      "source_case_id": "table-04",
+      "image": "images/table_screenshot/table-04-challenge.jpg",
+      "ground_truth": "ground_truth/table_screenshot/table-04.txt",
+      "annotation": "annotations/table_screenshot/table-04.json",
+      "width": 840,
+      "height": 588,
+      "format": "JPEG",
+      "bytes": 60605,
+      "sha256": "0d3b903339a6a19a2a9e533df4ac17d2bc22d103f4cec1379132bfdab72d0b1c",
+      "ground_truth_sha256": "a1f019533a77ff2bb862562219931de0277dfe750c39fb2f251d7d3df5613da1",
+      "recommended_mode": "table",
+      "transforms": [
+        {
+          "operation": "downscale",
+          "factor": 0.6
+        }
+      ],
+      "encoding": {
+        "jpeg_quality": 88
+      },
+      "fixture": null,
+      "ocr_verified": false
+    },
+    {
+      "id": "table-05-standard",
+      "case_id": "table-05",
+      "category": "table_screenshot",
+      "category_label": "表格截图",
+      "title": "样本入库登记表",
+      "variant": "standard",
+      "split": "test",
+      "origin": "synthetic",
+      "source": "cases.json",
+      "source_case_id": "table-05",
+      "image": "images/table_screenshot/table-05-standard.png",
+      "ground_truth": "ground_truth/table_screenshot/table-05.txt",
+      "annotation": "annotations/table_screenshot/table-05.json",
+      "width": 1400,
+      "height": 980,
+      "format": "PNG",
+      "bytes": 83214,
+      "sha256": "9ce5c0397b7b1967c6bbd39ee5f58b812e9e439f4ba6dd9adf210c0b6722d72f",
+      "ground_truth_sha256": "0b6520cf29c4503b992172763a87b8aad15e601a70c10a88fae575948f3454b0",
+      "recommended_mode": "table",
+      "transforms": [],
+      "encoding": {},
+      "fixture": null,
+      "ocr_verified": false
+    },
+    {
+      "id": "table-05-challenge",
+      "case_id": "table-05",
+      "category": "table_screenshot",
+      "category_label": "表格截图",
+      "title": "样本入库登记表",
+      "variant": "challenge",
+      "split": "test",
+      "origin": "synthetic",
+      "source": "cases.json",
+      "source_case_id": "table-05",
+      "image": "images/table_screenshot/table-05-challenge.jpg",
+      "ground_truth": "ground_truth/table_screenshot/table-05.txt",
+      "annotation": "annotations/table_screenshot/table-05.json",
+      "width": 1400,
+      "height": 980,
+      "format": "JPEG",
+      "bytes": 115543,
+      "sha256": "c9850f222ae457450c20c30d0a620be64d8990f95d57a5b51759b370f819e0ec",
+      "ground_truth_sha256": "0b6520cf29c4503b992172763a87b8aad15e601a70c10a88fae575948f3454b0",
+      "recommended_mode": "table",
+      "transforms": [
+        {
+          "operation": "jpeg_noise",
+          "noise_range": [
+            225,
+            255
+          ],
+          "seed": 1143801750,
+          "jpeg_quality": 42
+        }
+      ],
+      "encoding": {
+        "jpeg_quality": 42
+      },
+      "fixture": null,
+      "ocr_verified": false
+    },
+    {
+      "id": "receipt-01-standard",
+      "case_id": "receipt-01",
+      "category": "receipt",
+      "category_label": "票据单据",
+      "title": "收款收据",
+      "variant": "standard",
+      "split": "development",
+      "origin": "synthetic",
+      "source": "cases.json",
+      "source_case_id": "receipt-01",
+      "image": "images/receipt/receipt-01-standard.png",
+      "ground_truth": "ground_truth/receipt/receipt-01.txt",
+      "annotation": "annotations/receipt/receipt-01.json",
+      "width": 1200,
+      "height": 1160,
+      "format": "PNG",
+      "bytes": 75857,
+      "sha256": "465e9c85425b7a3534abcd414bf0b8e1c1b82c71b49478238196616a7733cac7",
+      "ground_truth_sha256": "ed52787129c26230a083cb8fd6b2c848d75cf0193a3fd14f29c2ac34c77ef489",
+      "recommended_mode": "table",
+      "transforms": [],
+      "encoding": {},
+      "fixture": null,
+      "ocr_verified": false
+    },
+    {
+      "id": "receipt-01-challenge",
+      "case_id": "receipt-01",
+      "category": "receipt",
+      "category_label": "票据单据",
+      "title": "收款收据",
+      "variant": "challenge",
+      "split": "development",
+      "origin": "synthetic",
+      "source": "cases.json",
+      "source_case_id": "receipt-01",
+      "image": "images/receipt/receipt-01-challenge.jpg",
+      "ground_truth": "ground_truth/receipt/receipt-01.txt",
+      "annotation": "annotations/receipt/receipt-01.json",
+      "width": 1250,
+      "height": 1212,
+      "format": "JPEG",
+      "bytes": 122759,
+      "sha256": "1cf3121d55c6a323817e3ef20f743eec6354690dbf554ab2d7eccee3f82e55e0",
+      "ground_truth_sha256": "ed52787129c26230a083cb8fd6b2c848d75cf0193a3fd14f29c2ac34c77ef489",
+      "recommended_mode": "table",
+      "transforms": [
+        {
+          "operation": "rotation",
+          "degrees": 2.5,
+          "expand": true
+        }
+      ],
+      "encoding": {
+        "jpeg_quality": 88
+      },
+      "fixture": null,
+      "ocr_verified": false
+    },
+    {
+      "id": "receipt-02-standard",
+      "case_id": "receipt-02",
+      "category": "receipt",
+      "category_label": "票据单据",
+      "title": "费用报销单",
+      "variant": "standard",
+      "split": "development",
+      "origin": "synthetic",
+      "source": "cases.json",
+      "source_case_id": "receipt-02",
+      "image": "images/receipt/receipt-02-standard.png",
+      "ground_truth": "ground_truth/receipt/receipt-02.txt",
+      "annotation": "annotations/receipt/receipt-02.json",
+      "width": 1200,
+      "height": 1160,
+      "format": "PNG",
+      "bytes": 74390,
+      "sha256": "efb618d70495e319f4af31f6d09e37b79abda95b87c80916d4ffb9cb28e0c9b7",
+      "ground_truth_sha256": "87943c3ef4440f216071279abe62faf9909541eee21f147bd102cf336c47e57d",
+      "recommended_mode": "table",
+      "transforms": [],
+      "encoding": {},
+      "fixture": null,
+      "ocr_verified": false
+    },
+    {
+      "id": "receipt-02-challenge",
+      "case_id": "receipt-02",
+      "category": "receipt",
+      "category_label": "票据单据",
+      "title": "费用报销单",
+      "variant": "challenge",
+      "split": "development",
+      "origin": "synthetic",
+      "source": "cases.json",
+      "source_case_id": "receipt-02",
+      "image": "images/receipt/receipt-02-challenge.jpg",
+      "ground_truth": "ground_truth/receipt/receipt-02.txt",
+      "annotation": "annotations/receipt/receipt-02.json",
+      "width": 1200,
+      "height": 1160,
+      "format": "JPEG",
+      "bytes": 90376,
+      "sha256": "d6c8b32423c9756fd41f1879287a798ae277e4dccf5cf3103987fa06e9844f87",
+      "ground_truth_sha256": "87943c3ef4440f216071279abe62faf9909541eee21f147bd102cf336c47e57d",
+      "recommended_mode": "table",
+      "transforms": [
+        {
+          "operation": "low_contrast",
+          "contrast_factor": 0.55,
+          "brightness_factor": 0.9
+        }
+      ],
+      "encoding": {
+        "jpeg_quality": 88
+      },
+      "fixture": null,
+      "ocr_verified": false
+    },
+    {
+      "id": "receipt-03-standard",
+      "case_id": "receipt-03",
+      "category": "receipt",
+      "category_label": "票据单据",
+      "title": "采购订单",
+      "variant": "standard",
+      "split": "development",
+      "origin": "synthetic",
+      "source": "cases.json",
+      "source_case_id": "receipt-03",
+      "image": "images/receipt/receipt-03-standard.png",
+      "ground_truth": "ground_truth/receipt/receipt-03.txt",
+      "annotation": "annotations/receipt/receipt-03.json",
+      "width": 1200,
+      "height": 1160,
+      "format": "PNG",
+      "bytes": 73682,
+      "sha256": "fb659cb293f6b3db9101f98c0a4c1523d722235093ad3b2347c1d56de11c6e45",
+      "ground_truth_sha256": "8eaf8e53a96c8c547a073d07e0a80b83224c4cd7e09ea207833cd9f047a1963b",
+      "recommended_mode": "table",
+      "transforms": [],
+      "encoding": {},
+      "fixture": null,
+      "ocr_verified": false
+    },
+    {
+      "id": "receipt-03-challenge",
+      "case_id": "receipt-03",
+      "category": "receipt",
+      "category_label": "票据单据",
+      "title": "采购订单",
+      "variant": "challenge",
+      "split": "development",
+      "origin": "synthetic",
+      "source": "cases.json",
+      "source_case_id": "receipt-03",
+      "image": "images/receipt/receipt-03-challenge.jpg",
+      "ground_truth": "ground_truth/receipt/receipt-03.txt",
+      "annotation": "annotations/receipt/receipt-03.json",
+      "width": 1200,
+      "height": 1160,
+      "format": "JPEG",
+      "bytes": 89308,
+      "sha256": "e662ce5dbdcf6d5560886b54315c63f0b66994868d24d09c2aa23cfa73b6dcca",
+      "ground_truth_sha256": "8eaf8e53a96c8c547a073d07e0a80b83224c4cd7e09ea207833cd9f047a1963b",
+      "recommended_mode": "table",
+      "transforms": [
+        {
+          "operation": "gaussian_blur",
+          "radius": 0.9
+        }
+      ],
+      "encoding": {
+        "jpeg_quality": 88
+      },
+      "fixture": null,
+      "ocr_verified": false
+    },
+    {
+      "id": "receipt-04-standard",
+      "case_id": "receipt-04",
+      "category": "receipt",
+      "category_label": "票据单据",
+      "title": "送货清单",
+      "variant": "standard",
+      "split": "development",
+      "origin": "synthetic",
+      "source": "cases.json",
+      "source_case_id": "receipt-04",
+      "image": "images/receipt/receipt-04-standard.png",
+      "ground_truth": "ground_truth/receipt/receipt-04.txt",
+      "annotation": "annotations/receipt/receipt-04.json",
+      "width": 1200,
+      "height": 1160,
+      "format": "PNG",
+      "bytes": 78552,
+      "sha256": "78fe79a45e8d6b375030266435c757aee40ec8aaf7f266680b57a9fbe5a942cc",
+      "ground_truth_sha256": "33f43df24225e9bd3e7a86f48e3590001120c7df4ae1b8714227b5d945de4abf",
+      "recommended_mode": "table",
+      "transforms": [],
+      "encoding": {},
+      "fixture": null,
+      "ocr_verified": false
+    },
+    {
+      "id": "receipt-04-challenge",
+      "case_id": "receipt-04",
+      "category": "receipt",
+      "category_label": "票据单据",
+      "title": "送货清单",
+      "variant": "challenge",
+      "split": "development",
+      "origin": "synthetic",
+      "source": "cases.json",
+      "source_case_id": "receipt-04",
+      "image": "images/receipt/receipt-04-challenge.jpg",
+      "ground_truth": "ground_truth/receipt/receipt-04.txt",
+      "annotation": "annotations/receipt/receipt-04.json",
+      "width": 720,
+      "height": 696,
+      "format": "JPEG",
+      "bytes": 48135,
+      "sha256": "1eb9047ddedad132414a526d51341ddd0dada136ca55bb9cfab85b82bcbfeeb5",
+      "ground_truth_sha256": "33f43df24225e9bd3e7a86f48e3590001120c7df4ae1b8714227b5d945de4abf",
+      "recommended_mode": "table",
+      "transforms": [
+        {
+          "operation": "downscale",
+          "factor": 0.6
+        }
+      ],
+      "encoding": {
+        "jpeg_quality": 88
+      },
+      "fixture": null,
+      "ocr_verified": false
+    },
+    {
+      "id": "receipt-05-standard",
+      "case_id": "receipt-05",
+      "category": "receipt",
+      "category_label": "票据单据",
+      "title": "服务结算单",
+      "variant": "standard",
+      "split": "test",
+      "origin": "synthetic",
+      "source": "cases.json",
+      "source_case_id": "receipt-05",
+      "image": "images/receipt/receipt-05-standard.png",
+      "ground_truth": "ground_truth/receipt/receipt-05.txt",
+      "annotation": "annotations/receipt/receipt-05.json",
+      "width": 1200,
+      "height": 1160,
+      "format": "PNG",
+      "bytes": 79502,
+      "sha256": "47dd00185a66b87e0324af01a6487094eeec3ac461e4b50a7b4f5d29b4c89b54",
+      "ground_truth_sha256": "32a4e235eb8eb8b15fe6080df59075f483aaa4017f9387aeea6c663a04dd32c6",
+      "recommended_mode": "table",
+      "transforms": [],
+      "encoding": {},
+      "fixture": null,
+      "ocr_verified": false
+    },
+    {
+      "id": "receipt-05-challenge",
+      "case_id": "receipt-05",
+      "category": "receipt",
+      "category_label": "票据单据",
+      "title": "服务结算单",
+      "variant": "challenge",
+      "split": "test",
+      "origin": "synthetic",
+      "source": "cases.json",
+      "source_case_id": "receipt-05",
+      "image": "images/receipt/receipt-05-challenge.jpg",
+      "ground_truth": "ground_truth/receipt/receipt-05.txt",
+      "annotation": "annotations/receipt/receipt-05.json",
+      "width": 1200,
+      "height": 1160,
+      "format": "JPEG",
+      "bytes": 115354,
+      "sha256": "eb460dfc2d79dcc1ec58c83d647a6dce12123d87b8173a98bf948d710295ac83",
+      "ground_truth_sha256": "32a4e235eb8eb8b15fe6080df59075f483aaa4017f9387aeea6c663a04dd32c6",
+      "recommended_mode": "table",
+      "transforms": [
+        {
+          "operation": "jpeg_noise",
+          "noise_range": [
+            225,
+            255
+          ],
+          "seed": 3538936485,
+          "jpeg_quality": 42
+        }
+      ],
+      "encoding": {
+        "jpeg_quality": 42
+      },
+      "fixture": null,
+      "ocr_verified": false
+    },
+    {
+      "id": "exam-01-standard",
+      "case_id": "exam-01",
+      "category": "exam",
+      "category_label": "试卷图片",
+      "title": "数学基础练习",
+      "variant": "standard",
+      "split": "development",
+      "origin": "synthetic",
+      "source": "cases.json",
+      "source_case_id": "exam-01",
+      "image": "images/exam/exam-01-standard.png",
+      "ground_truth": "ground_truth/exam/exam-01.txt",
+      "annotation": "annotations/exam/exam-01.json",
+      "width": 1200,
+      "height": 1600,
+      "format": "PNG",
+      "bytes": 82060,
+      "sha256": "99d953e67ff20ffdebcb3eefc1765d0432880d0dc4079034983b5eb0e9b90c62",
+      "ground_truth_sha256": "d410a44e42cf7c57b2b9761f94139ed745c19d6ce33eab69741fc663e623cf03",
+      "recommended_mode": "deep",
+      "transforms": [],
+      "encoding": {},
+      "fixture": null,
+      "ocr_verified": false
+    },
+    {
+      "id": "exam-01-challenge",
+      "case_id": "exam-01",
+      "category": "exam",
+      "category_label": "试卷图片",
+      "title": "数学基础练习",
+      "variant": "challenge",
+      "split": "development",
+      "origin": "synthetic",
+      "source": "cases.json",
+      "source_case_id": "exam-01",
+      "image": "images/exam/exam-01-challenge.jpg",
+      "ground_truth": "ground_truth/exam/exam-01.txt",
+      "annotation": "annotations/exam/exam-01.json",
+      "width": 1270,
+      "height": 1652,
+      "format": "JPEG",
+      "bytes": 121396,
+      "sha256": "ce7051b846c569b2980008c1972989d0a0683327145a4e9945ce52a924a4da07",
+      "ground_truth_sha256": "d410a44e42cf7c57b2b9761f94139ed745c19d6ce33eab69741fc663e623cf03",
+      "recommended_mode": "deep",
+      "transforms": [
+        {
+          "operation": "rotation",
+          "degrees": 2.5,
+          "expand": true
+        }
+      ],
+      "encoding": {
+        "jpeg_quality": 88
+      },
+      "fixture": null,
+      "ocr_verified": false
+    },
+    {
+      "id": "exam-02-standard",
+      "case_id": "exam-02",
+      "category": "exam",
+      "category_label": "试卷图片",
+      "title": "语文阅读练习",
+      "variant": "standard",
+      "split": "development",
+      "origin": "synthetic",
+      "source": "cases.json",
+      "source_case_id": "exam-02",
+      "image": "images/exam/exam-02-standard.png",
+      "ground_truth": "ground_truth/exam/exam-02.txt",
+      "annotation": "annotations/exam/exam-02.json",
+      "width": 1200,
+      "height": 1600,
+      "format": "PNG",
+      "bytes": 95664,
+      "sha256": "03cbc693ce20b0bffbeb8beedda7c7f4f514fdf9f43aabbe830b0593900487a1",
+      "ground_truth_sha256": "a60f45af695eea30ea621ab67c822e59f92669245b5cece08a26d64e890f7241",
+      "recommended_mode": "deep",
+      "transforms": [],
+      "encoding": {},
+      "fixture": null,
+      "ocr_verified": false
+    },
+    {
+      "id": "exam-02-challenge",
+      "case_id": "exam-02",
+      "category": "exam",
+      "category_label": "试卷图片",
+      "title": "语文阅读练习",
+      "variant": "challenge",
+      "split": "development",
+      "origin": "synthetic",
+      "source": "cases.json",
+      "source_case_id": "exam-02",
+      "image": "images/exam/exam-02-challenge.jpg",
+      "ground_truth": "ground_truth/exam/exam-02.txt",
+      "annotation": "annotations/exam/exam-02.json",
+      "width": 1200,
+      "height": 1600,
+      "format": "JPEG",
+      "bytes": 103347,
+      "sha256": "a7337c089e3c43597b79efd5ed8957945bd4b0595728f0349146e648804fb9a8",
+      "ground_truth_sha256": "a60f45af695eea30ea621ab67c822e59f92669245b5cece08a26d64e890f7241",
+      "recommended_mode": "deep",
+      "transforms": [
+        {
+          "operation": "low_contrast",
+          "contrast_factor": 0.55,
+          "brightness_factor": 0.9
+        }
+      ],
+      "encoding": {
+        "jpeg_quality": 88
+      },
+      "fixture": null,
+      "ocr_verified": false
+    },
+    {
+      "id": "exam-03-standard",
+      "case_id": "exam-03",
+      "category": "exam",
+      "category_label": "试卷图片",
+      "title": "英语基础练习",
+      "variant": "standard",
+      "split": "development",
+      "origin": "synthetic",
+      "source": "cases.json",
+      "source_case_id": "exam-03",
+      "image": "images/exam/exam-03-standard.png",
+      "ground_truth": "ground_truth/exam/exam-03.txt",
+      "annotation": "annotations/exam/exam-03.json",
+      "width": 1200,
+      "height": 1600,
+      "format": "PNG",
+      "bytes": 64988,
+      "sha256": "bf91b7c73b45f298007f0f1c465dd5e6cfce62aa1eeef625d07c9186481bc1c4",
+      "ground_truth_sha256": "7b062601247f408aeca2f64b757c75ecd07c441f5bbc9c39784bccc2bf4f7abf",
+      "recommended_mode": "deep",
+      "transforms": [],
+      "encoding": {},
+      "fixture": null,
+      "ocr_verified": false
+    },
+    {
+      "id": "exam-03-challenge",
+      "case_id": "exam-03",
+      "category": "exam",
+      "category_label": "试卷图片",
+      "title": "英语基础练习",
+      "variant": "challenge",
+      "split": "development",
+      "origin": "synthetic",
+      "source": "cases.json",
+      "source_case_id": "exam-03",
+      "image": "images/exam/exam-03-challenge.jpg",
+      "ground_truth": "ground_truth/exam/exam-03.txt",
+      "annotation": "annotations/exam/exam-03.json",
+      "width": 1200,
+      "height": 1600,
+      "format": "JPEG",
+      "bytes": 95995,
+      "sha256": "04a815d173d28389da4953295f793e9e80c8d5092d5b4417b7e6310cbe778922",
+      "ground_truth_sha256": "7b062601247f408aeca2f64b757c75ecd07c441f5bbc9c39784bccc2bf4f7abf",
+      "recommended_mode": "deep",
+      "transforms": [
+        {
+          "operation": "gaussian_blur",
+          "radius": 0.9
+        }
+      ],
+      "encoding": {
+        "jpeg_quality": 88
+      },
+      "fixture": null,
+      "ocr_verified": false
+    },
+    {
+      "id": "exam-04-standard",
+      "case_id": "exam-04",
+      "category": "exam",
+      "category_label": "试卷图片",
+      "title": "计算机基础测验",
+      "variant": "standard",
+      "split": "development",
+      "origin": "synthetic",
+      "source": "cases.json",
+      "source_case_id": "exam-04",
+      "image": "images/exam/exam-04-standard.png",
+      "ground_truth": "ground_truth/exam/exam-04.txt",
+      "annotation": "annotations/exam/exam-04.json",
+      "width": 1200,
+      "height": 1600,
+      "format": "PNG",
+      "bytes": 98787,
+      "sha256": "c1de56510677d5a34dbd6234d4390fcc0451bc2d6c21d2c0529f90a18d1eff89",
+      "ground_truth_sha256": "c485c3f22c3d13cdda61e6666e26226ddc09e29b236547c09e0648debb319348",
+      "recommended_mode": "deep",
+      "transforms": [],
+      "encoding": {},
+      "fixture": null,
+      "ocr_verified": false
+    },
+    {
+      "id": "exam-04-challenge",
+      "case_id": "exam-04",
+      "category": "exam",
+      "category_label": "试卷图片",
+      "title": "计算机基础测验",
+      "variant": "challenge",
+      "split": "development",
+      "origin": "synthetic",
+      "source": "cases.json",
+      "source_case_id": "exam-04",
+      "image": "images/exam/exam-04-challenge.jpg",
+      "ground_truth": "ground_truth/exam/exam-04.txt",
+      "annotation": "annotations/exam/exam-04.json",
+      "width": 720,
+      "height": 960,
+      "format": "JPEG",
+      "bytes": 50872,
+      "sha256": "93f09f4d970f11697c6cf82c27c01f4d94867cd87cd3de21901745d1ba4a988d",
+      "ground_truth_sha256": "c485c3f22c3d13cdda61e6666e26226ddc09e29b236547c09e0648debb319348",
+      "recommended_mode": "deep",
+      "transforms": [
+        {
+          "operation": "downscale",
+          "factor": 0.6
+        }
+      ],
+      "encoding": {
+        "jpeg_quality": 88
+      },
+      "fixture": null,
+      "ocr_verified": false
+    },
+    {
+      "id": "exam-05-standard",
+      "case_id": "exam-05",
+      "category": "exam",
+      "category_label": "试卷图片",
+      "title": "科学常识练习",
+      "variant": "standard",
+      "split": "test",
+      "origin": "synthetic",
+      "source": "cases.json",
+      "source_case_id": "exam-05",
+      "image": "images/exam/exam-05-standard.png",
+      "ground_truth": "ground_truth/exam/exam-05.txt",
+      "annotation": "annotations/exam/exam-05.json",
+      "width": 1200,
+      "height": 1600,
+      "format": "PNG",
+      "bytes": 96791,
+      "sha256": "a50f1917d0cc66c3ace0f8a5a6ef9bc6c9b007492088d81114a397db66b97c41",
+      "ground_truth_sha256": "9ddcb6a64d327874e1ea074f8b0a5cd68b78c4ac890c0f99b0679bead5291e5a",
+      "recommended_mode": "deep",
+      "transforms": [],
+      "encoding": {},
+      "fixture": null,
+      "ocr_verified": false
+    },
+    {
+      "id": "exam-05-challenge",
+      "case_id": "exam-05",
+      "category": "exam",
+      "category_label": "试卷图片",
+      "title": "科学常识练习",
+      "variant": "challenge",
+      "split": "test",
+      "origin": "synthetic",
+      "source": "cases.json",
+      "source_case_id": "exam-05",
+      "image": "images/exam/exam-05-challenge.jpg",
+      "ground_truth": "ground_truth/exam/exam-05.txt",
+      "annotation": "annotations/exam/exam-05.json",
+      "width": 1200,
+      "height": 1600,
+      "format": "JPEG",
+      "bytes": 143572,
+      "sha256": "208a0f8540213ddfd62c96115d2d40ed2d971c5eaaff611a7d1ef37e886f5a27",
+      "ground_truth_sha256": "9ddcb6a64d327874e1ea074f8b0a5cd68b78c4ac890c0f99b0679bead5291e5a",
+      "recommended_mode": "deep",
+      "transforms": [
+        {
+          "operation": "jpeg_noise",
+          "noise_range": [
+            225,
+            255
+          ],
+          "seed": 3794818442,
+          "jpeg_quality": 42
+        }
+      ],
+      "encoding": {
+        "jpeg_quality": 42
+      },
+      "fixture": null,
+      "ocr_verified": false
+    },
+    {
+      "id": "poster-01-standard",
+      "case_id": "poster-01",
+      "category": "poster",
+      "category_label": "宣传海报",
+      "title": "校园科技开放日",
+      "variant": "standard",
+      "split": "development",
+      "origin": "synthetic",
+      "source": "cases.json",
+      "source_case_id": "poster-01",
+      "image": "images/poster/poster-01-standard.png",
+      "ground_truth": "ground_truth/poster/poster-01.txt",
+      "annotation": "annotations/poster/poster-01.json",
+      "width": 1000,
+      "height": 1400,
+      "format": "PNG",
+      "bytes": 82547,
+      "sha256": "770d1ab9b933ea7a773a739b19582c24bf3e2af0615209788f9c3ec7a55b84d2",
+      "ground_truth_sha256": "fa0103c3a3265bfc25475b7209c25d0dfed3ed001982746f40af92c29aa93d36",
+      "recommended_mode": "general",
+      "transforms": [],
+      "encoding": {},
+      "fixture": null,
+      "ocr_verified": false
+    },
+    {
+      "id": "poster-01-challenge",
+      "case_id": "poster-01",
+      "category": "poster",
+      "category_label": "宣传海报",
+      "title": "校园科技开放日",
+      "variant": "challenge",
+      "split": "development",
+      "origin": "synthetic",
+      "source": "cases.json",
+      "source_case_id": "poster-01",
+      "image": "images/poster/poster-01-challenge.jpg",
+      "ground_truth": "ground_truth/poster/poster-01.txt",
+      "annotation": "annotations/poster/poster-01.json",
+      "width": 1062,
+      "height": 1444,
+      "format": "JPEG",
+      "bytes": 112859,
+      "sha256": "9f6c84bec74bb3d57d739ba1d70215e30171b85c9416416780fa55354bab9ea4",
+      "ground_truth_sha256": "fa0103c3a3265bfc25475b7209c25d0dfed3ed001982746f40af92c29aa93d36",
+      "recommended_mode": "general",
+      "transforms": [
+        {
+          "operation": "rotation",
+          "degrees": 2.5,
+          "expand": true
+        }
+      ],
+      "encoding": {
+        "jpeg_quality": 88
+      },
+      "fixture": null,
+      "ocr_verified": false
+    },
+    {
+      "id": "poster-02-standard",
+      "case_id": "poster-02",
+      "category": "poster",
+      "category_label": "宣传海报",
+      "title": "数字阅读分享会",
+      "variant": "standard",
+      "split": "development",
+      "origin": "synthetic",
+      "source": "cases.json",
+      "source_case_id": "poster-02",
+      "image": "images/poster/poster-02-standard.png",
+      "ground_truth": "ground_truth/poster/poster-02.txt",
+      "annotation": "annotations/poster/poster-02.json",
+      "width": 1000,
+      "height": 1400,
+      "format": "PNG",
+      "bytes": 78442,
+      "sha256": "bde3b990c30a44a46bb957714d865f3381fa163c625c6653c28ba4fec8d0239d",
+      "ground_truth_sha256": "fc838ae0fcb47f448f609a8ecf9fd470af69d1f603787d9436abdf230fd3cd71",
+      "recommended_mode": "general",
+      "transforms": [],
+      "encoding": {},
+      "fixture": null,
+      "ocr_verified": false
+    },
+    {
+      "id": "poster-02-challenge",
+      "case_id": "poster-02",
+      "category": "poster",
+      "category_label": "宣传海报",
+      "title": "数字阅读分享会",
+      "variant": "challenge",
+      "split": "development",
+      "origin": "synthetic",
+      "source": "cases.json",
+      "source_case_id": "poster-02",
+      "image": "images/poster/poster-02-challenge.jpg",
+      "ground_truth": "ground_truth/poster/poster-02.txt",
+      "annotation": "annotations/poster/poster-02.json",
+      "width": 1000,
+      "height": 1400,
+      "format": "JPEG",
+      "bytes": 83786,
+      "sha256": "29e9f98daf67b05c366ac3f79f883f17d84eaf023702040aecdbd661b9f0fc34",
+      "ground_truth_sha256": "fc838ae0fcb47f448f609a8ecf9fd470af69d1f603787d9436abdf230fd3cd71",
+      "recommended_mode": "general",
+      "transforms": [
+        {
+          "operation": "low_contrast",
+          "contrast_factor": 0.55,
+          "brightness_factor": 0.9
+        }
+      ],
+      "encoding": {
+        "jpeg_quality": 88
+      },
+      "fixture": null,
+      "ocr_verified": false
+    },
+    {
+      "id": "poster-03-standard",
+      "case_id": "poster-03",
+      "category": "poster",
+      "category_label": "宣传海报",
+      "title": "文档整理工作坊",
+      "variant": "standard",
+      "split": "development",
+      "origin": "synthetic",
+      "source": "cases.json",
+      "source_case_id": "poster-03",
+      "image": "images/poster/poster-03-standard.png",
+      "ground_truth": "ground_truth/poster/poster-03.txt",
+      "annotation": "annotations/poster/poster-03.json",
+      "width": 1000,
+      "height": 1400,
+      "format": "PNG",
+      "bytes": 74793,
+      "sha256": "f8aa016e20d1ac0e34d965d13e9ebf8359a7135cdada4e6c51fb899770f7633c",
+      "ground_truth_sha256": "202ef8a355a1ca33cf53bc2a7da727876c3caf69517e93f7bd3738b5415ec7ae",
+      "recommended_mode": "general",
+      "transforms": [],
+      "encoding": {},
+      "fixture": null,
+      "ocr_verified": false
+    },
+    {
+      "id": "poster-03-challenge",
+      "case_id": "poster-03",
+      "category": "poster",
+      "category_label": "宣传海报",
+      "title": "文档整理工作坊",
+      "variant": "challenge",
+      "split": "development",
+      "origin": "synthetic",
+      "source": "cases.json",
+      "source_case_id": "poster-03",
+      "image": "images/poster/poster-03-challenge.jpg",
+      "ground_truth": "ground_truth/poster/poster-03.txt",
+      "annotation": "annotations/poster/poster-03.json",
+      "width": 1000,
+      "height": 1400,
+      "format": "JPEG",
+      "bytes": 83263,
+      "sha256": "5dbb6131050d108914043c7bd76268481d2320f8f739a531adee821a84744ae4",
+      "ground_truth_sha256": "202ef8a355a1ca33cf53bc2a7da727876c3caf69517e93f7bd3738b5415ec7ae",
+      "recommended_mode": "general",
+      "transforms": [
+        {
+          "operation": "gaussian_blur",
+          "radius": 0.9
+        }
+      ],
+      "encoding": {
+        "jpeg_quality": 88
+      },
+      "fixture": null,
+      "ocr_verified": false
+    },
+    {
+      "id": "poster-04-standard",
+      "case_id": "poster-04",
+      "category": "poster",
+      "category_label": "宣传海报",
+      "title": "软件测试交流会",
+      "variant": "standard",
+      "split": "development",
+      "origin": "synthetic",
+      "source": "cases.json",
+      "source_case_id": "poster-04",
+      "image": "images/poster/poster-04-standard.png",
+      "ground_truth": "ground_truth/poster/poster-04.txt",
+      "annotation": "annotations/poster/poster-04.json",
+      "width": 1000,
+      "height": 1400,
+      "format": "PNG",
+      "bytes": 80927,
+      "sha256": "b1b39b635102b64911123da0f9852cb7057414e0356e98a928c377f1cd6fe4c7",
+      "ground_truth_sha256": "7f567ab0e4e92bf346ce12c02c3c6b731b61323f75bd79a50172b2ef1864cb3b",
+      "recommended_mode": "general",
+      "transforms": [],
+      "encoding": {},
+      "fixture": null,
+      "ocr_verified": false
+    },
+    {
+      "id": "poster-04-challenge",
+      "case_id": "poster-04",
+      "category": "poster",
+      "category_label": "宣传海报",
+      "title": "软件测试交流会",
+      "variant": "challenge",
+      "split": "development",
+      "origin": "synthetic",
+      "source": "cases.json",
+      "source_case_id": "poster-04",
+      "image": "images/poster/poster-04-challenge.jpg",
+      "ground_truth": "ground_truth/poster/poster-04.txt",
+      "annotation": "annotations/poster/poster-04.json",
+      "width": 600,
+      "height": 840,
+      "format": "JPEG",
+      "bytes": 43794,
+      "sha256": "027f5fd0cefb53696315b54176d4032b1639e19f732c2900030bf48600ec6fc9",
+      "ground_truth_sha256": "7f567ab0e4e92bf346ce12c02c3c6b731b61323f75bd79a50172b2ef1864cb3b",
+      "recommended_mode": "general",
+      "transforms": [
+        {
+          "operation": "downscale",
+          "factor": 0.6
+        }
+      ],
+      "encoding": {
+        "jpeg_quality": 88
+      },
+      "fixture": null,
+      "ocr_verified": false
+    },
+    {
+      "id": "poster-05-standard",
+      "case_id": "poster-05",
+      "category": "poster",
+      "category_label": "宣传海报",
+      "title": "实习成果展示日",
+      "variant": "standard",
+      "split": "test",
+      "origin": "synthetic",
+      "source": "cases.json",
+      "source_case_id": "poster-05",
+      "image": "images/poster/poster-05-standard.png",
+      "ground_truth": "ground_truth/poster/poster-05.txt",
+      "annotation": "annotations/poster/poster-05.json",
+      "width": 1000,
+      "height": 1400,
+      "format": "PNG",
+      "bytes": 72552,
+      "sha256": "22e4ecf566e1373069287c1f890f7f5501b196553856143b176355cdee07dcb1",
+      "ground_truth_sha256": "cfdd09c5ccf70086432ce14f051dc2ef235d269d4985f85031d54ff58bb0f782",
+      "recommended_mode": "general",
+      "transforms": [],
+      "encoding": {},
+      "fixture": null,
+      "ocr_verified": false
+    },
+    {
+      "id": "poster-05-challenge",
+      "case_id": "poster-05",
+      "category": "poster",
+      "category_label": "宣传海报",
+      "title": "实习成果展示日",
+      "variant": "challenge",
+      "split": "test",
+      "origin": "synthetic",
+      "source": "cases.json",
+      "source_case_id": "poster-05",
+      "image": "images/poster/poster-05-challenge.jpg",
+      "ground_truth": "ground_truth/poster/poster-05.txt",
+      "annotation": "annotations/poster/poster-05.json",
+      "width": 1000,
+      "height": 1400,
+      "format": "JPEG",
+      "bytes": 108143,
+      "sha256": "9133621d9acf51ae8d17bbf533f8c3b405216883ae905c35dc39dedd94f0f07b",
+      "ground_truth_sha256": "cfdd09c5ccf70086432ce14f051dc2ef235d269d4985f85031d54ff58bb0f782",
+      "recommended_mode": "general",
+      "transforms": [
+        {
+          "operation": "jpeg_noise",
+          "noise_range": [
+            225,
+            255
+          ],
+          "seed": 4277339946,
+          "jpeg_quality": 42
+        }
+      ],
+      "encoding": {
+        "jpeg_quality": 42
+      },
+      "fixture": null,
+      "ocr_verified": false
+    },
+    {
+      "id": "scan-01-standard",
+      "case_id": "scan-01",
+      "category": "scan",
+      "category_label": "扫描件",
+      "title": "项目资料归档办法",
+      "variant": "standard",
+      "split": "development",
+      "origin": "synthetic",
+      "source": "cases.json",
+      "source_case_id": "scan-01",
+      "image": "images/scan/scan-01-standard.png",
+      "ground_truth": "ground_truth/scan/scan-01.txt",
+      "annotation": "annotations/scan/scan-01.json",
+      "width": 1200,
+      "height": 1600,
+      "format": "PNG",
+      "bytes": 130015,
+      "sha256": "00b91beec0df55177e86f59b152db45ca7c86bb7192dd21e7a4bd7c97c00775d",
+      "ground_truth_sha256": "ee0888edcfe38eabb1e2a68045d2a350b09522b9f351082d5f7201f9a46a0853",
+      "recommended_mode": "general",
+      "transforms": [
+        {
+          "operation": "simulated_grayscale_scan"
+        }
+      ],
+      "encoding": {},
+      "fixture": null,
+      "ocr_verified": false
+    },
+    {
+      "id": "scan-01-challenge",
+      "case_id": "scan-01",
+      "category": "scan",
+      "category_label": "扫描件",
+      "title": "项目资料归档办法",
+      "variant": "challenge",
+      "split": "development",
+      "origin": "synthetic",
+      "source": "cases.json",
+      "source_case_id": "scan-01",
+      "image": "images/scan/scan-01-challenge.jpg",
+      "ground_truth": "ground_truth/scan/scan-01.txt",
+      "annotation": "annotations/scan/scan-01.json",
+      "width": 1270,
+      "height": 1652,
+      "format": "JPEG",
+      "bytes": 154762,
+      "sha256": "e02eeefaf214a7db04ce0edfad412436d4f001eab5c70c544b9cc1ee32c6796c",
+      "ground_truth_sha256": "ee0888edcfe38eabb1e2a68045d2a350b09522b9f351082d5f7201f9a46a0853",
+      "recommended_mode": "general",
+      "transforms": [
+        {
+          "operation": "simulated_grayscale_scan"
+        },
+        {
+          "operation": "rotation",
+          "degrees": 2.5,
+          "expand": true
+        }
+      ],
+      "encoding": {
+        "jpeg_quality": 88
+      },
+      "fixture": null,
+      "ocr_verified": false
+    },
+    {
+      "id": "scan-02-standard",
+      "case_id": "scan-02",
+      "category": "scan",
+      "category_label": "扫描件",
+      "title": "软件测试记录规范",
+      "variant": "standard",
+      "split": "development",
+      "origin": "synthetic",
+      "source": "cases.json",
+      "source_case_id": "scan-02",
+      "image": "images/scan/scan-02-standard.png",
+      "ground_truth": "ground_truth/scan/scan-02.txt",
+      "annotation": "annotations/scan/scan-02.json",
+      "width": 1200,
+      "height": 1600,
+      "format": "PNG",
+      "bytes": 132856,
+      "sha256": "220e3fd44b0098eac4df6a0ca0093ca63097575d33e1da511f7746574dfe554d",
+      "ground_truth_sha256": "6e1f3f9e4eee15dcc7cbe59634d00a5a79c107bb45af4a8ef7135e47d64d8fc3",
+      "recommended_mode": "general",
+      "transforms": [
+        {
+          "operation": "simulated_grayscale_scan"
+        }
+      ],
+      "encoding": {},
+      "fixture": null,
+      "ocr_verified": false
+    },
+    {
+      "id": "scan-02-challenge",
+      "case_id": "scan-02",
+      "category": "scan",
+      "category_label": "扫描件",
+      "title": "软件测试记录规范",
+      "variant": "challenge",
+      "split": "development",
+      "origin": "synthetic",
+      "source": "cases.json",
+      "source_case_id": "scan-02",
+      "image": "images/scan/scan-02-challenge.jpg",
+      "ground_truth": "ground_truth/scan/scan-02.txt",
+      "annotation": "annotations/scan/scan-02.json",
+      "width": 1200,
+      "height": 1600,
+      "format": "JPEG",
+      "bytes": 124850,
+      "sha256": "ed390f5dd849791657d48f8523971349d01272a443e4a2509443e048318db85b",
+      "ground_truth_sha256": "6e1f3f9e4eee15dcc7cbe59634d00a5a79c107bb45af4a8ef7135e47d64d8fc3",
+      "recommended_mode": "general",
+      "transforms": [
+        {
+          "operation": "simulated_grayscale_scan"
+        },
+        {
+          "operation": "low_contrast",
+          "contrast_factor": 0.55,
+          "brightness_factor": 0.9
+        }
+      ],
+      "encoding": {
+        "jpeg_quality": 88
+      },
+      "fixture": null,
+      "ocr_verified": false
+    },
+    {
+      "id": "scan-03-standard",
+      "case_id": "scan-03",
+      "category": "scan",
+      "category_label": "扫描件",
+      "title": "文档数字化操作规程",
+      "variant": "standard",
+      "split": "development",
+      "origin": "synthetic",
+      "source": "cases.json",
+      "source_case_id": "scan-03",
+      "image": "images/scan/scan-03-standard.png",
+      "ground_truth": "ground_truth/scan/scan-03.txt",
+      "annotation": "annotations/scan/scan-03.json",
+      "width": 1200,
+      "height": 1600,
+      "format": "PNG",
+      "bytes": 128977,
+      "sha256": "eeee0f7401a244ab3910a3f9bd5fa4ac2a5ff807b307f29def9ac190e69f1ffa",
+      "ground_truth_sha256": "05e57dc4e0051abdccfd1ebc90c3e316ec8d3b637dcc27ba0daaa4b69acc644a",
+      "recommended_mode": "general",
+      "transforms": [
+        {
+          "operation": "simulated_grayscale_scan"
+        }
+      ],
+      "encoding": {},
+      "fixture": null,
+      "ocr_verified": false
+    },
+    {
+      "id": "scan-03-challenge",
+      "case_id": "scan-03",
+      "category": "scan",
+      "category_label": "扫描件",
+      "title": "文档数字化操作规程",
+      "variant": "challenge",
+      "split": "development",
+      "origin": "synthetic",
+      "source": "cases.json",
+      "source_case_id": "scan-03",
+      "image": "images/scan/scan-03-challenge.jpg",
+      "ground_truth": "ground_truth/scan/scan-03.txt",
+      "annotation": "annotations/scan/scan-03.json",
+      "width": 1200,
+      "height": 1600,
+      "format": "JPEG",
+      "bytes": 113103,
+      "sha256": "37a476394aec8b2dd3526cf4bf71d9798d8cf2656e5e4575a66e8b487b15f8b7",
+      "ground_truth_sha256": "05e57dc4e0051abdccfd1ebc90c3e316ec8d3b637dcc27ba0daaa4b69acc644a",
+      "recommended_mode": "general",
+      "transforms": [
+        {
+          "operation": "simulated_grayscale_scan"
+        },
+        {
+          "operation": "gaussian_blur",
+          "radius": 0.9
+        }
+      ],
+      "encoding": {
+        "jpeg_quality": 88
+      },
+      "fixture": null,
+      "ocr_verified": false
+    },
+    {
+      "id": "scan-04-standard",
+      "case_id": "scan-04",
+      "category": "scan",
+      "category_label": "扫描件",
+      "title": "线上实习工作安排",
+      "variant": "standard",
+      "split": "development",
+      "origin": "synthetic",
+      "source": "cases.json",
+      "source_case_id": "scan-04",
+      "image": "images/scan/scan-04-standard.png",
+      "ground_truth": "ground_truth/scan/scan-04.txt",
+      "annotation": "annotations/scan/scan-04.json",
+      "width": 1200,
+      "height": 1600,
+      "format": "PNG",
+      "bytes": 134899,
+      "sha256": "226ad658d90066379e55a87430673b07d507ff3d244aad2d63ef6f37f5ef7d7d",
+      "ground_truth_sha256": "e2bb15b80b51683c234efadd6e0eaf1c30ac6e638b9e2b6afaf6f2a88aca0590",
+      "recommended_mode": "general",
+      "transforms": [
+        {
+          "operation": "simulated_grayscale_scan"
+        }
+      ],
+      "encoding": {},
+      "fixture": null,
+      "ocr_verified": false
+    },
+    {
+      "id": "scan-04-challenge",
+      "case_id": "scan-04",
+      "category": "scan",
+      "category_label": "扫描件",
+      "title": "线上实习工作安排",
+      "variant": "challenge",
+      "split": "development",
+      "origin": "synthetic",
+      "source": "cases.json",
+      "source_case_id": "scan-04",
+      "image": "images/scan/scan-04-challenge.jpg",
+      "ground_truth": "ground_truth/scan/scan-04.txt",
+      "annotation": "annotations/scan/scan-04.json",
+      "width": 720,
+      "height": 960,
+      "format": "JPEG",
+      "bytes": 62957,
+      "sha256": "75f696e93992d4bc6276718595273c18b6f6ac627ac3411fde84d23f61b4261b",
+      "ground_truth_sha256": "e2bb15b80b51683c234efadd6e0eaf1c30ac6e638b9e2b6afaf6f2a88aca0590",
+      "recommended_mode": "general",
+      "transforms": [
+        {
+          "operation": "simulated_grayscale_scan"
+        },
+        {
+          "operation": "downscale",
+          "factor": 0.6
+        }
+      ],
+      "encoding": {
+        "jpeg_quality": 88
+      },
+      "fixture": null,
+      "ocr_verified": false
+    },
+    {
+      "id": "scan-05-standard",
+      "case_id": "scan-05",
+      "category": "scan",
+      "category_label": "扫描件",
+      "title": "样本标注约定",
+      "variant": "standard",
+      "split": "test",
+      "origin": "synthetic",
+      "source": "cases.json",
+      "source_case_id": "scan-05",
+      "image": "images/scan/scan-05-standard.png",
+      "ground_truth": "ground_truth/scan/scan-05.txt",
+      "annotation": "annotations/scan/scan-05.json",
+      "width": 1200,
+      "height": 1600,
+      "format": "PNG",
+      "bytes": 131047,
+      "sha256": "7ead42ae920f968e1d1bf4b9419735b065ec3b4d47b884b025e63f312343434f",
+      "ground_truth_sha256": "fb9898c802ff9ddb431bc6f4856b00f501144c57b783457bec21d05e2d89bf65",
+      "recommended_mode": "general",
+      "transforms": [
+        {
+          "operation": "simulated_grayscale_scan"
+        }
+      ],
+      "encoding": {},
+      "fixture": null,
+      "ocr_verified": false
+    },
+    {
+      "id": "scan-05-challenge",
+      "case_id": "scan-05",
+      "category": "scan",
+      "category_label": "扫描件",
+      "title": "样本标注约定",
+      "variant": "challenge",
+      "split": "test",
+      "origin": "synthetic",
+      "source": "cases.json",
+      "source_case_id": "scan-05",
+      "image": "images/scan/scan-05-challenge.jpg",
+      "ground_truth": "ground_truth/scan/scan-05.txt",
+      "annotation": "annotations/scan/scan-05.json",
+      "width": 1200,
+      "height": 1600,
+      "format": "JPEG",
+      "bytes": 153909,
+      "sha256": "269f8db86be44f47986bf94ac517142afcaf62651da01c97c3dddca72957e563",
+      "ground_truth_sha256": "fb9898c802ff9ddb431bc6f4856b00f501144c57b783457bec21d05e2d89bf65",
+      "recommended_mode": "general",
+      "transforms": [
+        {
+          "operation": "simulated_grayscale_scan"
+        },
+        {
+          "operation": "jpeg_noise",
+          "noise_range": [
+            225,
+            255
+          ],
+          "seed": 557214136,
+          "jpeg_quality": 42
+        }
+      ],
+      "encoding": {
+        "jpeg_quality": 42
+      },
+      "fixture": null,
+      "ocr_verified": false
+    }
+  ]
+}

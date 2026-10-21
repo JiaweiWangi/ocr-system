@@ -1,0 +1,184 @@
+{
+  "schema_version": 1,
+  "case_id": "table-04",
+  "origin": "synthetic",
+  "annotation_method": "renderer_source_text",
+  "reading_order": "top_to_bottom_then_table_row_major",
+  "segments": [
+    {
+      "order": 0,
+      "role": "sample_label",
+      "text": "合成测试样本  table-04"
+    },
+    {
+      "order": 1,
+      "role": "title",
+      "text": "识别模式选择表"
+    },
+    {
+      "order": 2,
+      "role": "table_row",
+      "text": "模式\t适用内容\t处理方式\t检查重点"
+    },
+    {
+      "order": 3,
+      "role": "table_row",
+      "text": "通用标准\t清晰正文\t同步\t文字完整"
+    },
+    {
+      "order": 4,
+      "role": "table_row",
+      "text": "通用高精度\t小字文档\t同步\t易混字符"
+    },
+    {
+      "order": 5,
+      "role": "table_row",
+      "text": "表格\t表格截图\t同步\t行列关系"
+    },
+    {
+      "order": 6,
+      "role": "table_row",
+      "text": "深度\t复杂版面\t异步\t阅读顺序"
+    },
+    {
+      "order": 7,
+      "role": "table_row",
+      "text": "人工复核\t低质量图片\t人工\t遗漏内容"
+    },
+    {
+      "order": 8,
+      "role": "paragraph",
+      "text": "本表为测试用模式说明，不代表识别效果评测结果。"
+    }
+  ],
+  "tables": [
+    {
+      "rows": 6,
+      "columns": 4,
+      "cells": [
+        {
+          "row": 0,
+          "column": 0,
+          "text": "模式"
+        },
+        {
+          "row": 0,
+          "column": 1,
+          "text": "适用内容"
+        },
+        {
+          "row": 0,
+          "column": 2,
+          "text": "处理方式"
+        },
+        {
+          "row": 0,
+          "column": 3,
+          "text": "检查重点"
+        },
+        {
+          "row": 1,
+          "column": 0,
+          "text": "通用标准"
+        },
+        {
+          "row": 1,
+          "column": 1,
+          "text": "清晰正文"
+        },
+        {
+          "row": 1,
+          "column": 2,
+          "text": "同步"
+        },
+        {
+          "row": 1,
+          "column": 3,
+          "text": "文字完整"
+        },
+        {
+          "row": 2,
+          "column": 0,
+          "text": "通用高精度"
+        },
+        {
+          "row": 2,
+          "column": 1,
+          "text": "小字文档"
+        },
+        {
+          "row": 2,
+          "column": 2,
+          "text": "同步"
+        },
+        {
+          "row": 2,
+          "column": 3,
+          "text": "易混字符"
+        },
+        {
+          "row": 3,
+          "column": 0,
+          "text": "表格"
+        },
+        {
+          "row": 3,
+          "column": 1,
+          "text": "表格截图"
+        },
+        {
+          "row": 3,
+          "column": 2,
+          "text": "同步"
+        },
+        {
+          "row": 3,
+          "column": 3,
+          "text": "行列关系"
+        },
+        {
+          "row": 4,
+          "column": 0,
+          "text": "深度"
+        },
+        {
+          "row": 4,
+          "column": 1,
+          "text": "复杂版面"
+        },
+        {
+          "row": 4,
+          "column": 2,
+          "text": "异步"
+        },
+        {
+          "row": 4,
+          "column": 3,
+          "text": "阅读顺序"
+        },
+        {
+          "row": 5,
+          "column": 0,
+          "text": "人工复核"
+        },
+        {
+          "row": 5,
+          "column": 1,
+          "text": "低质量图片"
+        },
+        {
+          "row": 5,
+          "column": 2,
+          "text": "人工"
+        },
+        {
+          "row": 5,
+          "column": 3,
+          "text": "遗漏内容"
+        }
+      ]
+    }
+  ],
+  "coordinates_available": false,
+  "review_status": "generated_not_independently_transcribed"
+}

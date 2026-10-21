@@ -1,0 +1,52 @@
+{
+  "schema_version": 1,
+  "case_id": "scan-01",
+  "origin": "synthetic",
+  "annotation_method": "renderer_source_text",
+  "reading_order": "top_to_bottom_then_table_row_major",
+  "segments": [
+    {
+      "order": 0,
+      "role": "sample_label",
+      "text": "合成测试样本  scan-01"
+    },
+    {
+      "order": 1,
+      "role": "title",
+      "text": "项目资料归档办法"
+    },
+    {
+      "order": 2,
+      "role": "paragraph",
+      "text": "一、归档范围"
+    },
+    {
+      "order": 3,
+      "role": "paragraph",
+      "text": "归档材料包括需求说明、接口文档、测试样本、识别结果和阶段总结。原始图片与处理后图片应分别保存，避免覆盖原始资料。"
+    },
+    {
+      "order": 4,
+      "role": "paragraph",
+      "text": "二、命名规则"
+    },
+    {
+      "order": 5,
+      "role": "paragraph",
+      "text": "文件名采用样本编号与版本标识。每个样本记录来源、类型、采集条件和复核状态，确保资料能够追溯。"
+    },
+    {
+      "order": 6,
+      "role": "paragraph",
+      "text": "三、复核要求"
+    },
+    {
+      "order": 7,
+      "role": "paragraph",
+      "text": "提交前核对文件数量与清单，检查是否存在重复文件、缺失标注或无法打开的图片。"
+    }
+  ],
+  "tables": [],
+  "coordinates_available": false,
+  "review_status": "generated_not_independently_transcribed"
+}

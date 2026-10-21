@@ -1,0 +1,67 @@
+{
+  "schema_version": 1,
+  "case_id": "exam-03",
+  "origin": "synthetic",
+  "annotation_method": "renderer_source_text",
+  "reading_order": "top_to_bottom_then_table_row_major",
+  "segments": [
+    {
+      "order": 0,
+      "role": "sample_label",
+      "text": "合成测试样本  exam-03"
+    },
+    {
+      "order": 1,
+      "role": "title",
+      "text": "英语基础练习"
+    },
+    {
+      "order": 2,
+      "role": "paragraph",
+      "text": "Time: 20 minutes. Total: 40 points."
+    },
+    {
+      "order": 3,
+      "role": "paragraph",
+      "text": "Part A: Choose the correct answer."
+    },
+    {
+      "order": 4,
+      "role": "paragraph",
+      "text": "1. Please save the original image."
+    },
+    {
+      "order": 5,
+      "role": "paragraph",
+      "text": "A. 保存原图  B. 删除原图  C. 关闭文件"
+    },
+    {
+      "order": 6,
+      "role": "paragraph",
+      "text": "2. The meeting starts at nine o'clock."
+    },
+    {
+      "order": 7,
+      "role": "paragraph",
+      "text": "A. 08:00  B. 09:00  C. 10:00"
+    },
+    {
+      "order": 8,
+      "role": "paragraph",
+      "text": "Part B: Translate the sentence."
+    },
+    {
+      "order": 9,
+      "role": "paragraph",
+      "text": "Good records make teamwork easier."
+    },
+    {
+      "order": 10,
+      "role": "paragraph",
+      "text": "Answer: ________________________________"
+    }
+  ],
+  "tables": [],
+  "coordinates_available": false,
+  "review_status": "generated_not_independently_transcribed"
+}

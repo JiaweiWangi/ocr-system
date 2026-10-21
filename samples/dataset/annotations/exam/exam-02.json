@@ -1,0 +1,52 @@
+{
+  "schema_version": 1,
+  "case_id": "exam-02",
+  "origin": "synthetic",
+  "annotation_method": "renderer_source_text",
+  "reading_order": "top_to_bottom_then_table_row_major",
+  "segments": [
+    {
+      "order": 0,
+      "role": "sample_label",
+      "text": "合成测试样本  exam-02"
+    },
+    {
+      "order": 1,
+      "role": "title",
+      "text": "语文阅读练习"
+    },
+    {
+      "order": 2,
+      "role": "paragraph",
+      "text": "姓名：测试学生；班级：测试班"
+    },
+    {
+      "order": 3,
+      "role": "paragraph",
+      "text": "阅读材料："
+    },
+    {
+      "order": 4,
+      "role": "paragraph",
+      "text": "整理资料时，我们既要保留原始文件，也要记录处理过程。准确的记录能够帮助他人理解工作，并在出现问题时找到原因。"
+    },
+    {
+      "order": 5,
+      "role": "paragraph",
+      "text": "1. 文中提出应当保留什么？（10分）"
+    },
+    {
+      "order": 6,
+      "role": "paragraph",
+      "text": "2. 准确记录有哪些作用？请分点回答。（20分）"
+    },
+    {
+      "order": 7,
+      "role": "paragraph",
+      "text": "答题区：________________________________"
+    }
+  ],
+  "tables": [],
+  "coordinates_available": false,
+  "review_status": "generated_not_independently_transcribed"
+}

@@ -1,0 +1,184 @@
+{
+  "schema_version": 1,
+  "case_id": "table-03",
+  "origin": "synthetic",
+  "annotation_method": "renderer_source_text",
+  "reading_order": "top_to_bottom_then_table_row_major",
+  "segments": [
+    {
+      "order": 0,
+      "role": "sample_label",
+      "text": "合成测试样本  table-03"
+    },
+    {
+      "order": 1,
+      "role": "title",
+      "text": "设备盘点清单"
+    },
+    {
+      "order": 2,
+      "role": "table_row",
+      "text": "设备编号\t设备名称\t数量\t状态"
+    },
+    {
+      "order": 3,
+      "role": "table_row",
+      "text": "CAM-001\t拍摄支架\t2\t正常"
+    },
+    {
+      "order": 4,
+      "role": "table_row",
+      "text": "SCAN-002\t扫描仪\t1\t正常"
+    },
+    {
+      "order": 5,
+      "role": "table_row",
+      "text": "LAMP-003\t补光灯\t3\t待检查"
+    },
+    {
+      "order": 6,
+      "role": "table_row",
+      "text": "USB-004\t连接线\t6\t正常"
+    },
+    {
+      "order": 7,
+      "role": "table_row",
+      "text": "CARD-005\t存储卡\t4\t正常"
+    },
+    {
+      "order": 8,
+      "role": "paragraph",
+      "text": "盘点日期：2026-07-16。"
+    }
+  ],
+  "tables": [
+    {
+      "rows": 6,
+      "columns": 4,
+      "cells": [
+        {
+          "row": 0,
+          "column": 0,
+          "text": "设备编号"
+        },
+        {
+          "row": 0,
+          "column": 1,
+          "text": "设备名称"
+        },
+        {
+          "row": 0,
+          "column": 2,
+          "text": "数量"
+        },
+        {
+          "row": 0,
+          "column": 3,
+          "text": "状态"
+        },
+        {
+          "row": 1,
+          "column": 0,
+          "text": "CAM-001"
+        },
+        {
+          "row": 1,
+          "column": 1,
+          "text": "拍摄支架"
+        },
+        {
+          "row": 1,
+          "column": 2,
+          "text": "2"
+        },
+        {
+          "row": 1,
+          "column": 3,
+          "text": "正常"
+        },
+        {
+          "row": 2,
+          "column": 0,
+          "text": "SCAN-002"
+        },
+        {
+          "row": 2,
+          "column": 1,
+          "text": "扫描仪"
+        },
+        {
+          "row": 2,
+          "column": 2,
+          "text": "1"
+        },
+        {
+          "row": 2,
+          "column": 3,
+          "text": "正常"
+        },
+        {
+          "row": 3,
+          "column": 0,
+          "text": "LAMP-003"
+        },
+        {
+          "row": 3,
+          "column": 1,
+          "text": "补光灯"
+        },
+        {
+          "row": 3,
+          "column": 2,
+          "text": "3"
+        },
+        {
+          "row": 3,
+          "column": 3,
+          "text": "待检查"
+        },
+        {
+          "row": 4,
+          "column": 0,
+          "text": "USB-004"
+        },
+        {
+          "row": 4,
+          "column": 1,
+          "text": "连接线"
+        },
+        {
+          "row": 4,
+          "column": 2,
+          "text": "6"
+        },
+        {
+          "row": 4,
+          "column": 3,
+          "text": "正常"
+        },
+        {
+          "row": 5,
+          "column": 0,
+          "text": "CARD-005"
+        },
+        {
+          "row": 5,
+          "column": 1,
+          "text": "存储卡"
+        },
+        {
+          "row": 5,
+          "column": 2,
+          "text": "4"
+        },
+        {
+          "row": 5,
+          "column": 3,
+          "text": "正常"
+        }
+      ]
+    }
+  ],
+  "coordinates_available": false,
+  "review_status": "generated_not_independently_transcribed"
+}

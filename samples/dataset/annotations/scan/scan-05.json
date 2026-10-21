@@ -1,0 +1,52 @@
+{
+  "schema_version": 1,
+  "case_id": "scan-05",
+  "origin": "synthetic",
+  "annotation_method": "renderer_source_text",
+  "reading_order": "top_to_bottom_then_table_row_major",
+  "segments": [
+    {
+      "order": 0,
+      "role": "sample_label",
+      "text": "合成测试样本  scan-05"
+    },
+    {
+      "order": 1,
+      "role": "title",
+      "text": "样本标注约定"
+    },
+    {
+      "order": 2,
+      "role": "paragraph",
+      "text": "一、文本标注"
+    },
+    {
+      "order": 3,
+      "role": "paragraph",
+      "text": "按照正常阅读顺序转录所有可见文字，保留数字、大小写与标点。表格按从上到下、从左到右的顺序记录。"
+    },
+    {
+      "order": 4,
+      "role": "paragraph",
+      "text": "二、特殊情况"
+    },
+    {
+      "order": 5,
+      "role": "paragraph",
+      "text": "图片中无法辨认的文字应单独说明。对模糊内容不得直接采用OCR输出作为标准答案，以免把识别错误写入标注。"
+    },
+    {
+      "order": 6,
+      "role": "paragraph",
+      "text": "三、数据划分"
+    },
+    {
+      "order": 7,
+      "role": "paragraph",
+      "text": "同一原图及其旋转、压缩或模糊版本必须属于同一数据划分，避免相同内容同时出现在开发集与评测集。"
+    }
+  ],
+  "tables": [],
+  "coordinates_available": false,
+  "review_status": "generated_not_independently_transcribed"
+}

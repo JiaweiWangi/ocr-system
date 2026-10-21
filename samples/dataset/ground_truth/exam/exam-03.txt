@@ -1,0 +1,11 @@
+合成测试样本  exam-03
+英语基础练习
+Time: 20 minutes. Total: 40 points.
+Part A: Choose the correct answer.
+1. Please save the original image.
+A. 保存原图  B. 删除原图  C. 关闭文件
+2. The meeting starts at nine o'clock.
+A. 08:00  B. 09:00  C. 10:00
+Part B: Translate the sentence.
+Good records make teamwork easier.
+Answer: ________________________________

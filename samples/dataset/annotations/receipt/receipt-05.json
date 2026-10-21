@@ -1,0 +1,154 @@
+{
+  "schema_version": 1,
+  "case_id": "receipt-05",
+  "origin": "synthetic",
+  "annotation_method": "renderer_source_text",
+  "reading_order": "top_to_bottom_then_table_row_major",
+  "segments": [
+    {
+      "order": 0,
+      "role": "sample_label",
+      "text": "合成测试样本  receipt-05"
+    },
+    {
+      "order": 1,
+      "role": "title",
+      "text": "服务结算单"
+    },
+    {
+      "order": 2,
+      "role": "paragraph",
+      "text": "结算编号：TEST-ST-20260808"
+    },
+    {
+      "order": 3,
+      "role": "paragraph",
+      "text": "服务期间：2026-08-01至2026-08-07"
+    },
+    {
+      "order": 4,
+      "role": "table_row",
+      "text": "服务\t数量\t单价\t金额"
+    },
+    {
+      "order": 5,
+      "role": "table_row",
+      "text": "文档扫描\t120\t0.80\t96.00"
+    },
+    {
+      "order": 6,
+      "role": "table_row",
+      "text": "图像整理\t3\t25.00\t75.00"
+    },
+    {
+      "order": 7,
+      "role": "table_row",
+      "text": "资料归档\t1\t40.00\t40.00"
+    },
+    {
+      "order": 8,
+      "role": "paragraph",
+      "text": "应付合计：211.00元"
+    },
+    {
+      "order": 9,
+      "role": "paragraph",
+      "text": "结算单位：示例数字化服务组（测试）"
+    },
+    {
+      "order": 10,
+      "role": "paragraph",
+      "text": "合成单据，不作报销凭证。"
+    }
+  ],
+  "tables": [
+    {
+      "rows": 4,
+      "columns": 4,
+      "cells": [
+        {
+          "row": 0,
+          "column": 0,
+          "text": "服务"
+        },
+        {
+          "row": 0,
+          "column": 1,
+          "text": "数量"
+        },
+        {
+          "row": 0,
+          "column": 2,
+          "text": "单价"
+        },
+        {
+          "row": 0,
+          "column": 3,
+          "text": "金额"
+        },
+        {
+          "row": 1,
+          "column": 0,
+          "text": "文档扫描"
+        },
+        {
+          "row": 1,
+          "column": 1,
+          "text": "120"
+        },
+        {
+          "row": 1,
+          "column": 2,
+          "text": "0.80"
+        },
+        {
+          "row": 1,
+          "column": 3,
+          "text": "96.00"
+        },
+        {
+          "row": 2,
+          "column": 0,
+          "text": "图像整理"
+        },
+        {
+          "row": 2,
+          "column": 1,
+          "text": "3"
+        },
+        {
+          "row": 2,
+          "column": 2,
+          "text": "25.00"
+        },
+        {
+          "row": 2,
+          "column": 3,
+          "text": "75.00"
+        },
+        {
+          "row": 3,
+          "column": 0,
+          "text": "资料归档"
+        },
+        {
+          "row": 3,
+          "column": 1,
+          "text": "1"
+        },
+        {
+          "row": 3,
+          "column": 2,
+          "text": "40.00"
+        },
+        {
+          "row": 3,
+          "column": 3,
+          "text": "40.00"
+        }
+      ]
+    }
+  ],
+  "coordinates_available": false,
+  "review_status": "generated_not_independently_transcribed"
+}

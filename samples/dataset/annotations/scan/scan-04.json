@@ -1,0 +1,52 @@
+{
+  "schema_version": 1,
+  "case_id": "scan-04",
+  "origin": "synthetic",
+  "annotation_method": "renderer_source_text",
+  "reading_order": "top_to_bottom_then_table_row_major",
+  "segments": [
+    {
+      "order": 0,
+      "role": "sample_label",
+      "text": "合成测试样本  scan-04"
+    },
+    {
+      "order": 1,
+      "role": "title",
+      "text": "线上实习工作安排"
+    },
+    {
+      "order": 2,
+      "role": "paragraph",
+      "text": "一、工作周期"
+    },
+    {
+      "order": 3,
+      "role": "paragraph",
+      "text": "实习课题安排在7月至8月开展。各成员围绕分工整理任务清单，定期同步进展，并对阶段交付物进行相互检查。"
+    },
+    {
+      "order": 4,
+      "role": "paragraph",
+      "text": "二、协作方式"
+    },
+    {
+      "order": 5,
+      "role": "paragraph",
+      "text": "需求变更和接口调整应形成记录。共享材料注明版本与负责人，避免使用名称相同但内容不同的文件。"
+    },
+    {
+      "order": 6,
+      "role": "paragraph",
+      "text": "三、阶段总结"
+    },
+    {
+      "order": 7,
+      "role": "paragraph",
+      "text": "总结应说明完成的工作、验证方法、遇到的问题和后续改进。涉及准确率或性能的数据必须有对应测试记录。"
+    }
+  ],
+  "tables": [],
+  "coordinates_available": false,
+  "review_status": "generated_not_independently_transcribed"
+}

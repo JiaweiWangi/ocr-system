@@ -1,0 +1,184 @@
+{
+  "schema_version": 1,
+  "case_id": "table-02",
+  "origin": "synthetic",
+  "annotation_method": "renderer_source_text",
+  "reading_order": "top_to_bottom_then_table_row_major",
+  "segments": [
+    {
+      "order": 0,
+      "role": "sample_label",
+      "text": "合成测试样本  table-02"
+    },
+    {
+      "order": 1,
+      "role": "title",
+      "text": "项目预算明细"
+    },
+    {
+      "order": 2,
+      "role": "table_row",
+      "text": "项目\t数量\t单价\t金额"
+    },
+    {
+      "order": 3,
+      "role": "table_row",
+      "text": "打印纸\t2包\t28.50\t57.00"
+    },
+    {
+      "order": 4,
+      "role": "table_row",
+      "text": "文件夹\t10个\t4.80\t48.00"
+    },
+    {
+      "order": 5,
+      "role": "table_row",
+      "text": "笔记本\t5本\t12.00\t60.00"
+    },
+    {
+      "order": 6,
+      "role": "table_row",
+      "text": "存储卡\t1张\t89.00\t89.00"
+    },
+    {
+      "order": 7,
+      "role": "table_row",
+      "text": "合计\t\t\t254.00"
+    },
+    {
+      "order": 8,
+      "role": "paragraph",
+      "text": "币种：人民币；金额单位：元。"
+    }
+  ],
+  "tables": [
+    {
+      "rows": 6,
+      "columns": 4,
+      "cells": [
+        {
+          "row": 0,
+          "column": 0,
+          "text": "项目"
+        },
+        {
+          "row": 0,
+          "column": 1,
+          "text": "数量"
+        },
+        {
+          "row": 0,
+          "column": 2,
+          "text": "单价"
+        },
+        {
+          "row": 0,
+          "column": 3,
+          "text": "金额"
+        },
+        {
+          "row": 1,
+          "column": 0,
+          "text": "打印纸"
+        },
+        {
+          "row": 1,
+          "column": 1,
+          "text": "2包"
+        },
+        {
+          "row": 1,
+          "column": 2,
+          "text": "28.50"
+        },
+        {
+          "row": 1,
+          "column": 3,
+          "text": "57.00"
+        },
+        {
+          "row": 2,
+          "column": 0,
+          "text": "文件夹"
+        },
+        {
+          "row": 2,
+          "column": 1,
+          "text": "10个"
+        },
+        {
+          "row": 2,
+          "column": 2,
+          "text": "4.80"
+        },
+        {
+          "row": 2,
+          "column": 3,
+          "text": "48.00"
+        },
+        {
+          "row": 3,
+          "column": 0,
+          "text": "笔记本"
+        },
+        {
+          "row": 3,
+          "column": 1,
+          "text": "5本"
+        },
+        {
+          "row": 3,
+          "column": 2,
+          "text": "12.00"
+        },
+        {
+          "row": 3,
+          "column": 3,
+          "text": "60.00"
+        },
+        {
+          "row": 4,
+          "column": 0,
+          "text": "存储卡"
+        },
+        {
+          "row": 4,
+          "column": 1,
+          "text": "1张"
+        },
+        {
+          "row": 4,
+          "column": 2,
+          "text": "89.00"
+        },
+        {
+          "row": 4,
+          "column": 3,
+          "text": "89.00"
+        },
+        {
+          "row": 5,
+          "column": 0,
+          "text": "合计"
+        },
+        {
+          "row": 5,
+          "column": 1,
+          "text": ""
+        },
+        {
+          "row": 5,
+          "column": 2,
+          "text": ""
+        },
+        {
+          "row": 5,
+          "column": 3,
+          "text": "254.00"
+        }
+      ]
+    }
+  ],
+  "coordinates_available": false,
+  "review_status": "generated_not_independently_transcribed"
+}

@@ -1,0 +1,62 @@
+{
+  "schema_version": 1,
+  "case_id": "exam-04",
+  "origin": "synthetic",
+  "annotation_method": "renderer_source_text",
+  "reading_order": "top_to_bottom_then_table_row_major",
+  "segments": [
+    {
+      "order": 0,
+      "role": "sample_label",
+      "text": "合成测试样本  exam-04"
+    },
+    {
+      "order": 1,
+      "role": "title",
+      "text": "计算机基础测验"
+    },
+    {
+      "order": 2,
+      "role": "paragraph",
+      "text": "题型：选择题与简答题；满分：100分"
+    },
+    {
+      "order": 3,
+      "role": "paragraph",
+      "text": "一、选择题（每题20分）"
+    },
+    {
+      "order": 4,
+      "role": "paragraph",
+      "text": "1. 下列哪项属于图片文件格式？"
+    },
+    {
+      "order": 5,
+      "role": "paragraph",
+      "text": "A. PNG  B. TXT  C. CSV  D. JSON"
+    },
+    {
+      "order": 6,
+      "role": "paragraph",
+      "text": "2. UTF-8主要用于什么？"
+    },
+    {
+      "order": 7,
+      "role": "paragraph",
+      "text": "A. 文本编码  B. 图像缩放  C. 网络测速"
+    },
+    {
+      "order": 8,
+      "role": "paragraph",
+      "text": "二、简答题（60分）"
+    },
+    {
+      "order": 9,
+      "role": "paragraph",
+      "text": "请说明原始识别响应与人工修改后的结果为什么应当分别保存。"
+    }
+  ],
+  "tables": [],
+  "coordinates_available": false,
+  "review_status": "generated_not_independently_transcribed"
+}

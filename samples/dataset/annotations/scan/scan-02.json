@@ -1,0 +1,52 @@
+{
+  "schema_version": 1,
+  "case_id": "scan-02",
+  "origin": "synthetic",
+  "annotation_method": "renderer_source_text",
+  "reading_order": "top_to_bottom_then_table_row_major",
+  "segments": [
+    {
+      "order": 0,
+      "role": "sample_label",
+      "text": "合成测试样本  scan-02"
+    },
+    {
+      "order": 1,
+      "role": "title",
+      "text": "软件测试记录规范"
+    },
+    {
+      "order": 2,
+      "role": "paragraph",
+      "text": "一、测试准备"
+    },
+    {
+      "order": 3,
+      "role": "paragraph",
+      "text": "测试前确认系统版本、识别模式和输入文件。使用同一组样本比较不同模式时，应保留每次调用的原始响应。"
+    },
+    {
+      "order": 4,
+      "role": "paragraph",
+      "text": "二、结果记录"
+    },
+    {
+      "order": 5,
+      "role": "paragraph",
+      "text": "记录识别是否成功、处理耗时和主要错误。错误类型包括漏字、错字、顺序错误和标点差异，不能仅凭页面是否显示结果判断识别质量。"
+    },
+    {
+      "order": 6,
+      "role": "paragraph",
+      "text": "三、问题跟踪"
+    },
+    {
+      "order": 7,
+      "role": "paragraph",
+      "text": "每个问题记录复现步骤与预期结果。完成修复后再次执行相关用例，并保留验证记录。"
+    }
+  ],
+  "tables": [],
+  "coordinates_available": false,
+  "review_status": "generated_not_independently_transcribed"
+}

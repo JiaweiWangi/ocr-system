@@ -1,0 +1,154 @@
+{
+  "schema_version": 1,
+  "case_id": "receipt-04",
+  "origin": "synthetic",
+  "annotation_method": "renderer_source_text",
+  "reading_order": "top_to_bottom_then_table_row_major",
+  "segments": [
+    {
+      "order": 0,
+      "role": "sample_label",
+      "text": "合成测试样本  receipt-04"
+    },
+    {
+      "order": 1,
+      "role": "title",
+      "text": "送货清单"
+    },
+    {
+      "order": 2,
+      "role": "paragraph",
+      "text": "送货编号：TEST-DL-20260722"
+    },
+    {
+      "order": 3,
+      "role": "paragraph",
+      "text": "收货单位：示例资料室（测试）"
+    },
+    {
+      "order": 4,
+      "role": "table_row",
+      "text": "货品\t数量\t单位\t备注"
+    },
+    {
+      "order": 5,
+      "role": "table_row",
+      "text": "档案盒\t12\t个\t蓝色"
+    },
+    {
+      "order": 6,
+      "role": "table_row",
+      "text": "文件夹\t20\t个\t透明"
+    },
+    {
+      "order": 7,
+      "role": "table_row",
+      "text": "标签纸\t5\t包\t空白"
+    },
+    {
+      "order": 8,
+      "role": "paragraph",
+      "text": "清单项目：3项；送货日期：2026年7月22日"
+    },
+    {
+      "order": 9,
+      "role": "paragraph",
+      "text": "签收状态：待签收"
+    },
+    {
+      "order": 10,
+      "role": "paragraph",
+      "text": "合成单据，不作交易凭证。"
+    }
+  ],
+  "tables": [
+    {
+      "rows": 4,
+      "columns": 4,
+      "cells": [
+        {
+          "row": 0,
+          "column": 0,
+          "text": "货品"
+        },
+        {
+          "row": 0,
+          "column": 1,
+          "text": "数量"
+        },
+        {
+          "row": 0,
+          "column": 2,
+          "text": "单位"
+        },
+        {
+          "row": 0,
+          "column": 3,
+          "text": "备注"
+        },
+        {
+          "row": 1,
+          "column": 0,
+          "text": "档案盒"
+        },
+        {
+          "row": 1,
+          "column": 1,
+          "text": "12"
+        },
+        {
+          "row": 1,
+          "column": 2,
+          "text": "个"
+        },
+        {
+          "row": 1,
+          "column": 3,
+          "text": "蓝色"
+        },
+        {
+          "row": 2,
+          "column": 0,
+          "text": "文件夹"
+        },
+        {
+          "row": 2,
+          "column": 1,
+          "text": "20"
+        },
+        {
+          "row": 2,
+          "column": 2,
+          "text": "个"
+        },
+        {
+          "row": 2,
+          "column": 3,
+          "text": "透明"
+        },
+        {
+          "row": 3,
+          "column": 0,
+          "text": "标签纸"
+        },
+        {
+          "row": 3,
+          "column": 1,
+          "text": "5"
+        },
+        {
+          "row": 3,
+          "column": 2,
+          "text": "包"
+        },
+        {
+          "row": 3,
+          "column": 3,
+          "text": "空白"
+        }
+      ]
+    }
+  ],
+  "coordinates_available": false,
+  "review_status": "generated_not_independently_transcribed"
+}

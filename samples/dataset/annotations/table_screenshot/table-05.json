@@ -1,0 +1,184 @@
+{
+  "schema_version": 1,
+  "case_id": "table-05",
+  "origin": "synthetic",
+  "annotation_method": "renderer_source_text",
+  "reading_order": "top_to_bottom_then_table_row_major",
+  "segments": [
+    {
+      "order": 0,
+      "role": "sample_label",
+      "text": "合成测试样本  table-05"
+    },
+    {
+      "order": 1,
+      "role": "title",
+      "text": "样本入库登记表"
+    },
+    {
+      "order": 2,
+      "role": "table_row",
+      "text": "样本编号\t类型\t文件格式\t复核状态"
+    },
+    {
+      "order": 3,
+      "role": "table_row",
+      "text": "S-001\t拍照文档\tJPG\t待复核"
+    },
+    {
+      "order": 4,
+      "role": "table_row",
+      "text": "S-002\t表格截图\tPNG\t已复核"
+    },
+    {
+      "order": 5,
+      "role": "table_row",
+      "text": "S-003\t票据单据\tJPG\t待复核"
+    },
+    {
+      "order": 6,
+      "role": "table_row",
+      "text": "S-004\t试卷图片\tPNG\t已复核"
+    },
+    {
+      "order": 7,
+      "role": "table_row",
+      "text": "S-005\t宣传海报\tPNG\t待复核"
+    },
+    {
+      "order": 8,
+      "role": "paragraph",
+      "text": "登记信息均为合成测试内容。"
+    }
+  ],
+  "tables": [
+    {
+      "rows": 6,
+      "columns": 4,
+      "cells": [
+        {
+          "row": 0,
+          "column": 0,
+          "text": "样本编号"
+        },
+        {
+          "row": 0,
+          "column": 1,
+          "text": "类型"
+        },
+        {
+          "row": 0,
+          "column": 2,
+          "text": "文件格式"
+        },
+        {
+          "row": 0,
+          "column": 3,
+          "text": "复核状态"
+        },
+        {
+          "row": 1,
+          "column": 0,
+          "text": "S-001"
+        },
+        {
+          "row": 1,
+          "column": 1,
+          "text": "拍照文档"
+        },
+        {
+          "row": 1,
+          "column": 2,
+          "text": "JPG"
+        },
+        {
+          "row": 1,
+          "column": 3,
+          "text": "待复核"
+        },
+        {
+          "row": 2,
+          "column": 0,
+          "text": "S-002"
+        },
+        {
+          "row": 2,
+          "column": 1,
+          "text": "表格截图"
+        },
+        {
+          "row": 2,
+          "column": 2,
+          "text": "PNG"
+        },
+        {
+          "row": 2,
+          "column": 3,
+          "text": "已复核"
+        },
+        {
+          "row": 3,
+          "column": 0,
+          "text": "S-003"
+        },
+        {
+          "row": 3,
+          "column": 1,
+          "text": "票据单据"
+        },
+        {
+          "row": 3,
+          "column": 2,
+          "text": "JPG"
+        },
+        {
+          "row": 3,
+          "column": 3,
+          "text": "待复核"
+        },
+        {
+          "row": 4,
+          "column": 0,
+          "text": "S-004"
+        },
+        {
+          "row": 4,
+          "column": 1,
+          "text": "试卷图片"
+        },
+        {
+          "row": 4,
+          "column": 2,
+          "text": "PNG"
+        },
+        {
+          "row": 4,
+          "column": 3,
+          "text": "已复核"
+        },
+        {
+          "row": 5,
+          "column": 0,
+          "text": "S-005"
+        },
+        {
+          "row": 5,
+          "column": 1,
+          "text": "宣传海报"
+        },
+        {
+          "row": 5,
+          "column": 2,
+          "text": "PNG"
+        },
+        {
+          "row": 5,
+          "column": 3,
+          "text": "待复核"
+        }
+      ]
+    }
+  ],
+  "coordinates_available": false,
+  "review_status": "generated_not_independently_transcribed"
+}

@@ -1,0 +1,154 @@
+{
+  "schema_version": 1,
+  "case_id": "receipt-02",
+  "origin": "synthetic",
+  "annotation_method": "renderer_source_text",
+  "reading_order": "top_to_bottom_then_table_row_major",
+  "segments": [
+    {
+      "order": 0,
+      "role": "sample_label",
+      "text": "合成测试样本  receipt-02"
+    },
+    {
+      "order": 1,
+      "role": "title",
+      "text": "费用报销单"
+    },
+    {
+      "order": 2,
+      "role": "paragraph",
+      "text": "单据编号：TEST-EX-20260709"
+    },
+    {
+      "order": 3,
+      "role": "paragraph",
+      "text": "申请日期：2026年7月9日"
+    },
+    {
+      "order": 4,
+      "role": "table_row",
+      "text": "费用项目\t数量\t单价\t金额"
+    },
+    {
+      "order": 5,
+      "role": "table_row",
+      "text": "交通费\t2\t12.50\t25.00"
+    },
+    {
+      "order": 6,
+      "role": "table_row",
+      "text": "材料费\t1\t86.40\t86.40"
+    },
+    {
+      "order": 7,
+      "role": "table_row",
+      "text": "邮寄费\t1\t18.00\t18.00"
+    },
+    {
+      "order": 8,
+      "role": "paragraph",
+      "text": "报销合计：129.40元"
+    },
+    {
+      "order": 9,
+      "role": "paragraph",
+      "text": "附件数量：3张；审核状态：待审核"
+    },
+    {
+      "order": 10,
+      "role": "paragraph",
+      "text": "合成单据，不作报销凭证。"
+    }
+  ],
+  "tables": [
+    {
+      "rows": 4,
+      "columns": 4,
+      "cells": [
+        {
+          "row": 0,
+          "column": 0,
+          "text": "费用项目"
+        },
+        {
+          "row": 0,
+          "column": 1,
+          "text": "数量"
+        },
+        {
+          "row": 0,
+          "column": 2,
+          "text": "单价"
+        },
+        {
+          "row": 0,
+          "column": 3,
+          "text": "金额"
+        },
+        {
+          "row": 1,
+          "column": 0,
+          "text": "交通费"
+        },
+        {
+          "row": 1,
+          "column": 1,
+          "text": "2"
+        },
+        {
+          "row": 1,
+          "column": 2,
+          "text": "12.50"
+        },
+        {
+          "row": 1,
+          "column": 3,
+          "text": "25.00"
+        },
+        {
+          "row": 2,
+          "column": 0,
+          "text": "材料费"
+        },
+        {
+          "row": 2,
+          "column": 1,
+          "text": "1"
+        },
+        {
+          "row": 2,
+          "column": 2,
+          "text": "86.40"
+        },
+        {
+          "row": 2,
+          "column": 3,
+          "text": "86.40"
+        },
+        {
+          "row": 3,
+          "column": 0,
+          "text": "邮寄费"
+        },
+        {
+          "row": 3,
+          "column": 1,
+          "text": "1"
+        },
+        {
+          "row": 3,
+          "column": 2,
+          "text": "18.00"
+        },
+        {
+          "row": 3,
+          "column": 3,
+          "text": "18.00"
+        }
+      ]
+    }
+  ],
+  "coordinates_available": false,
+  "review_status": "generated_not_independently_transcribed"
+}

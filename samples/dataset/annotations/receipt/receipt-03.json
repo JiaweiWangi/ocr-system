@@ -1,0 +1,154 @@
+{
+  "schema_version": 1,
+  "case_id": "receipt-03",
+  "origin": "synthetic",
+  "annotation_method": "renderer_source_text",
+  "reading_order": "top_to_bottom_then_table_row_major",
+  "segments": [
+    {
+      "order": 0,
+      "role": "sample_label",
+      "text": "合成测试样本  receipt-03"
+    },
+    {
+      "order": 1,
+      "role": "title",
+      "text": "采购订单"
+    },
+    {
+      "order": 2,
+      "role": "paragraph",
+      "text": "订单编号：TEST-PO-20260712"
+    },
+    {
+      "order": 3,
+      "role": "paragraph",
+      "text": "采购方：示例实验小组（测试）"
+    },
+    {
+      "order": 4,
+      "role": "table_row",
+      "text": "商品\t数量\t单价\t金额"
+    },
+    {
+      "order": 5,
+      "role": "table_row",
+      "text": "打印纸\t3\t28.50\t85.50"
+    },
+    {
+      "order": 6,
+      "role": "table_row",
+      "text": "标签纸\t2\t15.00\t30.00"
+    },
+    {
+      "order": 7,
+      "role": "table_row",
+      "text": "记号笔\t6\t3.20\t19.20"
+    },
+    {
+      "order": 8,
+      "role": "paragraph",
+      "text": "订单总额：134.70元"
+    },
+    {
+      "order": 9,
+      "role": "paragraph",
+      "text": "交付日期：2026-07-18"
+    },
+    {
+      "order": 10,
+      "role": "paragraph",
+      "text": "合成单据，不作交易凭证。"
+    }
+  ],
+  "tables": [
+    {
+      "rows": 4,
+      "columns": 4,
+      "cells": [
+        {
+          "row": 0,
+          "column": 0,
+          "text": "商品"
+        },
+        {
+          "row": 0,
+          "column": 1,
+          "text": "数量"
+        },
+        {
+          "row": 0,
+          "column": 2,
+          "text": "单价"
+        },
+        {
+          "row": 0,
+          "column": 3,
+          "text": "金额"
+        },
+        {
+          "row": 1,
+          "column": 0,
+          "text": "打印纸"
+        },
+        {
+          "row": 1,
+          "column": 1,
+          "text": "3"
+        },
+        {
+          "row": 1,
+          "column": 2,
+          "text": "28.50"
+        },
+        {
+          "row": 1,
+          "column": 3,
+          "text": "85.50"
+        },
+        {
+          "row": 2,
+          "column": 0,
+          "text": "标签纸"
+        },
+        {
+          "row": 2,
+          "column": 1,
+          "text": "2"
+        },
+        {
+          "row": 2,
+          "column": 2,
+          "text": "15.00"
+        },
+        {
+          "row": 2,
+          "column": 3,
+          "text": "30.00"
+        },
+        {
+          "row": 3,
+          "column": 0,
+          "text": "记号笔"
+        },
+        {
+          "row": 3,
+          "column": 1,
+          "text": "6"
+        },
+        {
+          "row": 3,
+          "column": 2,
+          "text": "3.20"
+        },
+        {
+          "row": 3,
+          "column": 3,
+          "text": "19.20"
+        }
+      ]
+    }
+  ],
+  "coordinates_available": false,
+  "review_status": "generated_not_independently_transcribed"
+}

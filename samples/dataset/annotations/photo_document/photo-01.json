@@ -1,0 +1,42 @@
+{
+  "schema_version": 1,
+  "case_id": "photo-01",
+  "origin": "synthetic",
+  "annotation_method": "renderer_source_text",
+  "reading_order": "top_to_bottom_then_table_row_major",
+  "segments": [
+    {
+      "order": 0,
+      "role": "sample_label",
+      "text": "合成测试样本  photo-01"
+    },
+    {
+      "order": 1,
+      "role": "title",
+      "text": "项目周例会通知"
+    },
+    {
+      "order": 2,
+      "role": "paragraph",
+      "text": "会议时间：2026年7月6日 14:00至15:00"
+    },
+    {
+      "order": 3,
+      "role": "paragraph",
+      "text": "会议方式：线上会议"
+    },
+    {
+      "order": 4,
+      "role": "paragraph",
+      "text": "本次会议讨论图片采集范围、识别接口接入和本周任务分工。请各成员提前整理问题清单，并准备一张典型文档图片。"
+    },
+    {
+      "order": 5,
+      "role": "paragraph",
+      "text": "会后需提交会议记录，明确负责人、完成时间与验收标准。"
+    }
+  ],
+  "tables": [],
+  "coordinates_available": false,
+  "review_status": "generated_not_independently_transcribed"
+}

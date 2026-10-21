@@ -1,7 +1,16 @@
 # 测试样张套件
 
-每张样张都有配套 fixtures（`fixtures/{engine}-{文件名去扩展名}.json`），
-`BAIDU_MOCK=1`（默认）上传即完整回放，不消耗百度额度。
+## 子课题 1 基准样本集
+
+新增 [dataset/README.md](dataset/README.md)：六类、30 个独立合成案例、60 张图片，配有标准文本、来源说明、类别清单和校验工具。可从 [样本索引](dataset/CATALOG.md) 选择图片。
+
+新样本尚未调用真实 OCR，也没有配套响应 fixtures；Mock 回放不能用于检验新图片的识别效果。真实拍照和扫描采集另见 [采集计划](dataset/COLLECTION.md)，不与合成样本混计。
+
+## 原有四张演示样张
+
+以下样张有配套 fixtures（`fixtures/{engine}-{文件名去扩展名}.json`），
+显式设置 `BAIDU_MOCK=1` 后，使用已配备 fixture 的引擎回放，不消耗百度额度。
+通用模式回放时选择标准精度；当前未提供 `accurate-*` 高精度 fixtures。
 回放测试见 `src/lib/kie/samples.replay.test.ts` 与 `extract.invoice-replay.test.ts`。
 
 | 样张 | 模式 | 版式特征 | 考察点 |
@@ -13,7 +22,7 @@
 
 ## 使用
 
-1. `npm run dev`（默认 mock 模式）
+1. 显式配置 `BAIDU_MOCK=1` 后运行 `npm run dev`
 2. 首页上传 `samples/` 下的样张，选择对应模式
 3. 深度模式（试卷）提交后前端轮询 3 次左右完成（模拟 pending → running → success）
 

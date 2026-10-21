@@ -1,0 +1,52 @@
+{
+  "schema_version": 1,
+  "case_id": "poster-01",
+  "origin": "synthetic",
+  "annotation_method": "renderer_source_text",
+  "reading_order": "top_to_bottom_then_table_row_major",
+  "segments": [
+    {
+      "order": 0,
+      "role": "sample_label",
+      "text": "合成测试样本  poster-01"
+    },
+    {
+      "order": 1,
+      "role": "title",
+      "text": "校园科技开放日"
+    },
+    {
+      "order": 2,
+      "role": "paragraph",
+      "text": "探索图像与文字的世界"
+    },
+    {
+      "order": 3,
+      "role": "paragraph",
+      "text": "时间：2026年7月18日 09:30"
+    },
+    {
+      "order": 4,
+      "role": "paragraph",
+      "text": "地点：示例教学楼一层大厅"
+    },
+    {
+      "order": 5,
+      "role": "paragraph",
+      "text": "活动：图像采集体验、OCR演示、作品交流"
+    },
+    {
+      "order": 6,
+      "role": "paragraph",
+      "text": "报名邮箱：open-day@example.com"
+    },
+    {
+      "order": 7,
+      "role": "paragraph",
+      "text": "本海报为合成测试材料。"
+    }
+  ],
+  "tables": [],
+  "coordinates_available": false,
+  "review_status": "generated_not_independently_transcribed"
+}

@@ -1,0 +1,52 @@
+{
+  "schema_version": 1,
+  "case_id": "scan-03",
+  "origin": "synthetic",
+  "annotation_method": "renderer_source_text",
+  "reading_order": "top_to_bottom_then_table_row_major",
+  "segments": [
+    {
+      "order": 0,
+      "role": "sample_label",
+      "text": "合成测试样本  scan-03"
+    },
+    {
+      "order": 1,
+      "role": "title",
+      "text": "文档数字化操作规程"
+    },
+    {
+      "order": 2,
+      "role": "paragraph",
+      "text": "一、文档准备"
+    },
+    {
+      "order": 3,
+      "role": "paragraph",
+      "text": "检查纸张是否平整、文字是否完整。装订或折痕可能遮挡正文时，应先调整纸张位置，再进行拍摄或扫描。"
+    },
+    {
+      "order": 4,
+      "role": "paragraph",
+      "text": "二、图像检查"
+    },
+    {
+      "order": 5,
+      "role": "paragraph",
+      "text": "检查图像边缘、文字清晰度、方向和光照。过度压缩、运动模糊与反光可能降低后续识别效果。"
+    },
+    {
+      "order": 6,
+      "role": "paragraph",
+      "text": "三、识别复核"
+    },
+    {
+      "order": 7,
+      "role": "paragraph",
+      "text": "完成识别后，对照原图检查关键字段与正文内容。存在疑问的文字保留备注，不根据上下文随意补写。"
+    }
+  ],
+  "tables": [],
+  "coordinates_available": false,
+  "review_status": "generated_not_independently_transcribed"
+}

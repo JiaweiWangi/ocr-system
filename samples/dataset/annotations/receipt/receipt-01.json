@@ -1,0 +1,154 @@
+{
+  "schema_version": 1,
+  "case_id": "receipt-01",
+  "origin": "synthetic",
+  "annotation_method": "renderer_source_text",
+  "reading_order": "top_to_bottom_then_table_row_major",
+  "segments": [
+    {
+      "order": 0,
+      "role": "sample_label",
+      "text": "合成测试样本  receipt-01"
+    },
+    {
+      "order": 1,
+      "role": "title",
+      "text": "收款收据"
+    },
+    {
+      "order": 2,
+      "role": "paragraph",
+      "text": "单据编号：TEST-RC-20260701"
+    },
+    {
+      "order": 3,
+      "role": "paragraph",
+      "text": "日期：2026-07-01；付款单位：示例项目组"
+    },
+    {
+      "order": 4,
+      "role": "table_row",
+      "text": "项目\t数量\t单价\t金额"
+    },
+    {
+      "order": 5,
+      "role": "table_row",
+      "text": "资料打印\t100\t0.50\t50.00"
+    },
+    {
+      "order": 6,
+      "role": "table_row",
+      "text": "材料装订\t5\t8.00\t40.00"
+    },
+    {
+      "order": 7,
+      "role": "table_row",
+      "text": "文件袋\t10\t2.00\t20.00"
+    },
+    {
+      "order": 8,
+      "role": "paragraph",
+      "text": "合计金额：110.00元"
+    },
+    {
+      "order": 9,
+      "role": "paragraph",
+      "text": "收款单位：示例服务中心（测试）"
+    },
+    {
+      "order": 10,
+      "role": "paragraph",
+      "text": "合成单据，不作报销凭证。"
+    }
+  ],
+  "tables": [
+    {
+      "rows": 4,
+      "columns": 4,
+      "cells": [
+        {
+          "row": 0,
+          "column": 0,
+          "text": "项目"
+        },
+        {
+          "row": 0,
+          "column": 1,
+          "text": "数量"
+        },
+        {
+          "row": 0,
+          "column": 2,
+          "text": "单价"
+        },
+        {
+          "row": 0,
+          "column": 3,
+          "text": "金额"
+        },
+        {
+          "row": 1,
+          "column": 0,
+          "text": "资料打印"
+        },
+        {
+          "row": 1,
+          "column": 1,
+          "text": "100"
+        },
+        {
+          "row": 1,
+          "column": 2,
+          "text": "0.50"
+        },
+        {
+          "row": 1,
+          "column": 3,
+          "text": "50.00"
+        },
+        {
+          "row": 2,
+          "column": 0,
+          "text": "材料装订"
+        },
+        {
+          "row": 2,
+          "column": 1,
+          "text": "5"
+        },
+        {
+          "row": 2,
+          "column": 2,
+          "text": "8.00"
+        },
+        {
+          "row": 2,
+          "column": 3,
+          "text": "40.00"
+        },
+        {
+          "row": 3,
+          "column": 0,
+          "text": "文件袋"
+        },
+        {
+          "row": 3,
+          "column": 1,
+          "text": "10"
+        },
+        {
+          "row": 3,
+          "column": 2,
+          "text": "2.00"
+        },
+        {
+          "row": 3,
+          "column": 3,
+          "text": "20.00"
+        }
+      ]
+    }
+  ],
+  "coordinates_available": false,
+  "review_status": "generated_not_independently_transcribed"
+}

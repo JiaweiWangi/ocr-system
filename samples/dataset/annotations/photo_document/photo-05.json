@@ -1,0 +1,42 @@
+{
+  "schema_version": 1,
+  "case_id": "photo-05",
+  "origin": "synthetic",
+  "annotation_method": "renderer_source_text",
+  "reading_order": "top_to_bottom_then_table_row_major",
+  "segments": [
+    {
+      "order": 0,
+      "role": "sample_label",
+      "text": "合成测试样本  photo-05"
+    },
+    {
+      "order": 1,
+      "role": "title",
+      "text": "阶段验收记录"
+    },
+    {
+      "order": 2,
+      "role": "paragraph",
+      "text": "验收日期：2026年8月21日"
+    },
+    {
+      "order": 3,
+      "role": "paragraph",
+      "text": "验收对象：多版式OCR在线处理系统"
+    },
+    {
+      "order": 4,
+      "role": "paragraph",
+      "text": "本阶段检查图片上传、识别任务创建、原始响应保存和识别结果展示。验收应同时检查成功与失败路径。"
+    },
+    {
+      "order": 5,
+      "role": "paragraph",
+      "text": "发现的问题需记录复现步骤、预期行为及实际结果，修复后重新验证。"
+    }
+  ],
+  "tables": [],
+  "coordinates_available": false,
+  "review_status": "generated_not_independently_transcribed"
+}

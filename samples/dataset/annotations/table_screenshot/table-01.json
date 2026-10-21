@@ -1,0 +1,184 @@
+{
+  "schema_version": 1,
+  "case_id": "table-01",
+  "origin": "synthetic",
+  "annotation_method": "renderer_source_text",
+  "reading_order": "top_to_bottom_then_table_row_major",
+  "segments": [
+    {
+      "order": 0,
+      "role": "sample_label",
+      "text": "合成测试样本  table-01"
+    },
+    {
+      "order": 1,
+      "role": "title",
+      "text": "每周工作安排"
+    },
+    {
+      "order": 2,
+      "role": "table_row",
+      "text": "周次\t工作内容\t负责人\t交付物"
+    },
+    {
+      "order": 3,
+      "role": "table_row",
+      "text": "第1周\t需求分析\t成员甲\t需求说明"
+    },
+    {
+      "order": 4,
+      "role": "table_row",
+      "text": "第2周\t样本整理\t成员乙\t样本清单"
+    },
+    {
+      "order": 5,
+      "role": "table_row",
+      "text": "第3周\t接口接入\t成员丙\t调用记录"
+    },
+    {
+      "order": 6,
+      "role": "table_row",
+      "text": "第4周\t流程联调\t成员甲\t测试报告"
+    },
+    {
+      "order": 7,
+      "role": "table_row",
+      "text": "第5周\t结果校对\t成员乙\t问题清单"
+    },
+    {
+      "order": 8,
+      "role": "paragraph",
+      "text": "说明：任务完成后提交对应交付物。"
+    }
+  ],
+  "tables": [
+    {
+      "rows": 6,
+      "columns": 4,
+      "cells": [
+        {
+          "row": 0,
+          "column": 0,
+          "text": "周次"
+        },
+        {
+          "row": 0,
+          "column": 1,
+          "text": "工作内容"
+        },
+        {
+          "row": 0,
+          "column": 2,
+          "text": "负责人"
+        },
+        {
+          "row": 0,
+          "column": 3,
+          "text": "交付物"
+        },
+        {
+          "row": 1,
+          "column": 0,
+          "text": "第1周"
+        },
+        {
+          "row": 1,
+          "column": 1,
+          "text": "需求分析"
+        },
+        {
+          "row": 1,
+          "column": 2,
+          "text": "成员甲"
+        },
+        {
+          "row": 1,
+          "column": 3,
+          "text": "需求说明"
+        },
+        {
+          "row": 2,
+          "column": 0,
+          "text": "第2周"
+        },
+        {
+          "row": 2,
+          "column": 1,
+          "text": "样本整理"
+        },
+        {
+          "row": 2,
+          "column": 2,
+          "text": "成员乙"
+        },
+        {
+          "row": 2,
+          "column": 3,
+          "text": "样本清单"
+        },
+        {
+          "row": 3,
+          "column": 0,
+          "text": "第3周"
+        },
+        {
+          "row": 3,
+          "column": 1,
+          "text": "接口接入"
+        },
+        {
+          "row": 3,
+          "column": 2,
+          "text": "成员丙"
+        },
+        {
+          "row": 3,
+          "column": 3,
+          "text": "调用记录"
+        },
+        {
+          "row": 4,
+          "column": 0,
+          "text": "第4周"
+        },
+        {
+          "row": 4,
+          "column": 1,
+          "text": "流程联调"
+        },
+        {
+          "row": 4,
+          "column": 2,
+          "text": "成员甲"
+        },
+        {
+          "row": 4,
+          "column": 3,
+          "text": "测试报告"
+        },
+        {
+          "row": 5,
+          "column": 0,
+          "text": "第5周"
+        },
+        {
+          "row": 5,
+          "column": 1,
+          "text": "结果校对"
+        },
+        {
+          "row": 5,
+          "column": 2,
+          "text": "成员乙"
+        },
+        {
+          "row": 5,
+          "column": 3,
+          "text": "问题清单"
+        }
+      ]
+    }
+  ],
+  "coordinates_available": false,
+  "review_status": "generated_not_independently_transcribed"
+}
