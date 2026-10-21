@@ -47,11 +47,11 @@ export interface TableV2Result {
   log_id: number;
 }
 
-export function tableOcr(imageBase64: string): Promise<TableV2Result> {
+export function tableOcr(imageBase64: string, signal?: AbortSignal): Promise<TableV2Result> {
   return (async () =>
     (await callOcrApi("/rest/2.0/ocr/v1/table", {
       image: imageBase64,
-    })) as unknown as TableV2Result)();
+    }, signal)) as unknown as TableV2Result)();
 }
 
 export function polygonToBbox(poly: { x: number; y: number }[]): {

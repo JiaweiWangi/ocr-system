@@ -18,21 +18,35 @@ export function ProcessingPanel({
   onDone: () => void;
 }) {
   const [elapsed, setElapsed] = useState(0);
+  const [pollError, setPollError] = useState<string | null>(null);
 
   useEffect(() => {
     const started = Date.now();
     const tick = setInterval(() => setElapsed(Math.floor((Date.now() - started) / 1000)), 1000);
-    const poll = setInterval(async () => {
+    let cancelled = false;
+    let poll: ReturnType<typeof setTimeout>;
+    const controller = new AbortController();
+    async function checkStatus() {
       try {
-        const status = await fetchJson<{ status: string }>(`/api/tasks/${taskId}/status`);
-        if (status.status === "success" || status.status === "failed") onDone();
-      } catch {
-        /* 轮询失败下次重试 */
+        const status = await fetchJson<{ status: string }>(`/api/tasks/${taskId}/status`, { signal: controller.signal });
+        if (cancelled) return;
+        setPollError(null);
+        if (status.status === "success" || status.status === "failed") {
+          onDone();
+          return;
+        }
+      } catch (error) {
+        if (cancelled) return;
+        setPollError(error instanceof Error ? error.message : "暂时无法获取识别状态");
       }
-    }, 3000);
+      if (!cancelled) poll = setTimeout(checkStatus, 3000);
+    }
+    poll = setTimeout(checkStatus, 3000);
     return () => {
+      cancelled = true;
+      controller.abort();
       clearInterval(tick);
-      clearInterval(poll);
+      clearTimeout(poll);
     };
   }, [taskId, onDone]);
 
@@ -50,6 +64,7 @@ export function ProcessingPanel({
           {mode === "deep" && " · 文档解析约需 30–60 秒，可稍候"}
         </p>
         <Loader2 className="mx-auto mt-5 size-6 animate-spin text-gold" strokeWidth={1.6} />
+        {pollError && <p role="alert" className="mt-3 text-[13px] text-red-deep">{pollError}</p>}
       </div>
     </main>
   );
@@ -82,8 +97,8 @@ export function FailedPanel({
         body: "{}",
       });
       onRetry();
-    } catch {
-      window.alert("重试失败，请稍后再试");
+    } catch (error) {
+      window.alert(error instanceof Error ? error.message : "重试失败，请稍后再试");
       setRetrying(false);
     }
   }

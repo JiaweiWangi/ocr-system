@@ -1,64 +1,53 @@
-import { NextRequest, NextResponse } from "next/server";
+import { after, NextRequest, NextResponse } from "next/server";
+import { randomUUID } from "node:crypto";
 import { prisma } from "@/lib/db";
-import { saveImage } from "@/lib/storage";
+import { saveImage, removeImage } from "@/lib/storage";
 import { processTask } from "@/lib/pipeline/runner";
 import { isMockMode } from "@/lib/baidu/fixtures";
+import { InputError, readUploadForm, recognitionOptions, validateImage } from "@/lib/upload";
+import { expireTasks, newAttempt } from "@/lib/pipeline/lifecycle";
 
 /**
- * POST /api/tasks —— multipart 上传，创建任务并触发处理（不 await，内存异步）
+ * POST /api/tasks —— 校验、落盘、创建任务，响应后启动识别
  * GET  /api/tasks —— 任务列表（最近优先）
  */
 
-const MAX_SIZE = 8 * 1024 * 1024; // 百度 general 接口限制 base64 后 ≤ 8M（原文件约 6M）
-
 export async function POST(req: NextRequest) {
+  let imagePath: string | undefined;
   try {
-    const form = await req.formData();
+    const form = await readUploadForm(req);
     const file = form.get("image");
-    if (!(file instanceof File)) {
-      return NextResponse.json({ error: "缺少 image 文件" }, { status: 400 });
-    }
-    if (file.size > MAX_SIZE) {
-      return NextResponse.json(
-        { error: "图片过大（>6MB），请压缩后重试" },
-        { status: 400 },
-      );
-    }
-
-    const modeRaw = form.get("mode");
-    const mode = modeRaw === "table" || modeRaw === "deep" ? modeRaw : "general";
-    const precisionRaw = form.get("precision");
-    const precision = precisionRaw === "high" ? "high" : "standard";
-
-    const title = (form.get("title") as string | null) || file.name || "未命名";
-
-    // 先建 Task 拿 id，再用 id 命名图片
+    if (!(file instanceof File) || form.getAll("image").length !== 1) throw new InputError("请上传一张 image 图片");
+    const { mode, precision } = recognitionOptions(form.get("mode"), form.get("precision"));
+    const titleRaw = form.get("title");
+    if (titleRaw !== null && typeof titleRaw !== "string") throw new InputError("题名必须为文本");
+    const title = (titleRaw?.trim() || file.name || "未命名").slice(0, 120);
+    const image = await validateImage(file);
+    const id = randomUUID();
+    imagePath = await saveImage(id, file, image.buffer);
+    const attempt = newAttempt();
     const task = await prisma.task.create({
       data: {
-        title,
-        mode,
-        precision,
-        status: "pending",
-        imagePath: "", // 占位，下面更新
+        id, title, mode, precision, status: "pending", imagePath,
+        imageWidth: image.width, imageHeight: image.height, ...attempt,
       },
     });
-
-    const imagePath = await saveImage(task.id, file);
-    await prisma.task.update({ where: { id: task.id }, data: { imagePath } });
-
-    // 异步触发，不阻塞响应
-    void processTask(task.id).catch(() => undefined);
-
+    imagePath = undefined; // The task now owns the file.
+    after(() => processTask(task.id, attempt.attemptId).catch(() => {
+      console.error("Could not process task", task.id);
+    }));
     return NextResponse.json({ id: task.id }, { status: 201 });
   } catch (err) {
+    if (imagePath) await removeImage(imagePath).catch(() => console.error("Could not clean up failed upload"));
     return NextResponse.json(
-      { error: err instanceof Error ? err.message : "创建任务失败" },
-      { status: 500 },
+      { error: err instanceof InputError ? err.message : "创建任务失败，请稍后重试" },
+      { status: err instanceof InputError ? err.status : 500 },
     );
   }
 }
 
 export async function GET() {
+  await expireTasks();
   const tasks = await prisma.task.findMany({
     orderBy: { createdAt: "desc" },
     take: 50,

@@ -3,85 +3,50 @@ import { runParserPoll, PARSER_DONE, PARSER_FAILED } from "@/lib/baidu";
 import { fromParser } from "@/lib/normalize/fromParser";
 import { ocrDocumentSchema } from "@/lib/normalize/types";
 import { extractKeyInfo } from "@/lib/kie/extract";
-
-/**
- * 深度模式按需轮询（poll-on-demand）：
- *
- * 前端每次查 status 时调用；距上次真实查询 ≥3s 才向百度发起 query。
- * 无常驻定时器，dev server 重启后自动恢复（状态全在 DB，幂等）。
- */
+import { completeTask, expireTasks, failTask, storeRawResults, withTaskDeadline } from "./lifecycle";
 
 const MIN_POLL_INTERVAL_MS = 3000;
+// Coalesce overlapping requests in this process; the DB guards also protect retries and completion.
+const inFlight = new Map<string, Promise<void>>();
 
 export async function pollDeepTask(taskId: string): Promise<void> {
+  const running = inFlight.get(taskId);
+  if (running) return running;
+  const poll = pollOnce(taskId).finally(() => inFlight.delete(taskId));
+  inFlight.set(taskId, poll);
+  return poll;
+}
+
+async function pollOnce(taskId: string) {
+  await expireTasks(taskId);
   const task = await prisma.task.findUnique({ where: { id: taskId } });
-  if (!task || task.mode !== "deep" || task.status !== "processing") return;
-  if (!task.engineTaskId) return;
-
-  // 节流：上次查询距今太近则跳过
-  if (task.lastPolledAt && Date.now() - task.lastPolledAt.getTime() < MIN_POLL_INTERVAL_MS) {
-    return;
-  }
-
-  await prisma.task.update({
-    where: { id: taskId },
-    data: { lastPolledAt: new Date() },
+  if (!task || task.mode !== "deep" || task.status !== "processing" || !task.engineTaskId) return;
+  const now = new Date();
+  const claimed = await prisma.task.updateMany({
+    where: {
+      id: task.id, attemptId: task.attemptId, status: "processing",
+      OR: [{ lastPolledAt: null }, { lastPolledAt: { lte: new Date(now.getTime() - MIN_POLL_INTERVAL_MS) } }],
+    },
+    data: { lastPolledAt: now },
   });
+  if (!claimed.count) return;
 
-  const fileName = task.title || "default";
-  const { status, parseResult } = await runParserPoll(task.engineTaskId, fileName);
-
-  if (status === PARSER_FAILED) {
-    await prisma.task.update({
-      where: { id: taskId },
-      data: { status: "failed", error: "文档解析失败（百度侧处理失败）" },
-    });
-    return;
-  }
-
-  if (status === PARSER_DONE && parseResult) {
-    try {
-      // RawResult 存档（parse_result_url 是临时链接，立即落地）
-      await prisma.rawResult.create({
-        data: { taskId, engine: "parser", payload: JSON.stringify(parseResult) },
-      });
-
-      const size = await prisma.task
-        .findUnique({ where: { id: taskId } })
-        .then((t) => (t?.imageWidth && t?.imageHeight ? { width: t.imageWidth, height: t.imageHeight } : null));
-
-      const doc = fromParser(parseResult, {
-        width: size?.width ?? 0,
-        height: size?.height ?? 0,
-        path: task.imagePath,
-      });
-      const parsed = ocrDocumentSchema.parse(doc);
-      const kv = extractKeyInfo(parsed);
-      if (kv) parsed.blocks.push(kv);
-
-      const count = await prisma.documentVersion.count({ where: { taskId } });
-      await prisma.documentVersion.create({
-        data: {
-          taskId,
-          versionNo: count + 1,
-          label: "初始识别",
-          content: JSON.stringify(parsed),
-          isCurrent: true,
-        },
-      });
-      await prisma.task.update({
-        where: { id: taskId },
-        data: { status: "success", error: null },
-      });
-    } catch (err) {
-      await prisma.task.update({
-        where: { id: taskId },
-        data: {
-          status: "failed",
-          error: err instanceof Error ? err.message : String(err),
-        },
-      });
+  await withTaskDeadline(task, async (signal) => {
+    const { status, parseResult } = await runParserPoll(task.engineTaskId!, task.title || "default", signal);
+    if (status === PARSER_FAILED) {
+      await failTask(task, "文档解析失败（百度侧处理失败），请重试");
+      return;
     }
-  }
-  // 其余 status：仍在处理中，等待下次轮询
+    if (status !== PARSER_DONE) return;
+    if (!parseResult) throw new Error("文档解析完成但结果为空");
+    if (!await storeRawResults(task, [{ engine: "parser", payload: parseResult }])) return;
+    const doc = fromParser(parseResult, {
+      width: task.imageWidth ?? 0, height: task.imageHeight ?? 0, path: task.imagePath,
+    });
+    const parsed = ocrDocumentSchema.parse(doc);
+    const kv = extractKeyInfo(parsed);
+    if (kv) parsed.blocks.push(kv);
+    signal.throwIfAborted();
+    await completeTask(task, parsed);
+  });
 }

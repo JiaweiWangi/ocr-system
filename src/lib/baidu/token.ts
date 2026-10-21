@@ -4,6 +4,8 @@
  * token 有效期 30 天，按 expires_in 计算过期时间，提前 5 分钟刷新。
  */
 
+import { requestJson } from "./http";
+
 interface TokenCache {
   token: string;
   expiresAt: number; // ms since epoch
@@ -29,7 +31,8 @@ export function clearTokenCache(): void {
   cache = null;
 }
 
-export async function getAccessToken(forceRefresh = false): Promise<string> {
+export async function getAccessToken(forceRefresh = false, signal?: AbortSignal): Promise<string> {
+  signal?.throwIfAborted();
   const apiKey = process.env.BAIDU_API_KEY;
   const secretKey = process.env.BAIDU_SECRET_KEY;
   if (!apiKey || !secretKey) {
@@ -49,17 +52,16 @@ export async function getAccessToken(forceRefresh = false): Promise<string> {
     client_secret: secretKey,
   });
 
-  const res = await fetch(`${TOKEN_URL}?${params.toString()}`, { method: "POST" });
-  const data = (await res.json()) as {
+  const data = (await requestJson(TOKEN_URL, { method: "POST", body: params }, "获取百度访问凭证", signal, 10_000)) as {
     access_token?: string;
     expires_in?: number;
     error?: string;
     error_description?: string;
   };
 
-  if (!data.access_token) {
+  if (!data || typeof data.access_token !== "string" || !data.access_token) {
     throw new BaiduTokenError(
-      `获取 access_token 失败：${data.error ?? "unknown"} ${data.error_description ?? ""}`,
+      "获取百度访问凭证失败，请检查 API Key / Secret Key 配置与应用权限",
     );
   }
 

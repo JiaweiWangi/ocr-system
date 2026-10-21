@@ -5,6 +5,7 @@ import { fromGeneral } from "@/lib/normalize/fromGeneral";
 import { fromTable } from "@/lib/normalize/fromTable";
 import { ocrDocumentSchema } from "@/lib/normalize/types";
 import { extractKeyInfo } from "@/lib/kie/extract";
+import { completeTask, expireTasks, storeRawResults, withTaskDeadline } from "./lifecycle";
 
 /**
  * 处理管线编排：按模式调接口 → 存 RawResult → 归一化 → 建 version 1。
@@ -13,27 +14,28 @@ import { extractKeyInfo } from "@/lib/kie/extract";
  * 深度模式只负责 submit（存 engineTaskId），完成检测交给 pollOnDemand。
  */
 
-export async function processTask(taskId: string): Promise<void> {
+export async function processTask(taskId: string, attemptId: string): Promise<void> {
+  await expireTasks(taskId);
   const task = await prisma.task.findUnique({ where: { id: taskId } });
-  if (!task) return;
+  if (!task || task.attemptId !== attemptId || task.status !== "pending") return;
 
-  try {
-    await prisma.task.update({
-      where: { id: taskId },
+  await withTaskDeadline(task, async (signal) => {
+    const claimed = await prisma.task.updateMany({
+      where: { id: taskId, attemptId, status: "pending", deadlineAt: { gt: new Date() } },
       data: { status: "processing" },
     });
+    if (!claimed.count) return;
 
     const imageBase64 = await imageToBase64(task.imagePath);
     const size = await imageSize(task.imagePath);
-    if (size) {
-      await prisma.task.update({
-        where: { id: taskId },
-        data: { imageWidth: size.width, imageHeight: size.height },
-      });
-    }
+    if (!size) throw new Error("无法读取图片尺寸");
+    await prisma.task.updateMany({
+      where: { id: taskId, attemptId, status: "processing" },
+      data: { imageWidth: size.width, imageHeight: size.height },
+    });
     const image = {
-      width: size?.width ?? 0,
-      height: size?.height ?? 0,
+      width: size.width,
+      height: size.height,
       path: task.imagePath,
     };
 
@@ -43,9 +45,9 @@ export async function processTask(taskId: string): Promise<void> {
     if (task.mode === "deep") {
       // 真实调用的 file_name 必须带正确扩展名，取落盘文件名（title 可被编辑，不可靠）
       const realFileName = task.imagePath.split("/").pop() || "image.png";
-      const engineTaskId = await runParserSubmit(imageBase64, realFileName);
-      await prisma.task.update({
-        where: { id: taskId },
+      const engineTaskId = await runParserSubmit(imageBase64, realFileName, signal);
+      await prisma.task.updateMany({
+        where: { id: taskId, attemptId, status: "processing", deadlineAt: { gt: new Date() } },
         data: { engineTaskId },
       });
       return; // 后续由 pollOnDemand 接手
@@ -55,32 +57,18 @@ export async function processTask(taskId: string): Promise<void> {
 
     if (task.mode === "table") {
       const [tableResult, generalResult] = await Promise.all([
-        runTable(imageBase64, fileName),
-        runGeneral(imageBase64, fileName).catch(() => undefined), // 表外文字可选，失败不阻塞
+        runTable(imageBase64, fileName, signal),
+        runGeneral(imageBase64, fileName, "standard", signal).catch(() => undefined), // 表外文字可选，失败不阻塞
       ]);
-      await prisma.rawResult.createMany({
-        data: [
-          {
-            taskId,
-            engine: "table",
-            payload: JSON.stringify(tableResult),
-          },
-          ...(generalResult
-            ? [{ taskId, engine: "general", payload: JSON.stringify(generalResult) }]
-            : []),
-        ],
-      });
+      if (!await storeRawResults(task, [
+        { engine: "table", payload: tableResult },
+        ...(generalResult ? [{ engine: "general", payload: generalResult }] : []),
+      ])) return;
       doc = fromTable(tableResult, image, generalResult);
     } else {
       const precision = task.precision === "high" ? "high" : "standard";
-      const result = await runGeneral(imageBase64, fileName, precision);
-      await prisma.rawResult.create({
-        data: {
-          taskId,
-          engine: precision === "high" ? "accurate" : "general",
-          payload: JSON.stringify(result),
-        },
-      });
+      const result = await runGeneral(imageBase64, fileName, precision, signal);
+      if (!await storeRawResults(task, [{ engine: precision === "high" ? "accurate" : "general", payload: result }])) return;
       doc = fromGeneral(result, image, precision === "high" ? "accurate" : "general");
     }
 
@@ -89,29 +77,9 @@ export async function processTask(taskId: string): Promise<void> {
     const kv = extractKeyInfo(parsed);
     if (kv) parsed.blocks.push(kv);
 
-    const count = await prisma.documentVersion.count({ where: { taskId } });
-    await prisma.documentVersion.create({
-      data: {
-        taskId,
-        versionNo: count + 1,
-        label: "初始识别",
-        content: JSON.stringify(parsed),
-        isCurrent: true,
-      },
-    });
-    await prisma.task.update({
-      where: { id: taskId },
-      data: { status: "success", error: null },
-    });
-  } catch (err) {
-    await prisma.task.update({
-      where: { id: taskId },
-      data: {
-        status: "failed",
-        error: err instanceof Error ? err.message : String(err),
-      },
-    });
-  }
+    signal.throwIfAborted();
+    await completeTask(task, parsed);
+  });
 }
 
 export { PARSER_FAILED };

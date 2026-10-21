@@ -38,12 +38,26 @@ export interface TaskDetail {
 }
 
 export async function fetchJson<T>(url: string, init?: RequestInit): Promise<T> {
-  const res = await fetch(url, init);
-  if (!res.ok) {
-    const body = (await res.json().catch(() => null)) as { error?: string } | null;
-    throw new Error(body?.error || `请求失败（${res.status}）`);
+  const controller = new AbortController();
+  const timer = setTimeout(() => controller.abort(), 60_000);
+  const signal = init?.signal ? AbortSignal.any([init.signal, controller.signal]) : controller.signal;
+  try {
+    const res = await fetch(url, { ...init, signal });
+    const body = await res.json().catch((error) => {
+      if (signal.aborted) throw error;
+      return null;
+    });
+    if (!res.ok) {
+      throw new Error(typeof body?.error === "string" ? body.error : `请求失败（${res.status}）`);
+    }
+    if (body === null) throw new Error("服务器返回的数据无效，请稍后重试");
+    return body as T;
+  } catch (error) {
+    if (controller.signal.aborted) throw new DOMException("请求超时，请稍后重试", "TimeoutError");
+    throw error;
+  } finally {
+    clearTimeout(timer);
   }
-  return res.json() as Promise<T>;
 }
 
 export const MODE_LABEL: Record<TaskMode, string> = {

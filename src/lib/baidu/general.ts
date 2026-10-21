@@ -26,19 +26,19 @@ export interface GeneralResult {
 }
 
 /** 通用文字识别（标准含位置版），免费 1000 次/月 */
-export async function generalOcr(imageBase64: string): Promise<GeneralResult> {
+export async function generalOcr(imageBase64: string, signal?: AbortSignal): Promise<GeneralResult> {
   return (await callOcrApi("/rest/2.0/ocr/v1/general", {
     image: imageBase64,
     paragraph: "true",
     detect_direction: "true",
-  })) as unknown as GeneralResult;
+  }, signal)) as unknown as GeneralResult;
 }
 
 /** 通用文字识别（高精度含位置版），免费 500 次/月 */
-export async function accurateOcr(imageBase64: string): Promise<GeneralResult> {
+export async function accurateOcr(imageBase64: string, signal?: AbortSignal): Promise<GeneralResult> {
   return (await callOcrApi("/rest/2.0/ocr/v1/accurate", {
     image: imageBase64,
     paragraph: "true",
     detect_direction: "true",
-  })) as unknown as GeneralResult;
+  }, signal)) as unknown as GeneralResult;
 }

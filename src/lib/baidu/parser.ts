@@ -1,4 +1,5 @@
 import { callOcrApi } from "./client";
+import { requestJson } from "./http";
 
 /**
  * 文档解析（异步 submit + poll），承担版面分析能力
@@ -39,33 +40,31 @@ export interface ParserQueryResult {
 }
 
 /** 提交文档解析任务，返回 task_id */
-export async function parserSubmit(fileData: string, fileName: string): Promise<string> {
+export async function parserSubmit(fileData: string, fileName: string, signal?: AbortSignal): Promise<string> {
   const data = await callOcrApi("/rest/2.0/brain/online/v2/parser/task", {
     file_data: fileData,
     file_name: fileName,
-  });
+  }, signal);
   const r = data as unknown as ParserSubmitResult;
   if (!r.result?.task_id) {
     throw new Error(
-      `文档解析提交失败: ${JSON.stringify(r).slice(0, 200)}`,
+      "文档解析提交失败：接口未返回任务编号",
     );
   }
   return r.result.task_id;
 }
 
 /** 查询任务状态。status: success=完成 failed=失败，其余为进行中 */
-export async function parserQuery(taskId: string): Promise<ParserQueryResult["result"]> {
+export async function parserQuery(taskId: string, signal?: AbortSignal): Promise<ParserQueryResult["result"]> {
   const data = await callOcrApi("/rest/2.0/brain/online/v2/parser/task/query", {
     task_id: taskId,
-  });
+  }, signal);
   return (data as unknown as ParserQueryResult).result;
 }
 
 /** 下载 parse_result_url 指向的 JSON（临时链接，成功后立即下载存档） */
-export async function downloadParseResult(url: string): Promise<unknown> {
-  const res = await fetch(url);
-  if (!res.ok) throw new Error(`下载 parse_result 失败: HTTP ${res.status}`);
-  return res.json();
+export async function downloadParseResult(url: string, signal?: AbortSignal): Promise<unknown> {
+  return requestJson(url, {}, "下载文档解析结果", signal);
 }
 
 export const PARSER_DONE = "success";

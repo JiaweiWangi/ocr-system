@@ -1,10 +1,12 @@
 import { getAccessToken, isTokenInvalidError, clearTokenCache } from "./token";
+import { requestJson } from "./http";
+import { setTimeout as delay } from "node:timers/promises";
 
 /**
  * 百度 OCR API 统一调用封装
  *
  * - 全局串行队列：免费档 QPS=2，串行 + 最小间隔保证不被限流
- * - 错误码 17（额度超限）/18（QPS 超限）指数退避重试
+ * - 错误码 18（QPS 超限）指数退避重试；额度耗尽立即结束
  * - 错误码 110/111（token 失效）强刷 token 后重试一次
  */
 
@@ -27,20 +29,20 @@ export class BaiduApiError extends Error {
 let queueTail: Promise<void> = Promise.resolve();
 let lastCallAt = 0;
 
-function enqueue<T>(job: () => Promise<T>): Promise<T> {
+function enqueue<T>(job: () => Promise<T>, signal?: AbortSignal): Promise<T> {
   const run = queueTail.then(async () => {
+    signal?.throwIfAborted();
     const wait = lastCallAt + MIN_INTERVAL_MS - Date.now();
-    if (wait > 0) await new Promise((r) => setTimeout(r, wait));
+    if (wait > 0) await delay(wait, undefined, { signal });
     lastCallAt = Date.now();
+    return job();
   });
   queueTail = run.then(
     () => undefined,
     () => undefined,
   );
-  return run.then(job);
+  return run;
 }
-
-const sleep = (ms: number) => new Promise((r) => setTimeout(r, ms));
 
 interface BaiduResponse {
   error_code?: number;
@@ -57,6 +59,7 @@ interface BaiduResponse {
 export async function callOcrApi(
   path: string,
   params: Record<string, string>,
+  signal?: AbortSignal,
 ): Promise<BaiduResponse> {
   const url = (token: string) =>
     `https://aip.baidubce.com${path}?access_token=${encodeURIComponent(token)}`;
@@ -65,16 +68,19 @@ export async function callOcrApi(
     let tokenRefreshed = false;
 
     for (let attempt = 0; attempt <= MAX_RETRIES; attempt++) {
-      const token = await getAccessToken();
+      signal?.throwIfAborted();
+      const token = await getAccessToken(false, signal);
       const body = new URLSearchParams({ access_token: token, ...params });
 
-      const res = await fetch(url(token), {
+      const data = (await requestJson(url(token), {
         method: "POST",
         headers: { "Content-Type": "application/x-www-form-urlencoded" },
         body,
-      });
-
-      const data = (await res.json()) as BaiduResponse;
+      }, "百度 OCR 请求", signal)) as BaiduResponse;
+      if (!data || typeof data !== "object" || Array.isArray(data) ||
+          (data.error_code !== undefined && typeof data.error_code !== "number")) {
+        throw new BaiduApiError(-1, "接口返回的数据格式异常");
+      }
 
       // OCR v1 接口成功时无 error_code；brain online（文档解析等）成功时返回 error_code: 0
       if (data.error_code === undefined || data.error_code === 0) return data;
@@ -86,12 +92,12 @@ export async function callOcrApi(
         continue;
       }
 
-      // 额度/QPS 超限：指数退避重试
+      // Only retry explicit rate limiting; network failures may already have incurred a charge.
       if (
-        (data.error_code === 17 || data.error_code === 18) &&
+        data.error_code === 18 &&
         attempt < MAX_RETRIES
       ) {
-        await sleep(500 * 2 ** attempt);
+        await delay(600 * 2 ** attempt, undefined, { signal });
         continue;
       }
 
@@ -99,5 +105,5 @@ export async function callOcrApi(
     }
 
     throw new BaiduApiError(-1, "重试次数耗尽");
-  });
+  }, signal);
 }

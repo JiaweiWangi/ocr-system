@@ -1,0 +1,2 @@
+ALTER TABLE "Task" ADD COLUMN "attemptId" TEXT;
+ALTER TABLE "Task" ADD COLUMN "deadlineAt" DATETIME;

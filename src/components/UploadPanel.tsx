@@ -4,9 +4,9 @@ import { useRef, useState, type DragEvent } from "react";
 import { useRouter } from "next/navigation";
 import { Loader2, Upload } from "lucide-react";
 import { fetchJson, MODE_DESC, MODE_LABEL, type TaskMode } from "@/lib/client/api";
+import { MAX_IMAGE_BYTES, IMAGE_MIME_TYPES } from "@/lib/uploadLimits";
 
 const MODES: TaskMode[] = ["general", "table", "deep"];
-const MAX_SIZE = 6 * 1024 * 1024;
 
 /**
  * 上传面板：拖拽/点击选图 + 模式胶囊分段器 + 精度开关（仅通用模式）
@@ -22,11 +22,15 @@ export default function UploadPanel() {
 
   async function submit(file: File) {
     setError(null);
-    if (!file.type.startsWith("image/")) {
+    if (!IMAGE_MIME_TYPES.includes(file.type)) {
       setError("仅支持图片文件（PNG / JPG / BMP / WebP）");
       return;
     }
-    if (file.size > MAX_SIZE) {
+    if (!file.size) {
+      setError("图片不能为空");
+      return;
+    }
+    if (file.size > MAX_IMAGE_BYTES) {
       setError("图片过大（>6MB），请压缩后重试");
       return;
     }
@@ -45,7 +49,9 @@ export default function UploadPanel() {
       });
       router.push(`/tasks/${id}`);
     } catch (err) {
-      setError(err instanceof Error ? err.message : "上传失败，请重试");
+      setError(err instanceof Error && err.name === "TimeoutError"
+        ? "上传请求超时，请先查看历史记录确认是否已创建任务"
+        : err instanceof Error ? err.message : "上传失败，请重试");
     } finally {
       setUploading(false);
     }

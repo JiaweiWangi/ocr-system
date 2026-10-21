@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { prisma } from "@/lib/db";
+import { expireTasks } from "@/lib/pipeline/lifecycle";
 
 /**
  * GET    /api/tasks/[id] —— 任务详情 + 当前版本内容
@@ -11,6 +12,7 @@ export async function GET(
   { params }: { params: Promise<{ id: string }> },
 ) {
   const { id } = await params;
+  await expireTasks(id);
   const task = await prisma.task.findUnique({
     where: { id },
     include: {

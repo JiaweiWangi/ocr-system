@@ -19,6 +19,8 @@ model Task {
   engineTaskId  String? // 深度模式：文档解析返回的 task_id
   engineLogId   String? // 百度 log_id，排障用
   lastPolledAt  DateTime? // poll-on-demand 节流
+  attemptId     String? // 隔离重试，旧请求不得覆盖新一轮结果
+  deadlineAt    DateTime? // 本轮识别截止时间，含排队与解析时间
   error         String? // 失败原因（百度错误码 + 消息）
   createdAt     DateTime     @default(now())
   updatedAt     DateTime     @updatedAt

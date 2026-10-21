@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { prisma } from "@/lib/db";
 import { pollDeepTask } from "@/lib/pipeline/pollOnDemand";
+import { expireTasks } from "@/lib/pipeline/lifecycle";
 
 /**
  * GET /api/tasks/[id]/status —— 前端轮询入口。
@@ -12,6 +13,7 @@ export async function GET(
   { params }: { params: Promise<{ id: string }> },
 ) {
   const { id } = await params;
+  await expireTasks(id);
   const task = await prisma.task.findUnique({
     where: { id },
     select: { id: true, status: true, mode: true, error: true },
@@ -22,7 +24,7 @@ export async function GET(
     try {
       await pollDeepTask(id);
     } catch {
-      // 轮询失败不报给前端，下次轮询重试
+      return NextResponse.json({ error: "读取识别状态失败，请稍后重试" }, { status: 503 });
     }
   }
 
